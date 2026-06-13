@@ -6,20 +6,21 @@
 
 The actual example files were retrieved on 2026-06-13 under a **links-only policy**: only
 redistributable artifacts are committed to `sources/`; paywalled, reference-only, and
-copyright-restricted sources are recorded as URLs only. KiCad 9.0.9 was installed to render the
-fabrication outputs (Gerbers, drill, IPC-D-356, placement, BOM, fab/assembly PDFs) from the
-committed demo project. See `sources/MANIFEST.json`.
+copyright-restricted sources are recorded as URLs only. Tooling was installed to render derived
+specimens: **KiCad 9.0.9** for the fabrication outputs (Gerbers, drill, IPC-D-356, placement, BOM,
+fab/assembly PDFs) and a `.brd` boardview (via `pcbnew`), and **cadquery/OpenCASCADE** for the
+isometric (E04) and section (D03) views from the Framework CAD `.stp`. See `sources/MANIFEST.json`.
 
 | Status | Count | Meaning |
 |--------|-------|---------|
-| committed (file) | 25 | The example artifact is a redistributable file committed under `sources/`. |
-| committed (generated) | 1 | Boardview `.fz` (C01) — no `kicad-cli` exporter exists; produced via OpenBoardView from the committed PCB. |
-| url-only | 12 | Paywalled / reference-only / copyright-restricted — recorded as a link, nothing downloaded. |
+| committed (file) | 28 | The example artifact is a redistributable file committed under `sources/`. |
+| url-only | 10 | Paywalled / reference-only / copyright-restricted — recorded as a link, nothing downloaded. |
 
-**26 / 38** drawing types have a committed redistributable specimen (103 files, ~21 MB). The 12
-url-only IDs are: A07, A11, B04, B05, B06, B07, B09, B10, D03, E02, E04, E05. Note that "open
-license" (28, below) and "committed" (26) differ: B06 (FCC public domain) was not pinned to a single
-exhibit, and D03/E04/E05 (CC BY 4.0) derive from the 21 MB Framework CAD `.stp` kept url-only for size.
+**28 / 38** drawing types have a committed redistributable specimen (106 files, ~24 MB). The 10
+url-only IDs are: A07, A11, B04, B05, B06, B07, B09, B10, E02, E05. Only two open-licensed types
+remain url-only: B06 (FCC public domain, no single exhibit pinned) and E05 (exploded view — the
+fused Framework CAD `.stp` has no per-part explode metadata, so a faithful exploded render is not
+feasible automatically).
 
 ## Open (CC / CERN OHL / GPL / BSD / public domain / FCC)  (28)
 

@@ -933,15 +933,16 @@
       "human_review_required": true,
       "paywalled": false,
       "retrieval": {
-        "status": "generated_from_committed",
+        "status": "committed_file",
         "committed": true,
         "local_path": [
+          "sources/kicad-demos/video/_generated/video.brd",
           "sources/kicad-demos/video/video.kicad_pcb"
         ],
-        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "sha256": "4efdddc582271056d6d1e1e672d56157b36b4bb7190b2edc68286c376cfee799",
         "retrieved_at": "2026-06-13",
-        "note": "Boardview (.fz/.brd) is produced by converting the committed KiCad open PCB via OpenBoardView/FlexBV (no kicad-cli exporter exists; no DMCA-risk OEM mirror used).",
-        "generation_command": "OpenBoardView/FlexBV import of sources/kicad-demos/video/video.kicad_pcb"
+        "note": "OpenBoardView BRD2 ASCII boardview (video.brd) generated from the committed KiCad PCB via a pcbnew script (589 nets / 189 parts / 2118 pins; real board outline). Open in OpenBoardView/FlexBV. No DMCA-risk OEM mirror used.",
+        "generation_command": "python pcb2brd.py (KiCad pcbnew API) -> sources/kicad-demos/video/_generated/video.brd"
       }
     },
     {
@@ -1164,12 +1165,15 @@
       "human_review_required": false,
       "paywalled": false,
       "retrieval": {
-        "status": "url_only",
-        "committed": false,
-        "local_path": null,
-        "sha256": null,
+        "status": "committed_file",
+        "committed": true,
+        "local_path": [
+          "sources/framework-laptop-13/_generated/framework-laptop-13-section.svg"
+        ],
+        "sha256": "a06f89660f47f5279ac478252c2dd25b7950f0edb5075175d35aa62ea0dd1c86",
         "retrieved_at": "2026-06-13",
-        "note": "ASME Y14.3 section view is generated from the Framework CAD .stp, which is url_only (21 MB, exceeds commit budget). PCB cross-section = stackup (A07). Committed Framework 2D PDF is related mechanical context."
+        "note": "ASME Y14.3 cross-section SVG rendered from the Framework CAD .stp (CC BY 4.0) with cadquery/OpenCASCADE (mid-height cut, isometric of the cut body). The 21 MB .stp itself is url_only.",
+        "generation_command": "cadquery: import STEP, cut at mid-Z, export SVG"
       }
     },
     {
@@ -1308,12 +1312,15 @@
       "human_review_required": false,
       "paywalled": false,
       "retrieval": {
-        "status": "url_only",
-        "committed": false,
-        "local_path": null,
-        "sha256": null,
+        "status": "committed_file",
+        "committed": true,
+        "local_path": [
+          "sources/framework-laptop-13/_generated/framework-laptop-13-isometric.svg"
+        ],
+        "sha256": "09735da3d4b6d0f23e6616e423108368b78cd95fc6cf6241a60b614030e59bd1",
         "retrieved_at": "2026-06-13",
-        "note": "Isometric render is generated from Framework CAD .stp (url_only, 21 MB). iFixit isometric is CC BY-NC-SA (non-commercial, not committed). Recorded as links."
+        "note": "Isometric pictorial SVG rendered from the Framework CAD .stp (CC BY 4.0) with cadquery/OpenCASCADE (projectionDir 1,-1,1). The 21 MB .stp itself is url_only.",
+        "generation_command": "cadquery: import STEP, export isometric SVG"
       }
     },
     {
@@ -1348,7 +1355,7 @@
         "local_path": null,
         "sha256": null,
         "retrieved_at": "2026-06-13",
-        "note": "Exploded view is generated from Framework CAD .stp (url_only, 21 MB); iFixit teardown is CC BY-NC-SA (non-commercial, not committed). Recorded as links."
+        "note": "Exploded view needs per-part explode vectors; the Framework CAD .stp is a fused multi-solid with no assembly explode metadata, so an automatic render is only a crude heuristic and was not committed (it was also computationally prohibitive). iFixit teardown is CC BY-NC-SA (non-commercial). The 21 MB .stp is url_only — fetch via fetch_sources.sh and explode in a CAD tool."
       }
     },
     {
@@ -1429,11 +1436,11 @@
   "retrieval_summary": {
     "policy": "links-only",
     "retrieved_at": "2026-06-13",
-    "committed_file": 25,
-    "generated_from_committed": 1,
-    "url_only": 12,
-    "committed_total": 26,
-    "committed_files_on_disk": 103,
+    "committed_file": 28,
+    "generated_from_committed": 0,
+    "url_only": 10,
+    "committed_total": 28,
+    "committed_files_on_disk": 106,
     "note": "Only redistributable artifacts are committed (CC BY 4.0 Framework, GPL v3 KiCad, BSD-3 Chromium EC, CERN-OHL-S MNT Reform, public-domain NASA). 'generated_from_committed' means the named drawing is a standard KiCad output produced from the committed project source (run the generation_command). url_only = paywalled / reference-only / free-but-copyright-restricted, recorded as links per the links-only policy."
   }
 }

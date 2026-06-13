@@ -4,13 +4,12 @@
   "policy": "links-only: only redistributable artifacts committed; all else url_only",
   "record_count": 38,
   "counts": {
-    "committed_file": 25,
-    "url_only": 12,
-    "generated_from_committed": 1
+    "committed_file": 28,
+    "url_only": 10
   },
-  "committed_total": 26,
-  "committed_files_on_disk": 103,
-  "committed_bytes_on_disk": 21103222,
+  "committed_total": 28,
+  "committed_files_on_disk": 106,
+  "committed_bytes_on_disk": 23933548,
   "sources": {
     "chromium-ec": {
       "upstream": "https://chromium.googlesource.com/chromiumos/platform/ec/+/refs/heads/main/docs/",
@@ -326,15 +325,16 @@
     {
       "id": "C01",
       "drawing_type": "Boardview (.brd / .fz)",
-      "status": "generated_from_committed",
+      "status": "committed_file",
       "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
       "local_path": [
+        "sources/kicad-demos/video/_generated/video.brd",
         "sources/kicad-demos/video/video.kicad_pcb"
       ],
-      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "sha256": "4efdddc582271056d6d1e1e672d56157b36b4bb7190b2edc68286c376cfee799",
       "source_url": "https://github.com/FrameworkComputer/Framework-Laptop-13",
-      "note": "Boardview (.fz/.brd) is produced by converting the committed KiCad open PCB via OpenBoardView/FlexBV (no kicad-cli exporter exists; no DMCA-risk OEM mirror used).",
-      "generation_command": "OpenBoardView/FlexBV import of sources/kicad-demos/video/video.kicad_pcb"
+      "note": "OpenBoardView BRD2 ASCII boardview (video.brd) generated from the committed KiCad PCB via a pcbnew script (589 nets / 189 parts / 2118 pins; real board outline). Open in OpenBoardView/FlexBV. No DMCA-risk OEM mirror used.",
+      "generation_command": "python pcb2brd.py (KiCad pcbnew API) -> sources/kicad-demos/video/_generated/video.brd"
     },
     {
       "id": "C02",
@@ -407,12 +407,15 @@
     {
       "id": "D03",
       "drawing_type": "Section View / Cross-Section",
-      "status": "url_only",
+      "status": "committed_file",
       "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
-      "local_path": null,
-      "sha256": null,
+      "local_path": [
+        "sources/framework-laptop-13/_generated/framework-laptop-13-section.svg"
+      ],
+      "sha256": "a06f89660f47f5279ac478252c2dd25b7950f0edb5075175d35aa62ea0dd1c86",
       "source_url": "https://github.com/FrameworkComputer/Framework-Laptop-13",
-      "note": "ASME Y14.3 section view is generated from the Framework CAD .stp, which is url_only (21 MB, exceeds commit budget). PCB cross-section = stackup (A07). Committed Framework 2D PDF is related mechanical context."
+      "note": "ASME Y14.3 cross-section SVG rendered from the Framework CAD .stp (CC BY 4.0) with cadquery/OpenCASCADE (mid-height cut, isometric of the cut body). The 21 MB .stp itself is url_only.",
+      "generation_command": "cadquery: import STEP, cut at mid-Z, export SVG"
     },
     {
       "id": "E01",
@@ -451,12 +454,15 @@
     {
       "id": "E04",
       "drawing_type": "Isometric Drawing",
-      "status": "url_only",
+      "status": "committed_file",
       "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
-      "local_path": null,
-      "sha256": null,
+      "local_path": [
+        "sources/framework-laptop-13/_generated/framework-laptop-13-isometric.svg"
+      ],
+      "sha256": "09735da3d4b6d0f23e6616e423108368b78cd95fc6cf6241a60b614030e59bd1",
       "source_url": "https://github.com/FrameworkComputer/Framework-Laptop-13",
-      "note": "Isometric render is generated from Framework CAD .stp (url_only, 21 MB). iFixit isometric is CC BY-NC-SA (non-commercial, not committed). Recorded as links."
+      "note": "Isometric pictorial SVG rendered from the Framework CAD .stp (CC BY 4.0) with cadquery/OpenCASCADE (projectionDir 1,-1,1). The 21 MB .stp itself is url_only.",
+      "generation_command": "cadquery: import STEP, export isometric SVG"
     },
     {
       "id": "E05",
@@ -466,7 +472,7 @@
       "local_path": null,
       "sha256": null,
       "source_url": "https://github.com/FrameworkComputer/Framework-Laptop-13",
-      "note": "Exploded view is generated from Framework CAD .stp (url_only, 21 MB); iFixit teardown is CC BY-NC-SA (non-commercial, not committed). Recorded as links."
+      "note": "Exploded view needs per-part explode vectors; the Framework CAD .stp is a fused multi-solid with no assembly explode metadata, so an automatic render is only a crude heuristic and was not committed (it was also computationally prohibitive). iFixit teardown is CC BY-NC-SA (non-commercial). The 21 MB .stp is url_only — fetch via fetch_sources.sh and explode in a CAD tool."
     },
     {
       "id": "E06",
@@ -626,6 +632,20 @@
       "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
       "upstream": "https://github.com/FrameworkComputer/Framework-Laptop-13",
       "bytes": 2776
+    },
+    {
+      "path": "sources/framework-laptop-13/_generated/framework-laptop-13-isometric.svg",
+      "sha256": "09735da3d4b6d0f23e6616e423108368b78cd95fc6cf6241a60b614030e59bd1",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "upstream": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "bytes": 1988510
+    },
+    {
+      "path": "sources/framework-laptop-13/_generated/framework-laptop-13-section.svg",
+      "sha256": "a06f89660f47f5279ac478252c2dd25b7950f0edb5075175d35aa62ea0dd1c86",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "upstream": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "bytes": 781010
     },
     {
       "path": "sources/kicad-demos/LICENSE.GPLv3",
@@ -850,6 +870,13 @@
       "license": "GNU GPL v3",
       "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
       "bytes": 16619
+    },
+    {
+      "path": "sources/kicad-demos/video/_generated/video.brd",
+      "sha256": "4efdddc582271056d6d1e1e672d56157b36b4bb7190b2edc68286c376cfee799",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 60806
     },
     {
       "path": "sources/kicad-demos/video/_generated/video.d356",

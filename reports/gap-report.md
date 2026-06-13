@@ -50,24 +50,26 @@ None. No drawing type required dropping to Tier 4 — every type was satisfied a
 ## 5. Retrieval outcome (links-only, 2026-06-13)
 
 The example files were retrieved and committed under `sources/` (manifest: `sources/MANIFEST.json`).
-Under the links-only policy only redistributable artifacts were committed. **KiCad 9.0.9** was
-installed (via the kicad-9.0-releases PPA) to render the KiCad fabrication outputs.
+Under the links-only policy only redistributable artifacts were committed. Two toolchains were
+installed to render derived specimens: **KiCad 9.0.9** (kicad-9.0-releases PPA) for the fabrication
+outputs and a `.brd` boardview (via `pcbnew`), and **cadquery/OpenCASCADE** for the isometric and
+section views from the Framework CAD `.stp`.
 
-- **25 committed as files** — A01, A02, A03, A04, A05, A06, A08, A09, A10, A12, A13, A14, B01, B02,
-  B03, B08, C02, C03, C04, D01, D02, E01, E03, E06, E07. This includes the Framework CC BY 4.0
-  schematics/2D/connectors/README/OpenSCAD, the KiCad GPL v3 demo project, the Chromium EC BSD-3
-  docs, the NASA public-domain PDF, the MNT Reform CERN-OHL-S motherboard schematic, **and** the
-  KiCad-rendered fabrication set committed under `sources/kicad-demos/video/_generated/` (RS-274X
-  Gerbers incl. paste/silkscreen, Excellon drill + drill-map PDF, IPC-D-356 netlist, placement CSV,
-  fab/assembly PDFs, BOM CSV). Each rendered record keeps its `generation_command` for provenance.
-- **1 committed as generating project** — C01 Boardview. KiCad has no `.fz`/`.brd` `kicad-cli`
-  exporter, so the committed open PCB is converted via OpenBoardView/FlexBV (command recorded).
-- **12 url-only** — A07, A11 (paywalled IPC-2141 / ASME Y14.5; reference specimens), B04 (JEDEC,
+- **28 committed as files** — A01, A02, A03, A04, A05, A06, A08, A09, A10, A12, A13, A14, B01, B02,
+  B03, B08, C01, C02, C03, C04, D01, D02, D03, E01, E03, E04, E06, E07. Includes the Framework
+  CC BY 4.0 schematics/2D/connectors/README/OpenSCAD, the KiCad GPL v3 demo project, Chromium EC
+  BSD-3 docs, NASA public-domain PDF, MNT Reform CERN-OHL-S schematic, the KiCad-rendered fab set
+  under `kicad-demos/video/_generated/` (Gerbers incl. paste/silkscreen, Excellon drill + map PDF,
+  IPC-D-356, placement CSV, fab/assembly PDFs, BOM CSV), the **OpenBoardView BRD2 boardview**
+  (C01, `video.brd`), and the cadquery-rendered **isometric** (E04) and **section** (D03) SVGs under
+  `framework-laptop-13/_generated/`. Each rendered/derived record keeps its `generation_command`.
+- **10 url-only** — A07, A11 (paywalled IPC-2141 / ASME Y14.5; reference specimens), B04 (JEDEC,
   registration), B05/B07 (Intel EDC, account-gated reference-only), B06 (FCC OET search entry; no
   single exhibit pinned), B09 (TI app note, copyright-restricted), B10 (IEEE 315A reference),
-  E02 (SMBus 3.2 / JEDEC, copyright-restricted), D03/E04/E05 (derive from the 21 MB Framework CAD
-  `.stp`, kept url-only for repo size). Retrieve any of these for personal use with
-  `sources/fetch_sources.sh` (paywalled/account-gated items must be obtained through their portals).
+  E02 (SMBus 3.2 / JEDEC, copyright-restricted), E05 (exploded view — see below). Retrieve any of
+  these for personal use with `sources/fetch_sources.sh` (paywalled/account-gated items must be
+  obtained through their portals).
 
-**Remaining follow-up:** D03/E04/E05 (section/isometric/exploded) need the 21 MB Framework CAD `.stp`
-rendered in a CAD tool — fetch it with `sources/fetch_sources.sh` if the size budget is raised.
+**Remaining follow-up:** E05 (exploded assembly) is the only mechanical view not committed — the
+Framework CAD `.stp` is a fused multi-solid with no per-part explode vectors, so a faithful exploded
+render needs manual assembly work in a CAD tool (fetch the `.stp` via `sources/fetch_sources.sh`).

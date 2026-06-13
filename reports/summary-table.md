@@ -28,21 +28,21 @@
 | B08 | Functional Block Diagram | B | MEDIUM | 2 | Creative Commons Attribution 4.0 | committed | no | no |
 | B09 | Signal Flow Diagram | B | MEDIUM | 2 | TI reference | url-only | no | no |
 | B10 | Single-Line Diagram | B | LOW | 3 | Fair use / CC | url-only | YES | no |
-| C01 | Boardview (.brd / .fz) | C | MEDIUM | 2 | Creative Commons Attribution 4.0 | committed (gen) | YES | no |
+| C01 | Boardview (.brd / .fz) | C | MEDIUM | 2 | Creative Commons Attribution 4.0 | committed | YES | no |
 | C02 | Silkscreen / Legend Drawing | C | HIGH | 2 | GNU GPL v3 | committed | no | no |
 | C03 | Test Point Drawing | C | MEDIUM | 2 | GNU GPL v3 | committed | no | no |
 | C04 | Interconnect / Connection Diagram | C | MEDIUM | 2 | Creative Commons Attribution 4.0 | committed | no | no |
 | D01 | Rework / Repair Drawing | D | MEDIUM | 3 | Public domain | committed | YES | no |
 | D02 | BOM (Bill of Materials) | D | HIGH | 2 | GNU GPL v3 (KiCad) / CC BY 4.0 (Framework) | committed | no | no |
-| D03 | Section View / Cross-Section | D | MEDIUM | 2 | Creative Commons Attribution 4.0 | url-only | no | no |
+| D03 | Section View / Cross-Section | D | MEDIUM | 2 | Creative Commons Attribution 4.0 | committed | no | no |
 | E01 | System Architecture Diagram | E | MEDIUM | 2 | Intel reference use | committed | no | no |
 | E02 | Timing Diagram | E | HIGH | 1 | Public | url-only | no | no |
 | E03 | State Machine Diagram | E | MEDIUM | 2 | BSD 3-Clause | committed | no | no |
-| E04 | Isometric Drawing | E | MEDIUM | 2 | Creative Commons Attribution 4.0 | url-only | no | no |
+| E04 | Isometric Drawing | E | MEDIUM | 2 | Creative Commons Attribution 4.0 | committed | no | no |
 | E05 | Exploded Assembly Diagram | E | HIGH | 2 | Creative Commons Attribution 4.0 | url-only | no | no |
 | E06 | Chassis / Enclosure Drawing | E | HIGH | 2 | Creative Commons Attribution 4.0 | committed | no | no |
 | E07 | PCB Fabrication Drawing (Fab) | E | HIGH | 2 | Creative Commons Attribution 4.0 | committed | no | no |
 
 **Totals:** 38 drawing types — 17 high, 17 medium, 4 low confidence. 7 flagged for human review, 4 paywalled.
 
-**Retrieval (links-only policy):** 26/38 have a committed redistributable specimen (25 direct files, 1 generated from a committed KiCad project); 12/38 are url-only (paywalled / reference-only / copyright-restricted). 103 files / 20608 KiB committed under `sources/`. See `sources/MANIFEST.json`.
+**Retrieval (links-only policy):** 28/38 have a committed redistributable specimen (28 direct files, 0 generated from a committed KiCad project); 10/38 are url-only (paywalled / reference-only / copyright-restricted). 106 files / 23372 KiB committed under `sources/`. See `sources/MANIFEST.json`.

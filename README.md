@@ -39,25 +39,25 @@ analysis).
 - **4** items depend on a paywalled standard and use a fair-use / tutorial specimen (IEEE 91, IPC-2141, ASME Y14.5, IPC-7525).
 - **0** items required dropping to Tier 4.
 - **28 / 38** examples carry an open license (CC BY 4.0, GPL v3, CERN-OHL-S, BSD, public domain / FCC).
-- **26 / 38** have a committed redistributable file in `sources/` (see *Retrieved files* below).
+- **28 / 38** have a committed redistributable file in `sources/` (see *Retrieved files* below).
 
 ## Retrieved files (`sources/`)
 
 The example files were retrieved on 2026-06-13 under a **links-only policy**: only redistributable
 artifacts are committed; paywalled, vendor reference-only, and copyright-restricted sources are
-recorded as URLs in `sources/MANIFEST.json` (nothing downloaded). **103 files (~21 MB)** are committed.
+recorded as URLs in `sources/MANIFEST.json` (nothing downloaded). **106 files (~24 MB)** are committed.
 
 | Retrieval status | Count | Notes |
 |------------------|-------|-------|
-| committed (file) | 25 | Exact example artifact committed (Framework PDFs, EC docs, NASA PDF, MNT schematic, KiCad project + KiCad 9.0.9-rendered Gerbers/drill/IPC-D-356/placement/BOM/fab+assembly PDFs). |
-| committed (generated) | 1 | Boardview `.fz` (C01) — no `kicad-cli` exporter; produced via OpenBoardView from the committed PCB. |
-| url-only | 12 | Paywalled / reference-only / copyright-restricted — link only. |
+| committed (file) | 28 | Exact/derived artifact committed — Framework PDFs, EC docs, NASA PDF, MNT schematic, KiCad project + KiCad 9.0.9-rendered Gerbers/drill/IPC-D-356/placement/BOM/fab+assembly + a `pcbnew`-generated boardview, and cadquery-rendered isometric/section SVGs from the CAD. |
+| url-only | 10 | Paywalled / reference-only / copyright-restricted — link only. |
 
 ```
 sources/
 ├── framework-laptop-13/   CC BY 4.0  — 6 interface schematics, 2D drawing, connectors, README, OpenSCAD
+│   └── _generated/                   — cadquery/OpenCASCADE isometric + section SVGs (from CAD .stp)
 ├── kicad-demos/           GPL v3     — video/ + pic_programmer/ KiCad projects
-│   └── video/_generated/             — KiCad 9.0.9-rendered Gerbers, drill, IPC-D-356, placement, BOM, fab/assembly PDFs
+│   └── video/_generated/             — KiCad 9.0.9 Gerbers/drill/IPC-D-356/placement/BOM/fab+assembly PDFs + video.brd boardview
 ├── chromium-ec/           BSD-3      — EC firmware docs with state machines
 ├── mnt-reform/            CERN-OHL-S — open-hardware laptop motherboard schematic PDF
 ├── nasa/                  public dom — NASA-STD-8739.3 (cancelled 2011)
@@ -114,7 +114,12 @@ Each `drawing-corpus.json` record follows the Section 8 schema: `drawing_type`, 
   (`sources/MANIFEST.json`). No paywall was bypassed and no DMCA-risk OEM schematic mirror was used.
 - **KiCad 9.0.9** was then installed (kicad-9.0-releases PPA) and `kicad-cli` used to render the
   fabrication outputs (Gerbers, Excellon drill + map, IPC-D-356 netlist, placement CSV, BOM,
-  fab/assembly PDFs) from the committed `video` demo into `sources/kicad-demos/video/_generated/`.
+  fab/assembly PDFs) from the committed `video` demo into `sources/kicad-demos/video/_generated/`;
+  the `pcbnew` Python API produced an OpenBoardView BRD2 `video.brd` (C01).
+- **cadquery / OpenCASCADE** rendered the isometric (E04) and mid-height section (D03) views from
+  the Framework CAD `.stp` (fetched to a temp dir, not committed) into
+  `sources/framework-laptop-13/_generated/`. The exploded view (E05) was not committed — the `.stp`
+  is a fused multi-solid with no per-part explode metadata.
 
 ---
 *Generated 2026-06-12 per EMBLEM-NLP-RSPEC-001 v1.0.0.*
