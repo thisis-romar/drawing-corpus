@@ -38,6 +38,7 @@ FW = "sources/framework-laptop-13"
 KV = "sources/kicad-demos/video/video.kicad_pcb"
 SCH = FW + "/Mainboard/Mainboard_Interfaces_Schematic_Intel_Core_Ultra_Series_1.pdf"
 AMD = FW + "/Mainboard/Mainboard_Interfaces_Schematic_AMD_Ryzen_AI_300_Series.pdf"
+SCH11 = FW + "/Mainboard/Mainboard_Interfaces_Schematic_11th_Gen.pdf"
 TWOD = FW + "/Mainboard/2D/fw_main_pcb_generic_2_w_fan.pdf"
 CONN = FW + "/Mainboard/Connectors/README.md"
 MBREADME = FW + "/Mainboard/README.md"
@@ -59,7 +60,7 @@ EXPL = FWGEN + "/framework-laptop-13-exploded.png"
 # status: committed_file | generated_from_committed | url_only
 MAP = {
  "A01": ("committed_file", [SCH], "Six Framework interface schematics committed (11th/12th Gen, 7040, Ryzen AI 300, Chromebook, Intel Core Ultra Series 1); MNT Reform motherboard schematic PDF (CERN-OHL-S) committed as a second open specimen at sources/mnt-reform/.", None),
- "A02": ("committed_file", [VSCH], "Applied IEEE-91-style logic-gate symbols are present in the committed KiCad 'video' schematics. The normative IEEE 91/91a standard is paywalled (url_only).", None),
+ "A02": ("committed_file", [VSCH], "Applied IEEE-91-style logic-gate symbols appear within the committed KiCad 'video' schematic (embedded in the full sheet, not a standalone logic diagram). The normative IEEE 91/91a standard is paywalled (url_only).", None),
  "A03": ("committed_file", [KV], "Complete KiCad 'video' multi-layer routed PCB. Opens natively in KiCad PCB editor.", None),
  "A04": ("committed_file", [GEN+"/video-fab.pdf", KV], "Fabrication drawing PDF rendered from the committed KiCad project with KiCad 9.0.9 (Edge.Cuts + F/B fab + user layers). Sierra Circuits IPC-2221 specimen is url_only.", KCMD.format(sub="pdf")),
  "A05": ("committed_file", [GEN+"/video-assembly.pdf", KV, TWOD], "Assembly drawing PDF rendered with KiCad 9.0.9 (F.Fab + silkscreen + Edge.Cuts). Framework 2D placement context PDF also committed.", KCMD.format(sub="pdf")),
@@ -89,7 +90,7 @@ MAP = {
  "D01": ("committed_file", [NASA], "NASA-STD-8739.3 'Soldered Electrical Connections' (84-pp public-domain PDF) committed. NOTE: cancelled 2011-10-17, superseded by IPC J-STD-001 + NASA addendum. IPC-7711/7721 paywalled.", None),
  "D02": ("committed_file", [GEN+"/video-bom.csv", CONN, KV], "BOM CSV (64 grouped lines: refs, value, footprint, qty) rendered with KiCad 9.0.9. Framework connector/part-number tables also committed.", "kicad-cli sch export bom --group-by Value sources/kicad-demos/video/video.kicad_sch"),
  "D03": ("committed_file", [SEC], "Cross-section SVG rendered from the Framework CAD .stp (CC BY 4.0) with cadquery/OpenCASCADE: a true cut-plane profile through the case at mid-width (case wall, ribs, standoffs). The 21 MB .stp itself is url_only.", "cadquery: import STEP, section() at mid-width YZ plane, export SVG"),
- "E01": ("committed_file", [MBREADME], "Framework Mainboard README system block diagram committed as the open-license alternative. Intel NUC Technical Product Specification is redistribution-restricted (url_only).", None),
+ "E01": ("committed_file", [SCH11, MBREADME], "System architecture diagram = the full-system Block Diagram on sheet 1 of the committed Framework interface schematics (a labelled block diagram of CPU/memory/USB-C/EC/codec/storage); the Mainboard README block diagram is committed as a second specimen. Intel NUC Technical Product Specification is redistribution-restricted (url_only).", None),
  "E02": ("url_only", [], "SMBus 3.2 spec is freely downloadable but copyright-restricted (no redistribution); JEDEC LPDDR5 free with registration. Timing diagrams recorded as links.", None),
  "E03": ("committed_file", [ECDOC], "Chromium EC firmware docs with state machines committed: low_battery_startup.md, usb-tcpmv2.md (TCPMv2 state machine), usb-c.md, usb_power.md (BSD-3).", None),
  "E04": ("committed_file", [ISO], "Isometric pictorial SVG rendered from the Framework CAD .stp (CC BY 4.0) with cadquery/OpenCASCADE (projectionDir 1,-1,1). The 21 MB .stp itself is url_only.", "cadquery: import STEP, export isometric SVG"),

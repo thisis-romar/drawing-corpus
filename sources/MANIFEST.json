@@ -55,7 +55,7 @@
       ],
       "sha256": "4d3ced775e49f56704b036bf56b9bf90d3d403b29bc9434eca47a8f18bea5ce1",
       "source_url": "https://en.wikipedia.org/wiki/Logic_gate#Symbols",
-      "note": "Applied IEEE-91-style logic-gate symbols are present in the committed KiCad 'video' schematics. The normative IEEE 91/91a standard is paywalled (url_only)."
+      "note": "Applied IEEE-91-style logic-gate symbols appear within the committed KiCad 'video' schematic (embedded in the full sheet, not a standalone logic diagram). The normative IEEE 91/91a standard is paywalled (url_only)."
     },
     {
       "id": "A03",
@@ -423,11 +423,12 @@
       "status": "committed_file",
       "license": "Intel reference use (publicly downloadable TPS; redistribution restricted)",
       "local_path": [
+        "sources/framework-laptop-13/Mainboard/Mainboard_Interfaces_Schematic_11th_Gen.pdf",
         "sources/framework-laptop-13/Mainboard/README.md"
       ],
-      "sha256": "40376b67c2e82e3848a34d5e9ff6328f50f811cb22c6d910e01df8837511d3c0",
+      "sha256": "29da75b651eb3e159271dec6f93514df39106445ad890cdf81bd6ee043ac63b0",
       "source_url": "https://www.intel.com/content/www/us/en/products/details/nuc/mini-pcs/products.html",
-      "note": "Framework Mainboard README system block diagram committed as the open-license alternative. Intel NUC Technical Product Specification is redistribution-restricted (url_only)."
+      "note": "System architecture diagram = the full-system Block Diagram on sheet 1 of the committed Framework interface schematics (a labelled block diagram of CPU/memory/USB-C/EC/codec/storage); the Mainboard README block diagram is committed as a second specimen. Intel NUC Technical Product Specification is redistribution-restricted (url_only)."
     },
     {
       "id": "E02",
