@@ -125,4 +125,4 @@ Each `drawing-corpus.json` record follows the Section 8 schema: `drawing_type`, 
   a temp dir, not committed) into `sources/framework-laptop-13/_generated/`.
 
 ---
-*Generated 2026-06-12 per EMBLEM-NLP-RSPEC-001 v1.0.0.*
+*Corpus generated 2026-06-12 per EMBLEM-NLP-RSPEC-001 v1.0.0; sources retrieved and rendered 2026-06-13.*
