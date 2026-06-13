@@ -4,13 +4,13 @@
   "policy": "links-only: only redistributable artifacts committed; all else url_only",
   "record_count": 38,
   "counts": {
-    "committed_file": 15,
-    "generated_from_committed": 11,
-    "url_only": 12
+    "committed_file": 25,
+    "url_only": 12,
+    "generated_from_committed": 1
   },
   "committed_total": 26,
-  "committed_files_on_disk": 84,
-  "committed_bytes_on_disk": 18405850,
+  "committed_files_on_disk": 103,
+  "committed_bytes_on_disk": 21103222,
   "sources": {
     "chromium-ec": {
       "upstream": "https://chromium.googlesource.com/chromiumos/platform/ec/+/refs/heads/main/docs/",
@@ -73,41 +73,45 @@
     {
       "id": "A04",
       "drawing_type": "Fabrication Drawing (Fab)",
-      "status": "generated_from_committed",
+      "status": "committed_file",
       "license": "GNU GPL v3",
       "local_path": [
+        "sources/kicad-demos/video/_generated/video-fab.pdf",
         "sources/kicad-demos/video/video.kicad_pcb"
       ],
-      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "sha256": "241549fc48392272a5dc80d33736aaad96e1fceff618348100f1491b523acc34",
       "source_url": "https://gitlab.com/kicad/kicad/-/tree/master/demos/video",
-      "note": "Fabrication drawing is a generated KiCad output; the source project is committed. Sierra Circuits IPC-2221 specimen is url_only.",
+      "note": "Fabrication drawing PDF rendered from the committed KiCad project with KiCad 9.0.9 (Edge.Cuts + F/B fab + user layers). Sierra Circuits IPC-2221 specimen is url_only.",
       "generation_command": "kicad-cli pcb export pdf sources/kicad-demos/video/video.kicad_pcb"
     },
     {
       "id": "A05",
       "drawing_type": "Assembly Drawing (PCBA)",
-      "status": "generated_from_committed",
+      "status": "committed_file",
       "license": "GNU GPL v3",
       "local_path": [
+        "sources/kicad-demos/video/_generated/video-assembly.pdf",
         "sources/kicad-demos/video/video.kicad_pcb",
         "sources/framework-laptop-13/Mainboard/2D/fw_main_pcb_generic_2_w_fan.pdf"
       ],
-      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "sha256": "86ef33b9b879a1957e3c48736e454ae860cec4feef105c8d7defaeadadc8497c",
       "source_url": "https://gitlab.com/kicad/kicad/-/tree/master/demos/video",
-      "note": "Assembly drawing is a generated KiCad output (fab+silk+ref-des layers); source project committed. Framework 2D placement context PDF also committed.",
+      "note": "Assembly drawing PDF rendered with KiCad 9.0.9 (F.Fab + silkscreen + Edge.Cuts). Framework 2D placement context PDF also committed.",
       "generation_command": "kicad-cli pcb export pdf sources/kicad-demos/video/video.kicad_pcb"
     },
     {
       "id": "A06",
       "drawing_type": "Drill Drawing / Drill Map",
-      "status": "generated_from_committed",
+      "status": "committed_file",
       "license": "GNU GPL v3",
       "local_path": [
+        "sources/kicad-demos/video/_generated/drill/video-drl_map.pdf",
+        "sources/kicad-demos/video/_generated/drill/video.drl",
         "sources/kicad-demos/video/video.kicad_pcb"
       ],
-      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "sha256": "236068fd35e4ac4b19e7b4761413337165cde6baed6a58254134c0223439e338",
       "source_url": "https://gitlab.com/kicad/kicad/-/tree/master/demos/video",
-      "note": "Drill map / Excellon is a generated KiCad fabrication output; source project committed.",
+      "note": "Drill map (PDF) + Excellon .drl rendered with KiCad 9.0.9.",
       "generation_command": "kicad-cli pcb export drill sources/kicad-demos/video/video.kicad_pcb"
     },
     {
@@ -123,41 +127,44 @@
     {
       "id": "A08",
       "drawing_type": "Gerber / ODB++ Output",
-      "status": "generated_from_committed",
+      "status": "committed_file",
       "license": "GNU GPL v3",
       "local_path": [
+        "sources/kicad-demos/video/_generated/gerbers/video-job.gbrjob",
         "sources/kicad-demos/video/video.kicad_pcb"
       ],
-      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "sha256": "29eeeab6c88bbdac2f8afd9a27b264f24a890c7e19686ec504f5ee3ca965e6c2",
       "source_url": "https://gitlab.com/kicad/kicad/-/tree/master/demos/video",
-      "note": "Gerber RS-274X set is a generated KiCad output; source project committed. Render with Tracespace.",
+      "note": "Full RS-274X Gerber set (per-layer, X2) rendered with KiCad 9.0.9 into _generated/gerbers/; the .gbrjob is the index. Render online with Tracespace.",
       "generation_command": "kicad-cli pcb export gerbers sources/kicad-demos/video/video.kicad_pcb"
     },
     {
       "id": "A09",
       "drawing_type": "Netlist (IPC-D-356)",
-      "status": "generated_from_committed",
+      "status": "committed_file",
       "license": "GNU GPL v3",
       "local_path": [
+        "sources/kicad-demos/video/_generated/video.d356",
         "sources/kicad-demos/video/video.kicad_pcb"
       ],
-      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "sha256": "8d350cca0ce0be75a7f90ca039955c08a3f554906a5bc6ba556f1a3b96189b44",
       "source_url": "https://gitlab.com/kicad/kicad/-/tree/master/demos/video",
-      "note": "IPC-D-356A netlist is a generated KiCad export (PCB editor: Fabrication Outputs -> IPC-D-356); source project committed.",
+      "note": "IPC-D-356A bare-board test netlist rendered with KiCad 9.0.9 (317 records: net names, pad coords, access side).",
       "generation_command": "kicad-cli pcb export ipcd356 sources/kicad-demos/video/video.kicad_pcb"
     },
     {
       "id": "A10",
       "drawing_type": "Component Placement Diagram",
-      "status": "generated_from_committed",
+      "status": "committed_file",
       "license": "GNU GPL v3",
       "local_path": [
+        "sources/kicad-demos/video/_generated/video-pos.csv",
         "sources/kicad-demos/video/video.kicad_pcb"
       ],
-      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "sha256": "291338378908416aa5100ce9aa85977f6f8a46091ab27b2a21859dff6a0c7a5b",
       "source_url": "https://gitlab.com/kicad/kicad/-/tree/master/demos/video",
-      "note": "Component placement plot + pick-and-place .pos are generated KiCad outputs; source project committed.",
-      "generation_command": "kicad-cli pcb export pos sources/kicad-demos/video/video.kicad_pcb"
+      "note": "Pick-and-place position file (186 components, mm) rendered with KiCad 9.0.9.",
+      "generation_command": "kicad-cli pcb export pos --format csv --units mm sources/kicad-demos/video/video.kicad_pcb"
     },
     {
       "id": "A11",
@@ -184,15 +191,17 @@
     {
       "id": "A13",
       "drawing_type": "Solder Paste / Stencil Drawing",
-      "status": "generated_from_committed",
+      "status": "committed_file",
       "license": "Reference / fair use (manufacturer educational content)",
       "local_path": [
+        "sources/kicad-demos/video/_generated/gerbers/video-F_Paste.gtp",
+        "sources/kicad-demos/video/_generated/gerbers/video-B_Paste.gbp",
         "sources/kicad-demos/video/video.kicad_pcb"
       ],
-      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "sha256": "88cd819406196e08fb6bf3ac9639d18e04c838fe798dfba5b4a04e98b7dacdbc",
       "source_url": "https://www.protoexpress.com/blog/solder-paste-stencil-design/",
-      "note": "Solder-paste/stencil aperture set is the generated KiCad paste layer; source project committed. IPC-7525 paywalled; Sierra/Sunstone tutorials url_only.",
-      "generation_command": "kicad-cli pcb export pdf sources/kicad-demos/video/video.kicad_pcb"
+      "note": "Solder-paste stencil aperture set = F/B paste Gerbers rendered with KiCad 9.0.9. IPC-7525 paywalled; Sierra/Sunstone tutorials url_only.",
+      "generation_command": "kicad-cli pcb export gerbers sources/kicad-demos/video/video.kicad_pcb"
     },
     {
       "id": "A14",
@@ -324,33 +333,36 @@
       ],
       "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
       "source_url": "https://github.com/FrameworkComputer/Framework-Laptop-13",
-      "note": "Boardview (.fz/.brd) is generated by converting the committed KiCad/Framework open PCB via OpenBoardView/FlexBV. No DMCA-risk OEM mirror used.",
+      "note": "Boardview (.fz/.brd) is produced by converting the committed KiCad open PCB via OpenBoardView/FlexBV (no kicad-cli exporter exists; no DMCA-risk OEM mirror used).",
       "generation_command": "OpenBoardView/FlexBV import of sources/kicad-demos/video/video.kicad_pcb"
     },
     {
       "id": "C02",
       "drawing_type": "Silkscreen / Legend Drawing",
-      "status": "generated_from_committed",
+      "status": "committed_file",
       "license": "GNU GPL v3",
       "local_path": [
+        "sources/kicad-demos/video/_generated/gerbers/video-F_Silkscreen.gto",
+        "sources/kicad-demos/video/_generated/gerbers/video-B_Silkscreen.gbo",
         "sources/kicad-demos/video/video.kicad_pcb"
       ],
-      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "sha256": "0a1bed37fbd7166f5b872519847be88b6a11b89bf52363a3f08613c818d34207",
       "source_url": "https://gitlab.com/kicad/kicad/-/tree/master/demos/video",
-      "note": "Silkscreen/legend (F.Silkscreen/B.Silkscreen) is a generated KiCad plot layer; source project committed.",
+      "note": "Silkscreen/legend = F/B silkscreen Gerbers rendered with KiCad 9.0.9.",
       "generation_command": "kicad-cli pcb export gerbers sources/kicad-demos/video/video.kicad_pcb"
     },
     {
       "id": "C03",
       "drawing_type": "Test Point Drawing",
-      "status": "generated_from_committed",
+      "status": "committed_file",
       "license": "GNU GPL v3",
       "local_path": [
+        "sources/kicad-demos/video/_generated/video.d356",
         "sources/kicad-demos/video/video.kicad_pcb"
       ],
-      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "sha256": "8d350cca0ce0be75a7f90ca039955c08a3f554906a5bc6ba556f1a3b96189b44",
       "source_url": "https://gitlab.com/kicad/kicad/-/tree/master/demos/video",
-      "note": "Test-point/access map derived from the generated IPC-D-356 net-access export; source project committed.",
+      "note": "Test-point/access map derived from the committed IPC-D-356 net-access export (rendered with KiCad 9.0.9).",
       "generation_command": "kicad-cli pcb export ipcd356 sources/kicad-demos/video/video.kicad_pcb"
     },
     {
@@ -380,16 +392,17 @@
     {
       "id": "D02",
       "drawing_type": "BOM (Bill of Materials)",
-      "status": "generated_from_committed",
+      "status": "committed_file",
       "license": "GNU GPL v3 (KiCad) / CC BY 4.0 (Framework)",
       "local_path": [
-        "sources/kicad-demos/video/video.kicad_pcb",
-        "sources/framework-laptop-13/Mainboard/Connectors/README.md"
+        "sources/kicad-demos/video/_generated/video-bom.csv",
+        "sources/framework-laptop-13/Mainboard/Connectors/README.md",
+        "sources/kicad-demos/video/video.kicad_pcb"
       ],
-      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "sha256": "6f88bd6e2d2928336b1eb5d24b6f44565c9e59cec25dd9a55614032df41942c4",
       "source_url": "https://gitlab.com/kicad/kicad/-/tree/master/demos/video",
-      "note": "BOM is a generated KiCad export (CSV/XML); source project committed. Framework connector/part-number tables also committed.",
-      "generation_command": "kicad-cli sch export bom sources/kicad-demos/video/video.kicad_sch"
+      "note": "BOM CSV (64 grouped lines: refs, value, footprint, qty) rendered with KiCad 9.0.9. Framework connector/part-number tables also committed.",
+      "generation_command": "kicad-cli sch export bom --group-by Value sources/kicad-demos/video/video.kicad_sch"
     },
     {
       "id": "D03",
@@ -711,6 +724,139 @@
       "license": "GNU GPL v3",
       "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
       "bytes": 143
+    },
+    {
+      "path": "sources/kicad-demos/video/_generated/drill/video-drl_map.pdf",
+      "sha256": "236068fd35e4ac4b19e7b4761413337165cde6baed6a58254134c0223439e338",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 88711
+    },
+    {
+      "path": "sources/kicad-demos/video/_generated/drill/video.drl",
+      "sha256": "f3ed6a7c5aaba2b4ee36ff42d38d577c97bfdca852a3ddab6d570167dbe14546",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 29814
+    },
+    {
+      "path": "sources/kicad-demos/video/_generated/gerbers/video-B_Cu.gbl",
+      "sha256": "48ac062eb8ef32a74316ab9e8f19279dbfec3b9491a336905180d53201403050",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 297031
+    },
+    {
+      "path": "sources/kicad-demos/video/_generated/gerbers/video-B_Fab.gbr",
+      "sha256": "316cdcfa7f9475d5a7349b1a9cbc56522e5f9a3ffcbb4b1352eed16f4d9dd138",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 407095
+    },
+    {
+      "path": "sources/kicad-demos/video/_generated/gerbers/video-B_Mask.gbs",
+      "sha256": "c8b095d35416ac254f0f170a2be8987e615bbf79e17144b022e814a7fb27ec63",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 37281
+    },
+    {
+      "path": "sources/kicad-demos/video/_generated/gerbers/video-B_Paste.gbp",
+      "sha256": "2b2ab9ee4e503f2cf3356cbaa5dd7131a22a414bbd61fe8a7585445fe4e8c939",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 10660
+    },
+    {
+      "path": "sources/kicad-demos/video/_generated/gerbers/video-B_Silkscreen.gbo",
+      "sha256": "c398a17017d77fbb13b3dbf6c17223aca0adb470492bd23c5e00d340ddc7cf7a",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 194071
+    },
+    {
+      "path": "sources/kicad-demos/video/_generated/gerbers/video-Edge_Cuts.gm1",
+      "sha256": "b3ca937cc1ec3cd03642aca1d061ef8db3fa0f7cab317e19ed5736de49bb3ffc",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 1643
+    },
+    {
+      "path": "sources/kicad-demos/video/_generated/gerbers/video-F_Fab.gbr",
+      "sha256": "004df2e15793b37f1ceec0c1de9c967cb8dc0e545e4abeb1e9ebb14c7dc47d9f",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 279761
+    },
+    {
+      "path": "sources/kicad-demos/video/_generated/gerbers/video-F_Mask.gts",
+      "sha256": "0f30d5dd576406b2f38418c2f8c689d25ce29e890933435c702b07d7d3f7df15",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 51191
+    },
+    {
+      "path": "sources/kicad-demos/video/_generated/gerbers/video-F_Paste.gtp",
+      "sha256": "88cd819406196e08fb6bf3ac9639d18e04c838fe798dfba5b4a04e98b7dacdbc",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 24496
+    },
+    {
+      "path": "sources/kicad-demos/video/_generated/gerbers/video-F_Silkscreen.gto",
+      "sha256": "0a1bed37fbd7166f5b872519847be88b6a11b89bf52363a3f08613c818d34207",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 185510
+    },
+    {
+      "path": "sources/kicad-demos/video/_generated/gerbers/video-job.gbrjob",
+      "sha256": "29eeeab6c88bbdac2f8afd9a27b264f24a890c7e19686ec504f5ee3ca965e6c2",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 3755
+    },
+    {
+      "path": "sources/kicad-demos/video/_generated/gerbers/video-top_copper.gtl",
+      "sha256": "460ecc7e3da7ea06774dfa617818a7f0911da336cafbd81f6152f0d599f72054",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 336891
+    },
+    {
+      "path": "sources/kicad-demos/video/_generated/video-assembly.pdf",
+      "sha256": "86ef33b9b879a1957e3c48736e454ae860cec4feef105c8d7defaeadadc8497c",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 238314
+    },
+    {
+      "path": "sources/kicad-demos/video/_generated/video-bom.csv",
+      "sha256": "6f88bd6e2d2928336b1eb5d24b6f44565c9e59cec25dd9a55614032df41942c4",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 4939
+    },
+    {
+      "path": "sources/kicad-demos/video/_generated/video-fab.pdf",
+      "sha256": "241549fc48392272a5dc80d33736aaad96e1fceff618348100f1491b523acc34",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 273019
+    },
+    {
+      "path": "sources/kicad-demos/video/_generated/video-pos.csv",
+      "sha256": "291338378908416aa5100ce9aa85977f6f8a46091ab27b2a21859dff6a0c7a5b",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 16619
+    },
+    {
+      "path": "sources/kicad-demos/video/_generated/video.d356",
+      "sha256": "8d350cca0ce0be75a7f90ca039955c08a3f554906a5bc6ba556f1a3b96189b44",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 216571
     },
     {
       "path": "sources/kicad-demos/video/bus_pci.kicad_sch",

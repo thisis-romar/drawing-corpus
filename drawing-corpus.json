@@ -153,14 +153,15 @@
       "human_review_required": false,
       "paywalled": false,
       "retrieval": {
-        "status": "generated_from_committed",
+        "status": "committed_file",
         "committed": true,
         "local_path": [
+          "sources/kicad-demos/video/_generated/video-fab.pdf",
           "sources/kicad-demos/video/video.kicad_pcb"
         ],
-        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "sha256": "241549fc48392272a5dc80d33736aaad96e1fceff618348100f1491b523acc34",
         "retrieved_at": "2026-06-13",
-        "note": "Fabrication drawing is a generated KiCad output; the source project is committed. Sierra Circuits IPC-2221 specimen is url_only.",
+        "note": "Fabrication drawing PDF rendered from the committed KiCad project with KiCad 9.0.9 (Edge.Cuts + F/B fab + user layers). Sierra Circuits IPC-2221 specimen is url_only.",
         "generation_command": "kicad-cli pcb export pdf sources/kicad-demos/video/video.kicad_pcb"
       }
     },
@@ -191,15 +192,16 @@
       "human_review_required": false,
       "paywalled": false,
       "retrieval": {
-        "status": "generated_from_committed",
+        "status": "committed_file",
         "committed": true,
         "local_path": [
+          "sources/kicad-demos/video/_generated/video-assembly.pdf",
           "sources/kicad-demos/video/video.kicad_pcb",
           "sources/framework-laptop-13/Mainboard/2D/fw_main_pcb_generic_2_w_fan.pdf"
         ],
-        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "sha256": "86ef33b9b879a1957e3c48736e454ae860cec4feef105c8d7defaeadadc8497c",
         "retrieved_at": "2026-06-13",
-        "note": "Assembly drawing is a generated KiCad output (fab+silk+ref-des layers); source project committed. Framework 2D placement context PDF also committed.",
+        "note": "Assembly drawing PDF rendered with KiCad 9.0.9 (F.Fab + silkscreen + Edge.Cuts). Framework 2D placement context PDF also committed.",
         "generation_command": "kicad-cli pcb export pdf sources/kicad-demos/video/video.kicad_pcb"
       }
     },
@@ -230,14 +232,16 @@
       "human_review_required": false,
       "paywalled": false,
       "retrieval": {
-        "status": "generated_from_committed",
+        "status": "committed_file",
         "committed": true,
         "local_path": [
+          "sources/kicad-demos/video/_generated/drill/video-drl_map.pdf",
+          "sources/kicad-demos/video/_generated/drill/video.drl",
           "sources/kicad-demos/video/video.kicad_pcb"
         ],
-        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "sha256": "236068fd35e4ac4b19e7b4761413337165cde6baed6a58254134c0223439e338",
         "retrieved_at": "2026-06-13",
-        "note": "Drill map / Excellon is a generated KiCad fabrication output; source project committed.",
+        "note": "Drill map (PDF) + Excellon .drl rendered with KiCad 9.0.9.",
         "generation_command": "kicad-cli pcb export drill sources/kicad-demos/video/video.kicad_pcb"
       }
     },
@@ -305,14 +309,15 @@
       "human_review_required": false,
       "paywalled": false,
       "retrieval": {
-        "status": "generated_from_committed",
+        "status": "committed_file",
         "committed": true,
         "local_path": [
+          "sources/kicad-demos/video/_generated/gerbers/video-job.gbrjob",
           "sources/kicad-demos/video/video.kicad_pcb"
         ],
-        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "sha256": "29eeeab6c88bbdac2f8afd9a27b264f24a890c7e19686ec504f5ee3ca965e6c2",
         "retrieved_at": "2026-06-13",
-        "note": "Gerber RS-274X set is a generated KiCad output; source project committed. Render with Tracespace.",
+        "note": "Full RS-274X Gerber set (per-layer, X2) rendered with KiCad 9.0.9 into _generated/gerbers/; the .gbrjob is the index. Render online with Tracespace.",
         "generation_command": "kicad-cli pcb export gerbers sources/kicad-demos/video/video.kicad_pcb"
       }
     },
@@ -343,14 +348,15 @@
       "human_review_required": false,
       "paywalled": false,
       "retrieval": {
-        "status": "generated_from_committed",
+        "status": "committed_file",
         "committed": true,
         "local_path": [
+          "sources/kicad-demos/video/_generated/video.d356",
           "sources/kicad-demos/video/video.kicad_pcb"
         ],
-        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "sha256": "8d350cca0ce0be75a7f90ca039955c08a3f554906a5bc6ba556f1a3b96189b44",
         "retrieved_at": "2026-06-13",
-        "note": "IPC-D-356A netlist is a generated KiCad export (PCB editor: Fabrication Outputs -> IPC-D-356); source project committed.",
+        "note": "IPC-D-356A bare-board test netlist rendered with KiCad 9.0.9 (317 records: net names, pad coords, access side).",
         "generation_command": "kicad-cli pcb export ipcd356 sources/kicad-demos/video/video.kicad_pcb"
       }
     },
@@ -381,15 +387,16 @@
       "human_review_required": false,
       "paywalled": false,
       "retrieval": {
-        "status": "generated_from_committed",
+        "status": "committed_file",
         "committed": true,
         "local_path": [
+          "sources/kicad-demos/video/_generated/video-pos.csv",
           "sources/kicad-demos/video/video.kicad_pcb"
         ],
-        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "sha256": "291338378908416aa5100ce9aa85977f6f8a46091ab27b2a21859dff6a0c7a5b",
         "retrieved_at": "2026-06-13",
-        "note": "Component placement plot + pick-and-place .pos are generated KiCad outputs; source project committed.",
-        "generation_command": "kicad-cli pcb export pos sources/kicad-demos/video/video.kicad_pcb"
+        "note": "Pick-and-place position file (186 components, mm) rendered with KiCad 9.0.9.",
+        "generation_command": "kicad-cli pcb export pos --format csv --units mm sources/kicad-demos/video/video.kicad_pcb"
       }
     },
     {
@@ -491,15 +498,17 @@
       "human_review_required": false,
       "paywalled": true,
       "retrieval": {
-        "status": "generated_from_committed",
+        "status": "committed_file",
         "committed": true,
         "local_path": [
+          "sources/kicad-demos/video/_generated/gerbers/video-F_Paste.gtp",
+          "sources/kicad-demos/video/_generated/gerbers/video-B_Paste.gbp",
           "sources/kicad-demos/video/video.kicad_pcb"
         ],
-        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "sha256": "88cd819406196e08fb6bf3ac9639d18e04c838fe798dfba5b4a04e98b7dacdbc",
         "retrieved_at": "2026-06-13",
-        "note": "Solder-paste/stencil aperture set is the generated KiCad paste layer; source project committed. IPC-7525 paywalled; Sierra/Sunstone tutorials url_only.",
-        "generation_command": "kicad-cli pcb export pdf sources/kicad-demos/video/video.kicad_pcb"
+        "note": "Solder-paste stencil aperture set = F/B paste Gerbers rendered with KiCad 9.0.9. IPC-7525 paywalled; Sierra/Sunstone tutorials url_only.",
+        "generation_command": "kicad-cli pcb export gerbers sources/kicad-demos/video/video.kicad_pcb"
       }
     },
     {
@@ -931,7 +940,7 @@
         ],
         "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
         "retrieved_at": "2026-06-13",
-        "note": "Boardview (.fz/.brd) is generated by converting the committed KiCad/Framework open PCB via OpenBoardView/FlexBV. No DMCA-risk OEM mirror used.",
+        "note": "Boardview (.fz/.brd) is produced by converting the committed KiCad open PCB via OpenBoardView/FlexBV (no kicad-cli exporter exists; no DMCA-risk OEM mirror used).",
         "generation_command": "OpenBoardView/FlexBV import of sources/kicad-demos/video/video.kicad_pcb"
       }
     },
@@ -962,14 +971,16 @@
       "human_review_required": false,
       "paywalled": false,
       "retrieval": {
-        "status": "generated_from_committed",
+        "status": "committed_file",
         "committed": true,
         "local_path": [
+          "sources/kicad-demos/video/_generated/gerbers/video-F_Silkscreen.gto",
+          "sources/kicad-demos/video/_generated/gerbers/video-B_Silkscreen.gbo",
           "sources/kicad-demos/video/video.kicad_pcb"
         ],
-        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "sha256": "0a1bed37fbd7166f5b872519847be88b6a11b89bf52363a3f08613c818d34207",
         "retrieved_at": "2026-06-13",
-        "note": "Silkscreen/legend (F.Silkscreen/B.Silkscreen) is a generated KiCad plot layer; source project committed.",
+        "note": "Silkscreen/legend = F/B silkscreen Gerbers rendered with KiCad 9.0.9.",
         "generation_command": "kicad-cli pcb export gerbers sources/kicad-demos/video/video.kicad_pcb"
       }
     },
@@ -1000,14 +1011,15 @@
       "human_review_required": false,
       "paywalled": false,
       "retrieval": {
-        "status": "generated_from_committed",
+        "status": "committed_file",
         "committed": true,
         "local_path": [
+          "sources/kicad-demos/video/_generated/video.d356",
           "sources/kicad-demos/video/video.kicad_pcb"
         ],
-        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "sha256": "8d350cca0ce0be75a7f90ca039955c08a3f554906a5bc6ba556f1a3b96189b44",
         "retrieved_at": "2026-06-13",
-        "note": "Test-point/access map derived from the generated IPC-D-356 net-access export; source project committed.",
+        "note": "Test-point/access map derived from the committed IPC-D-356 net-access export (rendered with KiCad 9.0.9).",
         "generation_command": "kicad-cli pcb export ipcd356 sources/kicad-demos/video/video.kicad_pcb"
       }
     },
@@ -1112,16 +1124,17 @@
       "human_review_required": false,
       "paywalled": false,
       "retrieval": {
-        "status": "generated_from_committed",
+        "status": "committed_file",
         "committed": true,
         "local_path": [
-          "sources/kicad-demos/video/video.kicad_pcb",
-          "sources/framework-laptop-13/Mainboard/Connectors/README.md"
+          "sources/kicad-demos/video/_generated/video-bom.csv",
+          "sources/framework-laptop-13/Mainboard/Connectors/README.md",
+          "sources/kicad-demos/video/video.kicad_pcb"
         ],
-        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "sha256": "6f88bd6e2d2928336b1eb5d24b6f44565c9e59cec25dd9a55614032df41942c4",
         "retrieved_at": "2026-06-13",
-        "note": "BOM is a generated KiCad export (CSV/XML); source project committed. Framework connector/part-number tables also committed.",
-        "generation_command": "kicad-cli sch export bom sources/kicad-demos/video/video.kicad_sch"
+        "note": "BOM CSV (64 grouped lines: refs, value, footprint, qty) rendered with KiCad 9.0.9. Framework connector/part-number tables also committed.",
+        "generation_command": "kicad-cli sch export bom --group-by Value sources/kicad-demos/video/video.kicad_sch"
       }
     },
     {
@@ -1416,11 +1429,11 @@
   "retrieval_summary": {
     "policy": "links-only",
     "retrieved_at": "2026-06-13",
-    "committed_file": 15,
-    "generated_from_committed": 11,
+    "committed_file": 25,
+    "generated_from_committed": 1,
     "url_only": 12,
     "committed_total": 26,
-    "committed_files_on_disk": 84,
+    "committed_files_on_disk": 103,
     "note": "Only redistributable artifacts are committed (CC BY 4.0 Framework, GPL v3 KiCad, BSD-3 Chromium EC, CERN-OHL-S MNT Reform, public-domain NASA). 'generated_from_committed' means the named drawing is a standard KiCad output produced from the committed project source (run the generation_command). url_only = paywalled / reference-only / free-but-copyright-restricted, recorded as links per the links-only policy."
   }
 }

@@ -7,16 +7,16 @@
 | A01 | Schematic Diagram | A | HIGH | 2 | Creative Commons Attribution 4.0 | committed | no | no |
 | A02 | Logic Diagram | A | LOW | 3 | Fair use / CC | committed | YES | YES |
 | A03 | PCB Layout Drawing | A | HIGH | 2 | GNU GPL v3 | committed | no | no |
-| A04 | Fabrication Drawing (Fab) | A | HIGH | 2 | GNU GPL v3 | committed (gen) | no | no |
-| A05 | Assembly Drawing (PCBA) | A | HIGH | 2 | GNU GPL v3 | committed (gen) | no | no |
-| A06 | Drill Drawing / Drill Map | A | HIGH | 2 | GNU GPL v3 | committed (gen) | no | no |
+| A04 | Fabrication Drawing (Fab) | A | HIGH | 2 | GNU GPL v3 | committed | no | no |
+| A05 | Assembly Drawing (PCBA) | A | HIGH | 2 | GNU GPL v3 | committed | no | no |
+| A06 | Drill Drawing / Drill Map | A | HIGH | 2 | GNU GPL v3 | committed | no | no |
 | A07 | Layer Stackup Drawing | A | MEDIUM | 3 | Reference / fair use | url-only | no | YES |
-| A08 | Gerber / ODB++ Output | A | HIGH | 2 | GNU GPL v3 | committed (gen) | no | no |
-| A09 | Netlist (IPC-D-356) | A | HIGH | 2 | GNU GPL v3 | committed (gen) | no | no |
-| A10 | Component Placement Diagram | A | HIGH | 2 | GNU GPL v3 | committed (gen) | no | no |
+| A08 | Gerber / ODB++ Output | A | HIGH | 2 | GNU GPL v3 | committed | no | no |
+| A09 | Netlist (IPC-D-356) | A | HIGH | 2 | GNU GPL v3 | committed | no | no |
+| A10 | Component Placement Diagram | A | HIGH | 2 | GNU GPL v3 | committed | no | no |
 | A11 | GD&T Drawing | A | MEDIUM | 3 | Reference / fair use | url-only | no | YES |
 | A12 | Orthographic / Multi-View Drawing | A | HIGH | 2 | Creative Commons Attribution 4.0 | committed | no | no |
-| A13 | Solder Paste / Stencil Drawing | A | MEDIUM | 3 | Reference / fair use | committed (gen) | no | YES |
+| A13 | Solder Paste / Stencil Drawing | A | MEDIUM | 3 | Reference / fair use | committed | no | YES |
 | A14 | Cable / Harness Drawing | A | MEDIUM | 2 | Creative Commons Attribution 4.0 | committed | no | no |
 | B01 | Block Diagram | B | HIGH | 2 | Creative Commons Attribution 4.0 | committed | no | no |
 | B02 | Power Tree / Power Distribution Diagram | B | HIGH | 2 | Creative Commons Attribution 4.0 | committed | no | no |
@@ -29,11 +29,11 @@
 | B09 | Signal Flow Diagram | B | MEDIUM | 2 | TI reference | url-only | no | no |
 | B10 | Single-Line Diagram | B | LOW | 3 | Fair use / CC | url-only | YES | no |
 | C01 | Boardview (.brd / .fz) | C | MEDIUM | 2 | Creative Commons Attribution 4.0 | committed (gen) | YES | no |
-| C02 | Silkscreen / Legend Drawing | C | HIGH | 2 | GNU GPL v3 | committed (gen) | no | no |
-| C03 | Test Point Drawing | C | MEDIUM | 2 | GNU GPL v3 | committed (gen) | no | no |
+| C02 | Silkscreen / Legend Drawing | C | HIGH | 2 | GNU GPL v3 | committed | no | no |
+| C03 | Test Point Drawing | C | MEDIUM | 2 | GNU GPL v3 | committed | no | no |
 | C04 | Interconnect / Connection Diagram | C | MEDIUM | 2 | Creative Commons Attribution 4.0 | committed | no | no |
 | D01 | Rework / Repair Drawing | D | MEDIUM | 3 | Public domain | committed | YES | no |
-| D02 | BOM (Bill of Materials) | D | HIGH | 2 | GNU GPL v3 (KiCad) / CC BY 4.0 (Framework) | committed (gen) | no | no |
+| D02 | BOM (Bill of Materials) | D | HIGH | 2 | GNU GPL v3 (KiCad) / CC BY 4.0 (Framework) | committed | no | no |
 | D03 | Section View / Cross-Section | D | MEDIUM | 2 | Creative Commons Attribution 4.0 | url-only | no | no |
 | E01 | System Architecture Diagram | E | MEDIUM | 2 | Intel reference use | committed | no | no |
 | E02 | Timing Diagram | E | HIGH | 1 | Public | url-only | no | no |
@@ -45,4 +45,4 @@
 
 **Totals:** 38 drawing types — 17 high, 17 medium, 4 low confidence. 7 flagged for human review, 4 paywalled.
 
-**Retrieval (links-only policy):** 26/38 have a committed redistributable specimen (15 direct files, 11 generated from a committed KiCad project); 12/38 are url-only (paywalled / reference-only / copyright-restricted). 84 files / 17974 KiB committed under `sources/`. See `sources/MANIFEST.json`.
+**Retrieval (links-only policy):** 26/38 have a committed redistributable specimen (25 direct files, 1 generated from a committed KiCad project); 12/38 are url-only (paywalled / reference-only / copyright-restricted). 103 files / 20608 KiB committed under `sources/`. See `sources/MANIFEST.json`.

@@ -6,15 +6,17 @@
 
 The actual example files were retrieved on 2026-06-13 under a **links-only policy**: only
 redistributable artifacts are committed to `sources/`; paywalled, reference-only, and
-copyright-restricted sources are recorded as URLs only. See `sources/MANIFEST.json`.
+copyright-restricted sources are recorded as URLs only. KiCad 9.0.9 was installed to render the
+fabrication outputs (Gerbers, drill, IPC-D-356, placement, BOM, fab/assembly PDFs) from the
+committed demo project. See `sources/MANIFEST.json`.
 
 | Status | Count | Meaning |
 |--------|-------|---------|
-| committed (file) | 15 | The example artifact is a redistributable file committed under `sources/`. |
-| committed (generated) | 11 | A standard KiCad output; the **generating project** is committed (run the recorded `generation_command`). |
+| committed (file) | 25 | The example artifact is a redistributable file committed under `sources/`. |
+| committed (generated) | 1 | Boardview `.fz` (C01) — no `kicad-cli` exporter exists; produced via OpenBoardView from the committed PCB. |
 | url-only | 12 | Paywalled / reference-only / copyright-restricted — recorded as a link, nothing downloaded. |
 
-**26 / 38** drawing types have a committed redistributable specimen (84 files, ~18 MB). The 12
+**26 / 38** drawing types have a committed redistributable specimen (103 files, ~21 MB). The 12
 url-only IDs are: A07, A11, B04, B05, B06, B07, B09, B10, D03, E02, E04, E05. Note that "open
 license" (28, below) and "committed" (26) differ: B06 (FCC public domain) was not pinned to a single
 exhibit, and D03/E04/E05 (CC BY 4.0) derive from the 21 MB Framework CAD `.stp` kept url-only for size.

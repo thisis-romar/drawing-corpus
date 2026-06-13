@@ -50,16 +50,18 @@ None. No drawing type required dropping to Tier 4 — every type was satisfied a
 ## 5. Retrieval outcome (links-only, 2026-06-13)
 
 The example files were retrieved and committed under `sources/` (manifest: `sources/MANIFEST.json`).
-Under the links-only policy only redistributable artifacts were committed.
+Under the links-only policy only redistributable artifacts were committed. **KiCad 9.0.9** was
+installed (via the kicad-9.0-releases PPA) to render the KiCad fabrication outputs.
 
-- **15 committed as files** — A01, A02, A03, A12, A14, B01, B02, B03, B08, C04, D01, E01, E03, E06, E07
-  (Framework CC BY 4.0 schematics/2D/connectors/README/OpenSCAD, KiCad GPL v3 schematic, Chromium EC
-  BSD-3 docs, NASA public-domain PDF, MNT Reform CERN-OHL-S motherboard schematic).
-- **11 committed as generating project** — A04, A05, A06, A08, A09, A10, A13, C01, C02, C03, D02. The
-  named drawing (Gerber, drill, fab/assembly sheet, IPC-D-356 netlist, placement, silkscreen,
-  boardview, BOM, paste/stencil) is a standard KiCad output; KiCad is **not installed** in this
-  environment, so the committed `video`/`pic_programmer` project source is the deliverable and each
-  record carries the `generation_command` to reproduce the output.
+- **25 committed as files** — A01, A02, A03, A04, A05, A06, A08, A09, A10, A12, A13, A14, B01, B02,
+  B03, B08, C02, C03, C04, D01, D02, E01, E03, E06, E07. This includes the Framework CC BY 4.0
+  schematics/2D/connectors/README/OpenSCAD, the KiCad GPL v3 demo project, the Chromium EC BSD-3
+  docs, the NASA public-domain PDF, the MNT Reform CERN-OHL-S motherboard schematic, **and** the
+  KiCad-rendered fabrication set committed under `sources/kicad-demos/video/_generated/` (RS-274X
+  Gerbers incl. paste/silkscreen, Excellon drill + drill-map PDF, IPC-D-356 netlist, placement CSV,
+  fab/assembly PDFs, BOM CSV). Each rendered record keeps its `generation_command` for provenance.
+- **1 committed as generating project** — C01 Boardview. KiCad has no `.fz`/`.brd` `kicad-cli`
+  exporter, so the committed open PCB is converted via OpenBoardView/FlexBV (command recorded).
 - **12 url-only** — A07, A11 (paywalled IPC-2141 / ASME Y14.5; reference specimens), B04 (JEDEC,
   registration), B05/B07 (Intel EDC, account-gated reference-only), B06 (FCC OET search entry; no
   single exhibit pinned), B09 (TI app note, copyright-restricted), B10 (IEEE 315A reference),
@@ -67,6 +69,5 @@ Under the links-only policy only redistributable artifacts were committed.
   `.stp`, kept url-only for repo size). Retrieve any of these for personal use with
   `sources/fetch_sources.sh` (paywalled/account-gated items must be obtained through their portals).
 
-**Follow-up to fully commit a generated specimen:** install KiCad and run the per-record
-`generation_command` (e.g. `kicad-cli pcb export gerbers sources/kicad-demos/video/video.kicad_pcb`),
-or commit the four Framework `.dxf` / CAD `.stp` files if the repo size budget is raised.
+**Remaining follow-up:** D03/E04/E05 (section/isometric/exploded) need the 21 MB Framework CAD `.stp`
+rendered in a CAD tool — fetch it with `sources/fetch_sources.sh` if the size budget is raised.
