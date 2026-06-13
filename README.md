@@ -116,11 +116,13 @@ Each `drawing-corpus.json` record follows the Section 8 schema: `drawing_type`, 
 - **KiCad 9.0.9** was then installed (kicad-9.0-releases PPA) and `kicad-cli` used to render the
   fabrication outputs (Gerbers, Excellon drill + map, IPC-D-356 netlist, placement CSV, BOM,
   fab/assembly PDFs) from the committed `video` demo into `sources/kicad-demos/video/_generated/`;
-  the `pcbnew` Python API produced an OpenBoardView BRD2 `video.brd` (C01).
-- **cadquery / OpenCASCADE** rendered the isometric (E04, SVG), mid-height section (D03, SVG) and
-  exploded (E05, shaded PNG — 107 solids tessellated and separated along the thickness axis) views
-  from the Framework CAD `.stp` (fetched to a temp dir, not committed) into
-  `sources/framework-laptop-13/_generated/`.
+  the `pcbnew` Python API produced an OpenBoardView BRD2 `video.brd` (C01). *Scope: these electrical
+  fab specimens are rendered from KiCad's generic `video` demo board (a drawing-type specimen), not a
+  laptop board.*
+- **cadquery / OpenCASCADE** rendered the isometric (E04, SVG), cross-section (D03, SVG — true
+  cut-plane profile through the case at mid-width) and exploded (E05, shaded PNG — 107 solids
+  tessellated and separated along the thickness axis) views from the Framework CAD `.stp` (fetched to
+  a temp dir, not committed) into `sources/framework-laptop-13/_generated/`.
 
 ---
 *Generated 2026-06-12 per EMBLEM-NLP-RSPEC-001 v1.0.0.*

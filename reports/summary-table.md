@@ -45,4 +45,4 @@
 
 **Totals:** 38 drawing types — 17 high, 17 medium, 4 low confidence. 7 flagged for human review, 4 paywalled.
 
-**Retrieval (links-only policy):** 29/38 have a committed redistributable specimen (29 direct files, 0 generated from a committed KiCad project); 9/38 are url-only (paywalled / reference-only / copyright-restricted). 107 files / 23695 KiB committed under `sources/`. See `sources/MANIFEST.json`.
+**Retrieval (links-only policy):** 29/38 have a committed redistributable specimen (exact upstream files plus drawing-type renders generated from the committed open sources); 9/38 are url-only (paywalled / reference-only / copyright-restricted). 107 files / 22965 KiB committed under `sources/`. See `sources/MANIFEST.json`.

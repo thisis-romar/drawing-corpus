@@ -1170,10 +1170,10 @@
         "local_path": [
           "sources/framework-laptop-13/_generated/framework-laptop-13-section.svg"
         ],
-        "sha256": "a06f89660f47f5279ac478252c2dd25b7950f0edb5075175d35aa62ea0dd1c86",
+        "sha256": "4feff37084d044fc7978d78e6de13a0adbe77f4d962592e707d30b7f2e4d6a18",
         "retrieved_at": "2026-06-13",
-        "note": "ASME Y14.3 cross-section SVG rendered from the Framework CAD .stp (CC BY 4.0) with cadquery/OpenCASCADE (mid-height cut, isometric of the cut body). The 21 MB .stp itself is url_only.",
-        "generation_command": "cadquery: import STEP, cut at mid-Z, export SVG"
+        "note": "Cross-section SVG rendered from the Framework CAD .stp (CC BY 4.0) with cadquery/OpenCASCADE: a true cut-plane profile through the case at mid-width (case wall, ribs, standoffs). The 21 MB .stp itself is url_only.",
+        "generation_command": "cadquery: import STEP, section() at mid-width YZ plane, export SVG"
       }
     },
     {
@@ -1444,6 +1444,6 @@
     "url_only": 9,
     "committed_total": 29,
     "committed_files_on_disk": 107,
-    "note": "Only redistributable artifacts are committed (CC BY 4.0 Framework, GPL v3 KiCad, BSD-3 Chromium EC, CERN-OHL-S MNT Reform, public-domain NASA). 'generated_from_committed' means the named drawing is a standard KiCad output produced from the committed project source (run the generation_command). url_only = paywalled / reference-only / free-but-copyright-restricted, recorded as links per the links-only policy."
+    "note": "Only redistributable artifacts are committed (CC BY 4.0 Framework, GPL v3 KiCad, BSD-3 Chromium EC, CERN-OHL-S MNT Reform, public-domain NASA). committed_file covers both exact upstream files and drawing-type renders generated from the committed open sources (KiCad 9.0.9 fab outputs + pcbnew boardview, and cadquery/OpenCASCADE CAD views); each render carries its generation_command and the scripts live in tools/. url_only = paywalled / reference-only / free-but-copyright-restricted, recorded as links per the links-only policy. See sources/ATTRIBUTION.md for modification notices."
   }
 }

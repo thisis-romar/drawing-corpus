@@ -88,7 +88,7 @@ MAP = {
  "C04": ("committed_file", [CONN], "Framework inter-board connection/interconnect documentation committed. IPC-2612 paywalled.", None),
  "D01": ("committed_file", [NASA], "NASA-STD-8739.3 'Soldered Electrical Connections' (84-pp public-domain PDF) committed. NOTE: cancelled 2011-10-17, superseded by IPC J-STD-001 + NASA addendum. IPC-7711/7721 paywalled.", None),
  "D02": ("committed_file", [GEN+"/video-bom.csv", CONN, KV], "BOM CSV (64 grouped lines: refs, value, footprint, qty) rendered with KiCad 9.0.9. Framework connector/part-number tables also committed.", "kicad-cli sch export bom --group-by Value sources/kicad-demos/video/video.kicad_sch"),
- "D03": ("committed_file", [SEC], "ASME Y14.3 cross-section SVG rendered from the Framework CAD .stp (CC BY 4.0) with cadquery/OpenCASCADE (mid-height cut, isometric of the cut body). The 21 MB .stp itself is url_only.", "cadquery: import STEP, cut at mid-Z, export SVG"),
+ "D03": ("committed_file", [SEC], "Cross-section SVG rendered from the Framework CAD .stp (CC BY 4.0) with cadquery/OpenCASCADE: a true cut-plane profile through the case at mid-width (case wall, ribs, standoffs). The 21 MB .stp itself is url_only.", "cadquery: import STEP, section() at mid-width YZ plane, export SVG"),
  "E01": ("committed_file", [MBREADME], "Framework Mainboard README system block diagram committed as the open-license alternative. Intel NUC Technical Product Specification is redistribution-restricted (url_only).", None),
  "E02": ("url_only", [], "SMBus 3.2 spec is freely downloadable but copyright-restricted (no redistribution); JEDEC LPDDR5 free with registration. Timing diagrams recorded as links.", None),
  "E03": ("committed_file", [ECDOC], "Chromium EC firmware docs with state machines committed: low_battery_startup.md, usb-tcpmv2.md (TCPMv2 state machine), usb-c.md, usb_power.md (BSD-3).", None),
@@ -129,10 +129,12 @@ corpus["retrieval_summary"] = {
     "committed_total": counts["committed_file"] + counts["generated_from_committed"],
     "committed_files_on_disk": len(DATA),
     "note": ("Only redistributable artifacts are committed (CC BY 4.0 Framework, GPL v3 KiCad, "
-             "BSD-3 Chromium EC, CERN-OHL-S MNT Reform, public-domain NASA). 'generated_from_committed' "
-             "means the named drawing is a standard KiCad output produced from the committed project "
-             "source (run the generation_command). url_only = paywalled / reference-only / "
-             "free-but-copyright-restricted, recorded as links per the links-only policy."),
+             "BSD-3 Chromium EC, CERN-OHL-S MNT Reform, public-domain NASA). committed_file covers "
+             "both exact upstream files and drawing-type renders generated from the committed open "
+             "sources (KiCad 9.0.9 fab outputs + pcbnew boardview, and cadquery/OpenCASCADE CAD "
+             "views); each render carries its generation_command and the scripts live in tools/. "
+             "url_only = paywalled / reference-only / free-but-copyright-restricted, recorded as "
+             "links per the links-only policy. See sources/ATTRIBUTION.md for modification notices."),
 }
 
 with open(f"{ROOT}/drawing-corpus.json", "w") as f:
@@ -218,8 +220,8 @@ lines.append(f"**Totals:** 38 drawing types — 17 high, 17 medium, 4 low confid
              f"7 flagged for human review, 4 paywalled.")
 lines.append("")
 lines.append(f"**Retrieval (links-only policy):** {ct}/38 have a committed redistributable specimen "
-             f"({counts['committed_file']} direct files, {counts['generated_from_committed']} generated "
-             f"from a committed KiCad project); {counts['url_only']}/38 are url-only "
+             f"(exact upstream files plus drawing-type renders generated from the committed open "
+             f"sources); {counts['url_only']}/38 are url-only "
              f"(paywalled / reference-only / copyright-restricted). "
              f"{len(inventory)} files / {manifest['committed_bytes_on_disk']//1024} KiB committed under `sources/`. "
              f"See `sources/MANIFEST.json`.")

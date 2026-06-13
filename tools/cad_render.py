@@ -33,31 +33,23 @@ try:
 except Exception:
     print("E04 FAILED:\n" + traceback.format_exc(), flush=True)
 
-# D03 — section / cross-section at mid-height (cut away top half, view isometric of cut)
+# D03 — true cross-section: cut plane perpendicular to X at mid-width; the planar
+# section curves are viewed along +X, giving the lengthwise (depth x thickness)
+# cross-section profile of the case wall, ribs and standoffs.
 try:
     print("D03 section ...", flush=True)
-    zmid = (bb.zmin + bb.zmax) / 2.0
-    cutter = cq.Solid.makeBox(bb.xlen + 20, bb.ylen + 20, (bb.zmax - zmid) + 20,
-                              pnt=cq.Vector(bb.xmin - 10, bb.ymin - 10, zmid))
-    cut = cq.Workplane(obj=shape).cut(cq.Workplane(obj=cutter))
-    svg(cut, f"{OUT}/framework-laptop-13-section.svg", (1, -1, 0.6))
+    xc = (bb.xmin + bb.xmax) / 2.0
+    sec = cq.Workplane("YZ", origin=(xc, 0, 0)).add(shape).section()
+    exporters.export(sec, f"{OUT}/framework-laptop-13-section.svg", exportType="SVG",
+                     opt={"width": 1200, "height": 500, "strokeWidth": 0.3,
+                          "showAxes": False, "projectionDir": (1, 0, 0)})
+    print(f"  wrote section ({os.path.getsize(f'{OUT}/framework-laptop-13-section.svg')} B)", flush=True)
 except Exception:
     print("D03 FAILED:\n" + traceback.format_exc(), flush=True)
 
-# E05 — approximate exploded (separate solids along Z by centroid order)
-try:
-    print(f"E05 exploded (solids={len(solids)}) ...", flush=True)
-    if len(solids) < 2:
-        print("  only one solid in STEP; true explode infeasible -> skip", flush=True)
-    else:
-        order = sorted(range(len(solids)), key=lambda i: solids[i].Center().z)
-        step = max(bb.zlen, 1.0) * 1.2
-        parts = []
-        for rank, idx in enumerate(order):
-            parts.append(solids[idx].translate(cq.Vector(0, 0, rank * step)))
-        comp = cq.Compound.makeCompound(parts)
-        svg(cq.Workplane(obj=comp), f"{OUT}/framework-laptop-13-exploded.svg", (1, -1, 1))
-except Exception:
-    print("E05 FAILED:\n" + traceback.format_exc(), flush=True)
+# E05 — exploded view is rendered separately: fw_tess.py caches the tessellated
+# meshes and fw_explode.py rasterizes the exploded layout. A vector hidden-line
+# export of the full 107-solid exploded assembly is prohibitively slow, so the
+# exploded view is a shaded raster (PNG) rather than an SVG.
 
 print("done", flush=True)

@@ -9,7 +9,7 @@
   },
   "committed_total": 29,
   "committed_files_on_disk": 107,
-  "committed_bytes_on_disk": 24263726,
+  "committed_bytes_on_disk": 23517062,
   "sources": {
     "chromium-ec": {
       "upstream": "https://chromium.googlesource.com/chromiumos/platform/ec/+/refs/heads/main/docs/",
@@ -412,10 +412,10 @@
       "local_path": [
         "sources/framework-laptop-13/_generated/framework-laptop-13-section.svg"
       ],
-      "sha256": "a06f89660f47f5279ac478252c2dd25b7950f0edb5075175d35aa62ea0dd1c86",
+      "sha256": "4feff37084d044fc7978d78e6de13a0adbe77f4d962592e707d30b7f2e4d6a18",
       "source_url": "https://github.com/FrameworkComputer/Framework-Laptop-13",
-      "note": "ASME Y14.3 cross-section SVG rendered from the Framework CAD .stp (CC BY 4.0) with cadquery/OpenCASCADE (mid-height cut, isometric of the cut body). The 21 MB .stp itself is url_only.",
-      "generation_command": "cadquery: import STEP, cut at mid-Z, export SVG"
+      "note": "Cross-section SVG rendered from the Framework CAD .stp (CC BY 4.0) with cadquery/OpenCASCADE: a true cut-plane profile through the case at mid-width (case wall, ribs, standoffs). The 21 MB .stp itself is url_only.",
+      "generation_command": "cadquery: import STEP, section() at mid-width YZ plane, export SVG"
     },
     {
       "id": "E01",
@@ -652,10 +652,10 @@
     },
     {
       "path": "sources/framework-laptop-13/_generated/framework-laptop-13-section.svg",
-      "sha256": "a06f89660f47f5279ac478252c2dd25b7950f0edb5075175d35aa62ea0dd1c86",
+      "sha256": "4feff37084d044fc7978d78e6de13a0adbe77f4d962592e707d30b7f2e4d6a18",
       "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
       "upstream": "https://github.com/FrameworkComputer/Framework-Laptop-13",
-      "bytes": 781010
+      "bytes": 34346
     },
     {
       "path": "sources/kicad-demos/LICENSE.GPLv3",
