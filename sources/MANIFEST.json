@@ -1,0 +1,1073 @@
+{
+  "spec": "EMBLEM-NLP-RSPEC-001",
+  "generated": "2026-06-13",
+  "policy": "links-only: only redistributable artifacts committed; all else url_only",
+  "record_count": 38,
+  "counts": {
+    "committed_file": 15,
+    "generated_from_committed": 11,
+    "url_only": 12
+  },
+  "committed_total": 26,
+  "committed_files_on_disk": 84,
+  "committed_bytes_on_disk": 18405850,
+  "sources": {
+    "chromium-ec": {
+      "upstream": "https://chromium.googlesource.com/chromiumos/platform/ec/+/refs/heads/main/docs/",
+      "license": "BSD 3-Clause"
+    },
+    "framework-laptop-13": {
+      "upstream": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)"
+    },
+    "kicad-demos": {
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "license": "GNU GPL v3"
+    },
+    "mnt-reform": {
+      "upstream": "https://source.mnt.re/reform/reform",
+      "license": "CERN-OHL-S v2"
+    },
+    "nasa": {
+      "upstream": "https://nepp.nasa.gov/docuploads/06AA01BA-FC7E-4094-AE829CE371A7B05D/NASA-STD-8739.3.pdf",
+      "license": "Public domain (US Government work)"
+    }
+  },
+  "records": [
+    {
+      "id": "A01",
+      "drawing_type": "Schematic Diagram",
+      "status": "committed_file",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "local_path": [
+        "sources/framework-laptop-13/Mainboard/Mainboard_Interfaces_Schematic_Intel_Core_Ultra_Series_1.pdf"
+      ],
+      "sha256": "9eacc3865db8999ae7661750359c9ed249cb9807ad34666020f6384761a87c3b",
+      "source_url": "https://github.com/FrameworkComputer/Framework-Laptop-13/tree/main/Mainboard/2D",
+      "note": "Six Framework interface schematics committed (11th/12th Gen, 7040, Ryzen AI 300, Chromebook, Intel Core Ultra Series 1); MNT Reform motherboard schematic PDF (CERN-OHL-S) committed as a second open specimen at sources/mnt-reform/."
+    },
+    {
+      "id": "A02",
+      "drawing_type": "Logic Diagram",
+      "status": "committed_file",
+      "license": "Fair use / CC (reproduced IEEE 91 symbols)",
+      "local_path": [
+        "sources/kicad-demos/video/video.kicad_sch"
+      ],
+      "sha256": "4d3ced775e49f56704b036bf56b9bf90d3d403b29bc9434eca47a8f18bea5ce1",
+      "source_url": "https://en.wikipedia.org/wiki/Logic_gate#Symbols",
+      "note": "Applied IEEE-91-style logic-gate symbols are present in the committed KiCad 'video' schematics. The normative IEEE 91/91a standard is paywalled (url_only)."
+    },
+    {
+      "id": "A03",
+      "drawing_type": "PCB Layout Drawing",
+      "status": "committed_file",
+      "license": "GNU GPL v3",
+      "local_path": [
+        "sources/kicad-demos/video/video.kicad_pcb"
+      ],
+      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "source_url": "https://gitlab.com/kicad/kicad/-/tree/master/demos/video",
+      "note": "Complete KiCad 'video' multi-layer routed PCB. Opens natively in KiCad PCB editor."
+    },
+    {
+      "id": "A04",
+      "drawing_type": "Fabrication Drawing (Fab)",
+      "status": "generated_from_committed",
+      "license": "GNU GPL v3",
+      "local_path": [
+        "sources/kicad-demos/video/video.kicad_pcb"
+      ],
+      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "source_url": "https://gitlab.com/kicad/kicad/-/tree/master/demos/video",
+      "note": "Fabrication drawing is a generated KiCad output; the source project is committed. Sierra Circuits IPC-2221 specimen is url_only.",
+      "generation_command": "kicad-cli pcb export pdf sources/kicad-demos/video/video.kicad_pcb"
+    },
+    {
+      "id": "A05",
+      "drawing_type": "Assembly Drawing (PCBA)",
+      "status": "generated_from_committed",
+      "license": "GNU GPL v3",
+      "local_path": [
+        "sources/kicad-demos/video/video.kicad_pcb",
+        "sources/framework-laptop-13/Mainboard/2D/fw_main_pcb_generic_2_w_fan.pdf"
+      ],
+      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "source_url": "https://gitlab.com/kicad/kicad/-/tree/master/demos/video",
+      "note": "Assembly drawing is a generated KiCad output (fab+silk+ref-des layers); source project committed. Framework 2D placement context PDF also committed.",
+      "generation_command": "kicad-cli pcb export pdf sources/kicad-demos/video/video.kicad_pcb"
+    },
+    {
+      "id": "A06",
+      "drawing_type": "Drill Drawing / Drill Map",
+      "status": "generated_from_committed",
+      "license": "GNU GPL v3",
+      "local_path": [
+        "sources/kicad-demos/video/video.kicad_pcb"
+      ],
+      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "source_url": "https://gitlab.com/kicad/kicad/-/tree/master/demos/video",
+      "note": "Drill map / Excellon is a generated KiCad fabrication output; source project committed.",
+      "generation_command": "kicad-cli pcb export drill sources/kicad-demos/video/video.kicad_pcb"
+    },
+    {
+      "id": "A07",
+      "drawing_type": "Layer Stackup Drawing",
+      "status": "url_only",
+      "license": "Reference / fair use (manufacturer educational content)",
+      "local_path": null,
+      "sha256": null,
+      "source_url": "https://www.protoexpress.com/blog/pcb-stackup-design/",
+      "note": "No real layer-stackup *drawing* is redistributable: IPC-2141/IPC-4101 paywalled; Sierra Circuits specimen is reference/fair-use. The committed KiCad video.kicad_pcb contains a 2-layer stackup definition."
+    },
+    {
+      "id": "A08",
+      "drawing_type": "Gerber / ODB++ Output",
+      "status": "generated_from_committed",
+      "license": "GNU GPL v3",
+      "local_path": [
+        "sources/kicad-demos/video/video.kicad_pcb"
+      ],
+      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "source_url": "https://gitlab.com/kicad/kicad/-/tree/master/demos/video",
+      "note": "Gerber RS-274X set is a generated KiCad output; source project committed. Render with Tracespace.",
+      "generation_command": "kicad-cli pcb export gerbers sources/kicad-demos/video/video.kicad_pcb"
+    },
+    {
+      "id": "A09",
+      "drawing_type": "Netlist (IPC-D-356)",
+      "status": "generated_from_committed",
+      "license": "GNU GPL v3",
+      "local_path": [
+        "sources/kicad-demos/video/video.kicad_pcb"
+      ],
+      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "source_url": "https://gitlab.com/kicad/kicad/-/tree/master/demos/video",
+      "note": "IPC-D-356A netlist is a generated KiCad export (PCB editor: Fabrication Outputs -> IPC-D-356); source project committed.",
+      "generation_command": "kicad-cli pcb export ipcd356 sources/kicad-demos/video/video.kicad_pcb"
+    },
+    {
+      "id": "A10",
+      "drawing_type": "Component Placement Diagram",
+      "status": "generated_from_committed",
+      "license": "GNU GPL v3",
+      "local_path": [
+        "sources/kicad-demos/video/video.kicad_pcb"
+      ],
+      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "source_url": "https://gitlab.com/kicad/kicad/-/tree/master/demos/video",
+      "note": "Component placement plot + pick-and-place .pos are generated KiCad outputs; source project committed.",
+      "generation_command": "kicad-cli pcb export pos sources/kicad-demos/video/video.kicad_pcb"
+    },
+    {
+      "id": "A11",
+      "drawing_type": "GD&T Drawing",
+      "status": "url_only",
+      "license": "Reference / fair use (educational, cites ASME Y14.5)",
+      "local_path": null,
+      "sha256": null,
+      "source_url": "https://www.gdandtbasics.com/asme-y14-5-gdt-standard/",
+      "note": "ASME Y14.5-2018 paywalled; GD&T Basics feature-control-frame specimen is reference/fair-use. No redistributable GD&T drawing committed."
+    },
+    {
+      "id": "A12",
+      "drawing_type": "Orthographic / Multi-View Drawing",
+      "status": "committed_file",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "local_path": [
+        "sources/framework-laptop-13/Mainboard/2D/fw_main_pcb_generic_2_w_fan.pdf"
+      ],
+      "sha256": "54269835c7abe902770436607bf8d4f5939c5998b4798c64d39ed9f417213d91",
+      "source_url": "https://github.com/FrameworkComputer/Framework-Laptop-13/tree/main/Mainboard/2D",
+      "note": "Framework Mainboard 2D multi-view mechanical drawing (PDF) committed. Native DXF vector versions are url_only (size)."
+    },
+    {
+      "id": "A13",
+      "drawing_type": "Solder Paste / Stencil Drawing",
+      "status": "generated_from_committed",
+      "license": "Reference / fair use (manufacturer educational content)",
+      "local_path": [
+        "sources/kicad-demos/video/video.kicad_pcb"
+      ],
+      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "source_url": "https://www.protoexpress.com/blog/solder-paste-stencil-design/",
+      "note": "Solder-paste/stencil aperture set is the generated KiCad paste layer; source project committed. IPC-7525 paywalled; Sierra/Sunstone tutorials url_only.",
+      "generation_command": "kicad-cli pcb export pdf sources/kicad-demos/video/video.kicad_pcb"
+    },
+    {
+      "id": "A14",
+      "drawing_type": "Cable / Harness Drawing",
+      "status": "committed_file",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "local_path": [
+        "sources/framework-laptop-13/Mainboard/Connectors/README.md"
+      ],
+      "sha256": "b9632b8edbf83f281f9059e5af337e70ef92990e32e10dcc0a247bb1dc998dd4",
+      "source_url": "https://github.com/FrameworkComputer/Framework-Laptop-13/tree/main/Mainboard/Connectors",
+      "note": "Framework connector pinout documentation + two connector datasheets (ACES 50458, AUSB0534) committed. IPC/WHMA-A-620 paywalled."
+    },
+    {
+      "id": "B01",
+      "drawing_type": "Block Diagram",
+      "status": "committed_file",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "local_path": [
+        "sources/framework-laptop-13/Mainboard/README.md"
+      ],
+      "sha256": "40376b67c2e82e3848a34d5e9ff6328f50f811cb22c6d910e01df8837511d3c0",
+      "source_url": "https://github.com/FrameworkComputer/Framework-Laptop-13/tree/main/Mainboard",
+      "note": "Framework Mainboard README system block diagram committed; interface block diagram also on schematic sheet 1 (committed PDFs). Intel Platform Design Guide is reference-only (url_only)."
+    },
+    {
+      "id": "B02",
+      "drawing_type": "Power Tree / Power Distribution Diagram",
+      "status": "committed_file",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "local_path": [
+        "sources/framework-laptop-13/Mainboard/README.md"
+      ],
+      "sha256": "40376b67c2e82e3848a34d5e9ff6328f50f811cb22c6d910e01df8837511d3c0",
+      "source_url": "https://github.com/FrameworkComputer/Framework-Laptop-13/tree/main/Mainboard",
+      "note": "Framework Mainboard README power tree committed. TI PowerLab notebook reference designs are url_only."
+    },
+    {
+      "id": "B03",
+      "drawing_type": "Bus Topology Diagram",
+      "status": "committed_file",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "local_path": [
+        "sources/framework-laptop-13/Mainboard/Mainboard_Interfaces_Schematic_Intel_Core_Ultra_Series_1.pdf"
+      ],
+      "sha256": "9eacc3865db8999ae7661750359c9ed249cb9807ad34666020f6384761a87c3b",
+      "source_url": "https://github.com/FrameworkComputer/Framework-Laptop-13/tree/main/Mainboard",
+      "note": "Framework interface schematics show real PCIe/USB/I2C topology. Intel PCIe/USB design guides reference-only (url_only)."
+    },
+    {
+      "id": "B04",
+      "drawing_type": "Memory Topology Drawing",
+      "status": "url_only",
+      "license": "JEDEC reference (free download with registration; redistribution restricted)",
+      "local_path": null,
+      "sha256": null,
+      "source_url": "https://www.jedec.org/standards-documents/docs/jesd79-5d",
+      "note": "JEDEC JESD79-5 (DDR5) free with registration but redistribution-restricted; Intel DDR5 routing guide reference-only. Recorded as links."
+    },
+    {
+      "id": "B05",
+      "drawing_type": "Thermal Management Drawing",
+      "status": "url_only",
+      "license": "Intel reference use only (no redistribution)",
+      "local_path": null,
+      "sha256": null,
+      "source_url": "https://edc.intel.com",
+      "note": "Intel Thermal Mechanical Design Guide is account-gated and reference-only (no redistribution). Recorded as link."
+    },
+    {
+      "id": "B06",
+      "drawing_type": "EMI / Shielding Drawing",
+      "status": "url_only",
+      "license": "Public domain (FCC equipment-authorization submissions)",
+      "local_path": null,
+      "sha256": null,
+      "source_url": "https://apps.fcc.gov/oetcf/eas/reports/GenericSearch.cfm",
+      "note": "FCC OET 'Internal Photos' exhibits are public domain but no single FCC ID was pinned (search entry point); flagged human_review. Recorded as link."
+    },
+    {
+      "id": "B07",
+      "drawing_type": "Thermal / Airflow Diagram",
+      "status": "url_only",
+      "license": "Intel reference use only (no redistribution)",
+      "local_path": null,
+      "sha256": null,
+      "source_url": "https://edc.intel.com",
+      "note": "Intel Thermal Mechanical Design Guide airflow figure is account-gated/reference-only. Recorded as link."
+    },
+    {
+      "id": "B08",
+      "drawing_type": "Functional Block Diagram",
+      "status": "committed_file",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "local_path": [
+        "sources/framework-laptop-13/Mainboard/Mainboard_Interfaces_Schematic_AMD_Ryzen_AI_300_Series.pdf"
+      ],
+      "sha256": "a53f5519f3efcdb135bb22cbe4ea65d23bd85ae9ca23d3dd3eb6355c6f626209",
+      "source_url": "https://github.com/FrameworkComputer/Framework-Laptop-13/tree/main/Mainboard",
+      "note": "Framework AMD Ryzen AI 300 interface schematic (functional partitioning) committed. SoC-vendor briefs are redistribution-restricted (url_only)."
+    },
+    {
+      "id": "B09",
+      "drawing_type": "Signal Flow Diagram",
+      "status": "url_only",
+      "license": "TI reference (publicly downloadable application material)",
+      "local_path": null,
+      "sha256": null,
+      "source_url": "https://www.ti.com/lit/ml/sluw001g/sluw001g.pdf",
+      "note": "TI signal-flow application note is publicly downloadable but copyright-restricted (no redistribution). Recorded as link."
+    },
+    {
+      "id": "B10",
+      "drawing_type": "Single-Line Diagram",
+      "status": "url_only",
+      "license": "Fair use / CC (reproduced IEEE 315A symbols)",
+      "local_path": null,
+      "sha256": null,
+      "source_url": "https://en.wikipedia.org/wiki/One-line_diagram",
+      "note": "IEEE 315A single-line symbols; limited laptop applicability. Reference/fair-use only, nothing redistributable committed."
+    },
+    {
+      "id": "C01",
+      "drawing_type": "Boardview (.brd / .fz)",
+      "status": "generated_from_committed",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "local_path": [
+        "sources/kicad-demos/video/video.kicad_pcb"
+      ],
+      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "source_url": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "note": "Boardview (.fz/.brd) is generated by converting the committed KiCad/Framework open PCB via OpenBoardView/FlexBV. No DMCA-risk OEM mirror used.",
+      "generation_command": "OpenBoardView/FlexBV import of sources/kicad-demos/video/video.kicad_pcb"
+    },
+    {
+      "id": "C02",
+      "drawing_type": "Silkscreen / Legend Drawing",
+      "status": "generated_from_committed",
+      "license": "GNU GPL v3",
+      "local_path": [
+        "sources/kicad-demos/video/video.kicad_pcb"
+      ],
+      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "source_url": "https://gitlab.com/kicad/kicad/-/tree/master/demos/video",
+      "note": "Silkscreen/legend (F.Silkscreen/B.Silkscreen) is a generated KiCad plot layer; source project committed.",
+      "generation_command": "kicad-cli pcb export gerbers sources/kicad-demos/video/video.kicad_pcb"
+    },
+    {
+      "id": "C03",
+      "drawing_type": "Test Point Drawing",
+      "status": "generated_from_committed",
+      "license": "GNU GPL v3",
+      "local_path": [
+        "sources/kicad-demos/video/video.kicad_pcb"
+      ],
+      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "source_url": "https://gitlab.com/kicad/kicad/-/tree/master/demos/video",
+      "note": "Test-point/access map derived from the generated IPC-D-356 net-access export; source project committed.",
+      "generation_command": "kicad-cli pcb export ipcd356 sources/kicad-demos/video/video.kicad_pcb"
+    },
+    {
+      "id": "C04",
+      "drawing_type": "Interconnect / Connection Diagram",
+      "status": "committed_file",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "local_path": [
+        "sources/framework-laptop-13/Mainboard/Connectors/README.md"
+      ],
+      "sha256": "b9632b8edbf83f281f9059e5af337e70ef92990e32e10dcc0a247bb1dc998dd4",
+      "source_url": "https://github.com/FrameworkComputer/Framework-Laptop-13/tree/main/Mainboard/Connectors",
+      "note": "Framework inter-board connection/interconnect documentation committed. IPC-2612 paywalled."
+    },
+    {
+      "id": "D01",
+      "drawing_type": "Rework / Repair Drawing",
+      "status": "committed_file",
+      "license": "Public domain (US Government work)",
+      "local_path": [
+        "sources/nasa/nasa-std-8739.3.pdf"
+      ],
+      "sha256": "514b961cd6a0fbe1eec5a7b6191a1096466a2e80cc6f59eeb24e1643590a8171",
+      "source_url": "https://standards.nasa.gov/standard/nasa/nasa-std-87393",
+      "note": "NASA-STD-8739.3 'Soldered Electrical Connections' (84-pp public-domain PDF) committed. NOTE: cancelled 2011-10-17, superseded by IPC J-STD-001 + NASA addendum. IPC-7711/7721 paywalled."
+    },
+    {
+      "id": "D02",
+      "drawing_type": "BOM (Bill of Materials)",
+      "status": "generated_from_committed",
+      "license": "GNU GPL v3 (KiCad) / CC BY 4.0 (Framework)",
+      "local_path": [
+        "sources/kicad-demos/video/video.kicad_pcb",
+        "sources/framework-laptop-13/Mainboard/Connectors/README.md"
+      ],
+      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "source_url": "https://gitlab.com/kicad/kicad/-/tree/master/demos/video",
+      "note": "BOM is a generated KiCad export (CSV/XML); source project committed. Framework connector/part-number tables also committed.",
+      "generation_command": "kicad-cli sch export bom sources/kicad-demos/video/video.kicad_sch"
+    },
+    {
+      "id": "D03",
+      "drawing_type": "Section View / Cross-Section",
+      "status": "url_only",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "local_path": null,
+      "sha256": null,
+      "source_url": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "note": "ASME Y14.3 section view is generated from the Framework CAD .stp, which is url_only (21 MB, exceeds commit budget). PCB cross-section = stackup (A07). Committed Framework 2D PDF is related mechanical context."
+    },
+    {
+      "id": "E01",
+      "drawing_type": "System Architecture Diagram",
+      "status": "committed_file",
+      "license": "Intel reference use (publicly downloadable TPS; redistribution restricted)",
+      "local_path": [
+        "sources/framework-laptop-13/Mainboard/README.md"
+      ],
+      "sha256": "40376b67c2e82e3848a34d5e9ff6328f50f811cb22c6d910e01df8837511d3c0",
+      "source_url": "https://www.intel.com/content/www/us/en/products/details/nuc/mini-pcs/products.html",
+      "note": "Framework Mainboard README system block diagram committed as the open-license alternative. Intel NUC Technical Product Specification is redistribution-restricted (url_only)."
+    },
+    {
+      "id": "E02",
+      "drawing_type": "Timing Diagram",
+      "status": "url_only",
+      "license": "Public (SMBus spec freely downloadable from smbus.org)",
+      "local_path": null,
+      "sha256": null,
+      "source_url": "https://www.smbus.org/specs/SMBus_3_2_20220112.pdf",
+      "note": "SMBus 3.2 spec is freely downloadable but copyright-restricted (no redistribution); JEDEC LPDDR5 free with registration. Timing diagrams recorded as links."
+    },
+    {
+      "id": "E03",
+      "drawing_type": "State Machine Diagram",
+      "status": "committed_file",
+      "license": "BSD 3-Clause",
+      "local_path": [
+        "sources/chromium-ec/docs/low_battery_startup.md"
+      ],
+      "sha256": "41cda5715d0569d348b9d0f5d48b70cc7e37957484ac91ccb568598d1cd16a5c",
+      "source_url": "https://chromium.googlesource.com/chromiumos/platform/ec/+/refs/heads/main/docs/",
+      "note": "Chromium EC firmware docs with state machines committed: low_battery_startup.md, usb-tcpmv2.md (TCPMv2 state machine), usb-c.md, usb_power.md (BSD-3)."
+    },
+    {
+      "id": "E04",
+      "drawing_type": "Isometric Drawing",
+      "status": "url_only",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "local_path": null,
+      "sha256": null,
+      "source_url": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "note": "Isometric render is generated from Framework CAD .stp (url_only, 21 MB). iFixit isometric is CC BY-NC-SA (non-commercial, not committed). Recorded as links."
+    },
+    {
+      "id": "E05",
+      "drawing_type": "Exploded Assembly Diagram",
+      "status": "url_only",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "local_path": null,
+      "sha256": null,
+      "source_url": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "note": "Exploded view is generated from Framework CAD .stp (url_only, 21 MB); iFixit teardown is CC BY-NC-SA (non-commercial, not committed). Recorded as links."
+    },
+    {
+      "id": "E06",
+      "drawing_type": "Chassis / Enclosure Drawing",
+      "status": "committed_file",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "local_path": [
+        "sources/framework-laptop-13/Mainboard/OpenSCAD/tray.scad"
+      ],
+      "sha256": "d66fae63d0ffb7cc883aa9639460ccbd01b470696c500d5297af53f49086ab2f",
+      "source_url": "https://github.com/FrameworkComputer/Framework-Laptop-13/tree/main/Mainboard/Printable%20Case",
+      "note": "Framework OpenSCAD mechanical source (tray.scad) committed as a chassis/enclosure mechanical specimen. Full chassis CAD .stp (21 MB) and Printable Case STLs are url_only."
+    },
+    {
+      "id": "E07",
+      "drawing_type": "PCB Fabrication Drawing (Fab)",
+      "status": "committed_file",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "local_path": [
+        "sources/framework-laptop-13/Mainboard/2D/fw_main_pcb_generic_2_w_fan.pdf"
+      ],
+      "sha256": "54269835c7abe902770436607bf8d4f5939c5998b4798c64d39ed9f417213d91",
+      "source_url": "https://github.com/FrameworkComputer/Framework-Laptop-13/tree/main/Mainboard/2D",
+      "note": "Framework Mainboard 2D fabrication-context drawing (PDF) committed; KiCad demo provides the full generated IPC-style fab sheet (project source committed)."
+    }
+  ],
+  "committed_file_inventory": [
+    {
+      "path": "sources/chromium-ec/LICENSE",
+      "sha256": "f0edee4e8678401849119448fc7412a0ce153710298013f1d47b41b2993f4336",
+      "license": "BSD 3-Clause",
+      "upstream": "https://chromium.googlesource.com/chromiumos/platform/ec/+/refs/heads/main/docs/",
+      "bytes": 1538
+    },
+    {
+      "path": "sources/chromium-ec/docs/low_battery_startup.md",
+      "sha256": "41cda5715d0569d348b9d0f5d48b70cc7e37957484ac91ccb568598d1cd16a5c",
+      "license": "BSD 3-Clause",
+      "upstream": "https://chromium.googlesource.com/chromiumos/platform/ec/+/refs/heads/main/docs/",
+      "bytes": 19745
+    },
+    {
+      "path": "sources/chromium-ec/docs/usb-c.md",
+      "sha256": "146219b7b1f27ae19b72025f0c94591c084bda750fdaa8314af369dbff81272a",
+      "license": "BSD 3-Clause",
+      "upstream": "https://chromium.googlesource.com/chromiumos/platform/ec/+/refs/heads/main/docs/",
+      "bytes": 12611
+    },
+    {
+      "path": "sources/chromium-ec/docs/usb-tcpmv2.md",
+      "sha256": "7c434c06b47dda1a2c7d9e31057515f08a0b3df802eec8e07fceea3fa498e295",
+      "license": "BSD 3-Clause",
+      "upstream": "https://chromium.googlesource.com/chromiumos/platform/ec/+/refs/heads/main/docs/",
+      "bytes": 13277
+    },
+    {
+      "path": "sources/chromium-ec/docs/usb_power.md",
+      "sha256": "8afbc1011715db0cba7649ca55cb928b32c8ad4afe3c35be77d17c4d1fb50cbc",
+      "license": "BSD 3-Clause",
+      "upstream": "https://chromium.googlesource.com/chromiumos/platform/ec/+/refs/heads/main/docs/",
+      "bytes": 12917
+    },
+    {
+      "path": "sources/framework-laptop-13/LICENSE",
+      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "upstream": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "bytes": 18656
+    },
+    {
+      "path": "sources/framework-laptop-13/Mainboard/2D/fw_main_pcb_generic_2_w_fan.pdf",
+      "sha256": "54269835c7abe902770436607bf8d4f5939c5998b4798c64d39ed9f417213d91",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "upstream": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "bytes": 942333
+    },
+    {
+      "path": "sources/framework-laptop-13/Mainboard/Connectors/50458-xxxxx-xxx-aces rev-H.pdf",
+      "sha256": "909808e30fabad913a1d08dadd5f2d87476eb16de7ff36846cec23742732abf9",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "upstream": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "bytes": 129405
+    },
+    {
+      "path": "sources/framework-laptop-13/Mainboard/Connectors/AUSB0534-P203A61_rev.B.pdf",
+      "sha256": "86cdd9e7e79ef577f146d95dbc2c89ab434497d3fb1c084eed7b2360af3ef98b",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "upstream": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "bytes": 863308
+    },
+    {
+      "path": "sources/framework-laptop-13/Mainboard/Connectors/README.md",
+      "sha256": "b9632b8edbf83f281f9059e5af337e70ef92990e32e10dcc0a247bb1dc998dd4",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "upstream": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "bytes": 431
+    },
+    {
+      "path": "sources/framework-laptop-13/Mainboard/Mainboard_Interfaces_Schematic_11th_Gen.pdf",
+      "sha256": "29da75b651eb3e159271dec6f93514df39106445ad890cdf81bd6ee043ac63b0",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "upstream": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "bytes": 881121
+    },
+    {
+      "path": "sources/framework-laptop-13/Mainboard/Mainboard_Interfaces_Schematic_12th_Gen.pdf",
+      "sha256": "8a377abbfa83cdb99c70e3f908448388382a951a5e76cadf05959bcdd5149a3c",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "upstream": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "bytes": 1160347
+    },
+    {
+      "path": "sources/framework-laptop-13/Mainboard/Mainboard_Interfaces_Schematic_7040_Series.pdf",
+      "sha256": "9a5ca882e9df85fc666cf381367b75846169ab4dd2c77367d58a1508e259f356",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "upstream": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "bytes": 780307
+    },
+    {
+      "path": "sources/framework-laptop-13/Mainboard/Mainboard_Interfaces_Schematic_AMD_Ryzen_AI_300_Series.pdf",
+      "sha256": "a53f5519f3efcdb135bb22cbe4ea65d23bd85ae9ca23d3dd3eb6355c6f626209",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "upstream": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "bytes": 1458592
+    },
+    {
+      "path": "sources/framework-laptop-13/Mainboard/Mainboard_Interfaces_Schematic_Chromebook_Edition.pdf",
+      "sha256": "31f5188c50426f06592409a0dbcbe8c656c1777aaaf10d9150caa5927ef31c7a",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "upstream": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "bytes": 436366
+    },
+    {
+      "path": "sources/framework-laptop-13/Mainboard/Mainboard_Interfaces_Schematic_Intel_Core_Ultra_Series_1.pdf",
+      "sha256": "9eacc3865db8999ae7661750359c9ed249cb9807ad34666020f6384761a87c3b",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "upstream": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "bytes": 510947
+    },
+    {
+      "path": "sources/framework-laptop-13/Mainboard/OpenSCAD/tray.scad",
+      "sha256": "d66fae63d0ffb7cc883aa9639460ccbd01b470696c500d5297af53f49086ab2f",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "upstream": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "bytes": 4158
+    },
+    {
+      "path": "sources/framework-laptop-13/Mainboard/README.md",
+      "sha256": "40376b67c2e82e3848a34d5e9ff6328f50f811cb22c6d910e01df8837511d3c0",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "upstream": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "bytes": 13374
+    },
+    {
+      "path": "sources/framework-laptop-13/README.md",
+      "sha256": "4c54121812f4f90f07636f70c37d82fd70f059d806126f4ba7b116f3b2060dd6",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "upstream": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "bytes": 2776
+    },
+    {
+      "path": "sources/kicad-demos/LICENSE.GPLv3",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 35149
+    },
+    {
+      "path": "sources/kicad-demos/pic_programmer/fp-lib-table",
+      "sha256": "e81a9c021142c92ce2795b9b94b37d4e7f04956dfe10c3d7869518c601e25ad8",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 1012
+    },
+    {
+      "path": "sources/kicad-demos/pic_programmer/libs/3d_shapes/adjustable_rx2v4.wrl",
+      "sha256": "f3dd9c781da7cfe705faef8f8999899a597088d7afbe727429823beec278ae54",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 34417
+    },
+    {
+      "path": "sources/kicad-demos/pic_programmer/libs/3d_shapes/textool_40.wrl",
+      "sha256": "ef484084ef42b8c2e61363426b63838e6069975a5a260bfd66f172227bf7f2c0",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 217408
+    },
+    {
+      "path": "sources/kicad-demos/pic_programmer/libs/pic_programmer_fp.pretty/40tex-Ell600.kicad_mod",
+      "sha256": "61c5b4297088827ba2d02143edc9cf031802ec0072e057cb8d8e5483b5d6fa9a",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 15915
+    },
+    {
+      "path": "sources/kicad-demos/pic_programmer/libs/pic_programmer_fp.pretty/RV2X4.kicad_mod",
+      "sha256": "64add84809f19b9eb77d86695ac19b2f87677e6849cdc1b103219c18ff8780cd",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 4599
+    },
+    {
+      "path": "sources/kicad-demos/pic_programmer/libs/pic_programmer_fp.pretty/SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm.kicad_mod",
+      "sha256": "0449fc32c1f0ed8fc10f686bb06953dbcfcf06849c41c9ebde3876df60ace016",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 3222
+    },
+    {
+      "path": "sources/kicad-demos/pic_programmer/libs/pic_programmer_fp.pretty/TO-92.kicad_mod",
+      "sha256": "ee34a946728dbf06ab4fbcfe6d940c202f737420b010927eb537c0e911fe3a62",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 3749
+    },
+    {
+      "path": "sources/kicad-demos/pic_programmer/pic_programmer.kicad_pcb",
+      "sha256": "1ca70b620506818eb0227e2863bbd573d1fec1672072dc43d0dbe8475e69c8fb",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 643403
+    },
+    {
+      "path": "sources/kicad-demos/pic_programmer/pic_programmer.kicad_pro",
+      "sha256": "3b0ac39da5af86d0baa2a64da55a89c39ba00148dc82b54f3062f5c3650a5cc5",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 17842
+    },
+    {
+      "path": "sources/kicad-demos/pic_programmer/pic_programmer.kicad_sch",
+      "sha256": "cf92bff8aebe19e45444f13b2ccd1c8ad578df6a226acd5381e2eff95e2fc08f",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 229174
+    },
+    {
+      "path": "sources/kicad-demos/pic_programmer/pic_programmer.kicad_sym",
+      "sha256": "311bf43e2f3999072cad00a00b8c894c6adbaec5b97ada2256b0db1d2115039a",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 80188
+    },
+    {
+      "path": "sources/kicad-demos/pic_programmer/pic_sockets.kicad_sch",
+      "sha256": "8cbf575b53b205280ca277df8affc6477cf20c5d06c63c267cd6fb19b6d771ae",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 97976
+    },
+    {
+      "path": "sources/kicad-demos/pic_programmer/sym-lib-table",
+      "sha256": "0115c6d84c88e0da8c7b47db401ae4f93f197ee9645b9dc4fbdad8d55a22a0e8",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 143
+    },
+    {
+      "path": "sources/kicad-demos/video/bus_pci.kicad_sch",
+      "sha256": "0110ee91bd8eb39ba7c4d08703bca193f72337b25928ad2babc86dc3c54d1cde",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 380549
+    },
+    {
+      "path": "sources/kicad-demos/video/esvideo.kicad_sch",
+      "sha256": "b736ce2d5a17fa94fcd64c656435031730b3b8524342dd4e1d19a917adbd1d6f",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 176303
+    },
+    {
+      "path": "sources/kicad-demos/video/fp-lib-table",
+      "sha256": "1cec8bd53e12c7d1468d1a83fa543685701fedd0ae20f3651a776fbcf544bec4",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 1950
+    },
+    {
+      "path": "sources/kicad-demos/video/graphic.kicad_sch",
+      "sha256": "c09706718277aefb6d9b1ea49825237d026191e6d91d44c7e75aa0eba682900d",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 288187
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/BUSPCI.kicad_mod",
+      "sha256": "3b3b6e025c8ef0c512db5d009b42cb2e9ef097abd7aa2bc817342a7d0bcd5fd9",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 19188
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/CP_EIA-3528-21_Kemet-B_Pad1.50x2.35mm_HandSolder.kicad_mod",
+      "sha256": "527bab574abfa9b29bfb91655cd9ce663406a64d14b38013ac41ab543e63f9aa",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 3954
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/CV3-30PF.kicad_mod",
+      "sha256": "061a32a2b13556bb4b709ef2e31db6e0cae5cb1437dca6616785940687d771ea",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 1897
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/C_Disc_D3.0mm_W2.0mm_P2.50mm.kicad_mod",
+      "sha256": "d70458b61329e66fff4a05f1402e7faaf3ab949eac5d17767b223f6559bb7146",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 4148
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/Crystal_HC18-U_Horizontal.kicad_mod",
+      "sha256": "11936e430dabcc0c1da1ce5e0079daf8140dd5814143a8ad51530f56197d1d49",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 6211
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/Crystal_HC18-U_Vertical.kicad_mod",
+      "sha256": "6c1ecebbd219da8bbfabfc2b73e6a0866760ddc25bfc36da3e882d76b8a4a938",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 4470
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/DIP-8_W7.62mm.kicad_mod",
+      "sha256": "7ae2068c7514580d6a07edf45a5bcf628907bb8378599d66dceec26ce951e13d",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 5337
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/DSUB-9_Female_Horizontal_P2.77x2.84mm_EdgePinOffset14.56mm_Housed_MountingHolesOffset15.98mm.kicad_mod",
+      "sha256": "d32728d69de247bdc240657690b5cb86c5e600699680196473aee3f57bbf54de",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 9905
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/D_DO-34_SOD68_P7.62mm_Horizontal.kicad_mod",
+      "sha256": "a18d9588f922cd130be684c1c34108b35a3a5aa169079136136fc5612b2726e2",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 4886
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/LED_D3.0mm.kicad_mod",
+      "sha256": "3fca0da4f9d1f1c305c2a7f123a8ac86837c8eed8cccdcb5f4ebf10713f36b4b",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 4566
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/LRTDK.kicad_mod",
+      "sha256": "ca2594be2994eb12980dbe206b912802c5a53a3dbb9ca5196cabdbd1e215aaf5",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 2406
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/PLCC68.kicad_mod",
+      "sha256": "482435c6dfefcd399c4ac787f833ef09b78f30227aa7ae1a19492dd6ca24b3b4",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 15776
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/PLCC84.kicad_mod",
+      "sha256": "81b71c70d3c48a0d87058c2daa0515f7337f86f2e85a65e23676857f233cd858",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 18846
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/PQFP-100_14x20mm_P0.65mm.kicad_mod",
+      "sha256": "87d2eacd4d87ef8579a584f2d8b63851cacfa5b41328e36f36f073fd0aae630e",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 25585
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/PQFP-160_28x28mm_P0.65mm.kicad_mod",
+      "sha256": "5f159909bdec7b8dae07909713cd820023f15fcf9e7e1d6e6cf392a76f46fb45",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 36513
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/PinHeader_1x01_P2.54mm_Vertical.kicad_mod",
+      "sha256": "f350885de38f4bf345d56bee342452e5fcd9e082e459206845593a053d5e1c9c",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 4120
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/PinHeader_1x02_P2.54mm_Vertical.kicad_mod",
+      "sha256": "c0941bdc1c9b9b46abefe7cb46c5ec543f2268eada4a52490d53571775501cbe",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 4286
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/PinHeader_1x05_P2.54mm_Vertical.kicad_mod",
+      "sha256": "1f74d9279280ad13652ea8ffd01bc535c6f91ebd4fa73278c8c518bb198441c2",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 4829
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/Potentiometer_Bourns_3314G_Vertical.kicad_mod",
+      "sha256": "7855d79fa5675781993a9d9758fc0335a9a4cb8f540a33365ea0e00866fb12c9",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 4833
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/R_1206_3216Metric_Pad1.30x1.75mm_HandSolder.kicad_mod",
+      "sha256": "644d3383071194ae37744ab07ccfe0eee086d1ea43691267ad7c455e98105c5f",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 3691
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/R_1210_3225Metric_Pad1.30x2.65mm_HandSolder.kicad_mod",
+      "sha256": "8ad80fdd4f5cdf3c5211fdaa631c96b7ec1014df0d340d26b94bb58cdcf3e48c",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 3711
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/R_1812_4532Metric_Pad1.30x3.40mm_HandSolder.kicad_mod",
+      "sha256": "22346c07f6730e9885cab232e6367eefa2a3dcd01feae94a0e03d4ee72b4c06c",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 3620
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/R_Array_SIP9.kicad_mod",
+      "sha256": "92e0509a670576e0856c7211b2a8448c981a2162b5150286516a3172d39632bf",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 5236
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/SOIC-20W_7.5x12.8mm_P1.27mm.kicad_mod",
+      "sha256": "5ce6690cd962155002cad901e2e7b876e1549e53fc5482bbc3d6cf2c3dc2aa39",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 8169
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/SOIC-24W_7.5x15.4mm_P1.27mm.kicad_mod",
+      "sha256": "d933cf9da35d8dcab23067b91b61262949191bcf4107e36e9e80b4a646bc30ce",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 8768
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/SOIC-28W_7.5x17.9mm_P1.27mm.kicad_mod",
+      "sha256": "4a8ddb1d3094553dd447c9a89689a3b27ac9899f258efbb80fd30848e39628ab",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 9470
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/SOT23EBC.kicad_mod",
+      "sha256": "69623a557c068e102377daa47d63fb39ee7830c22aa3ae539dbc81745a26328a",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 2529
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/SSOP-8_3.95x5.21x3.27mm_P1.27mm.kicad_mod",
+      "sha256": "1ff1a8dc91766b7acf139eac54245a3aa9bcd29f52afbfc7cf59bc036f71f1c2",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 6606
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm.kicad_mod",
+      "sha256": "00f39166c6f23ff76ceb39ddd1616d0c4ac0cef3eba6538fbd15e08b15692542",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 2686
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/TQFP-100_14x14mm_P0.5mm.kicad_mod",
+      "sha256": "1660898ef5a70e19b9a6157e35f232498711f2b752e294c37bf0af8ac866efa7",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 25340
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/sim72.kicad_mod",
+      "sha256": "123419830f9676adccc06d46ef12bbef3079ceee47cefd3abbc7b996dde358e8",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 16507
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/footprints.pretty/subclick.kicad_mod",
+      "sha256": "d9af67f4e58390b7f2a3840245494b0351bf2812a780a143fe238220e45d3699",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 4144
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/fp.3dshapes/subclick_horiz.wings",
+      "sha256": "23cbb65ecae74920a0259ba30bfea1bc2ca6cfc4ac4fa74120c313560513e7c9",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 14674
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/fp.3dshapes/subclick_horiz.wrl",
+      "sha256": "ef4c232aa3cf8e071b2554cf36857fd5920fcf2cd00e16189ddb08fd46b9ab3b",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 35778
+    },
+    {
+      "path": "sources/kicad-demos/video/libs/video_schlib.kicad_sym",
+      "sha256": "44304b91b9c95eaf709f0b7e0c8a1284265387ad4aec85e0c09047427c3c2265",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 336006
+    },
+    {
+      "path": "sources/kicad-demos/video/modul.kicad_sch",
+      "sha256": "59f6d8152af769371bd35a08dc11c1bdf9c3b4e56ab079f389a0584d1a4574c7",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 126999
+    },
+    {
+      "path": "sources/kicad-demos/video/muxdata.kicad_sch",
+      "sha256": "9b757497857c061632fd09cc3d0a236843c1c164f0b864a78b22c88c1fd96a58",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 132056
+    },
+    {
+      "path": "sources/kicad-demos/video/pal-ntsc.kicad_sch",
+      "sha256": "970c766b745d299ca0b47b05a51baf628bf114a6bfe007736beb7ccd0548fd09",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 198217
+    },
+    {
+      "path": "sources/kicad-demos/video/rams.kicad_sch",
+      "sha256": "40a46f70b6731962a4afa5858b54d3bbf55ac3e4b1a95c7c905b698ae99eb0e3",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 377836
+    },
+    {
+      "path": "sources/kicad-demos/video/sym-lib-table",
+      "sha256": "5e4e49725a37d49ccb0d2b7888d5fef56dfe8ab7cf2a95d8e3697fcfac3b0585",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 130
+    },
+    {
+      "path": "sources/kicad-demos/video/video.kicad_pcb",
+      "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 5787523
+    },
+    {
+      "path": "sources/kicad-demos/video/video.kicad_pro",
+      "sha256": "329241ed4d9d176ef51adcec457a7c072e4bbc1b6500738622ebeaeba74d6c7f",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 17203
+    },
+    {
+      "path": "sources/kicad-demos/video/video.kicad_sch",
+      "sha256": "4d3ced775e49f56704b036bf56b9bf90d3d403b29bc9434eca47a8f18bea5ce1",
+      "license": "GNU GPL v3",
+      "upstream": "https://gitlab.com/kicad/kicad/-/tree/master/demos (mirror: github.com/KiCad/kicad-source-mirror)",
+      "bytes": 110564
+    },
+    {
+      "path": "sources/mnt-reform/CERN-OHL-S-v2.txt",
+      "sha256": "d6475a84171f0cf7ff52667dea714df268fc65cea42f0bf328b0b70d4cd0ebab",
+      "license": "CERN-OHL-S v2",
+      "upstream": "https://source.mnt.re/reform/reform",
+      "bytes": 13419
+    },
+    {
+      "path": "sources/mnt-reform/LICENSE",
+      "sha256": "fcf524999da9e1c9083751983368f7e958dec57511d20db153ce88db94d51e96",
+      "license": "CERN-OHL-S v2",
+      "upstream": "https://source.mnt.re/reform/reform",
+      "bytes": 48574
+    },
+    {
+      "path": "sources/mnt-reform/reform2-motherboard-r2c.pdf",
+      "sha256": "454fe68fb7436da64ebd9b720f03ef78bf8599608ae18701bb1b3bffc0a6706d",
+      "license": "CERN-OHL-S v2",
+      "upstream": "https://source.mnt.re/reform/reform",
+      "bytes": 967610
+    },
+    {
+      "path": "sources/nasa/nasa-std-8739.3.pdf",
+      "sha256": "514b961cd6a0fbe1eec5a7b6191a1096466a2e80cc6f59eeb24e1643590a8171",
+      "license": "Public domain (US Government work)",
+      "upstream": "https://nepp.nasa.gov/docuploads/06AA01BA-FC7E-4094-AE829CE371A7B05D/NASA-STD-8739.3.pdf",
+      "bytes": 463633
+    }
+  ]
+}

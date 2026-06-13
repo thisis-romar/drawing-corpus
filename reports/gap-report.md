@@ -46,3 +46,27 @@ None. No drawing type required dropping to Tier 4 — every type was satisfied a
 | A07 | Layer Stackup Drawing | IPC-2141 (controlled impedance) / IPC-4101 (materials) | IPC-2141/IPC-4101 — Sierra Circuits annotated stackup specimen |
 | A11 | GD&T Drawing | ASME Y14.5-2018 | ASME Y14.5-2018 — GD&T Basics feature-control-frame specimen |
 | A13 | Solder Paste / Stencil Drawing | IPC-7525 (stencil design) | IPC-7525 — Sierra Circuits/Sunstone stencil tutorial + KiCad paste layer |
+
+## 5. Retrieval outcome (links-only, 2026-06-13)
+
+The example files were retrieved and committed under `sources/` (manifest: `sources/MANIFEST.json`).
+Under the links-only policy only redistributable artifacts were committed.
+
+- **15 committed as files** — A01, A02, A03, A12, A14, B01, B02, B03, B08, C04, D01, E01, E03, E06, E07
+  (Framework CC BY 4.0 schematics/2D/connectors/README/OpenSCAD, KiCad GPL v3 schematic, Chromium EC
+  BSD-3 docs, NASA public-domain PDF, MNT Reform CERN-OHL-S motherboard schematic).
+- **11 committed as generating project** — A04, A05, A06, A08, A09, A10, A13, C01, C02, C03, D02. The
+  named drawing (Gerber, drill, fab/assembly sheet, IPC-D-356 netlist, placement, silkscreen,
+  boardview, BOM, paste/stencil) is a standard KiCad output; KiCad is **not installed** in this
+  environment, so the committed `video`/`pic_programmer` project source is the deliverable and each
+  record carries the `generation_command` to reproduce the output.
+- **12 url-only** — A07, A11 (paywalled IPC-2141 / ASME Y14.5; reference specimens), B04 (JEDEC,
+  registration), B05/B07 (Intel EDC, account-gated reference-only), B06 (FCC OET search entry; no
+  single exhibit pinned), B09 (TI app note, copyright-restricted), B10 (IEEE 315A reference),
+  E02 (SMBus 3.2 / JEDEC, copyright-restricted), D03/E04/E05 (derive from the 21 MB Framework CAD
+  `.stp`, kept url-only for repo size). Retrieve any of these for personal use with
+  `sources/fetch_sources.sh` (paywalled/account-gated items must be obtained through their portals).
+
+**Follow-up to fully commit a generated specimen:** install KiCad and run the per-record
+`generation_command` (e.g. `kicad-cli pcb export gerbers sources/kicad-demos/video/video.kicad_pcb`),
+or commit the four Framework `.dxf` / CAD `.stp` files if the repo size budget is raised.

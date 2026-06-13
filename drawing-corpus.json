@@ -38,7 +38,17 @@
       "notes": "Real shipping laptop schematic published by the OEM under CC BY 4.0 - the best authorized, DMCA-free laptop schematic available. Framework publishes interface-level (not full net-by-net) schematics; IEEE 315 symbol conformance is visual, not stamped. Schematic PDFs: Mainboard_Interfaces_Schematic_*.pdf.",
       "fallback_source": "https://source.mnt.re/reform/reform - MNT Reform full KiCad schematic (CERN-OHL-S 2.0); or KiCad 'video' demo schematic (GPL v3)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "committed_file",
+        "committed": true,
+        "local_path": [
+          "sources/framework-laptop-13/Mainboard/Mainboard_Interfaces_Schematic_Intel_Core_Ultra_Series_1.pdf"
+        ],
+        "sha256": "9eacc3865db8999ae7661750359c9ed249cb9807ad34666020f6384761a87c3b",
+        "retrieved_at": "2026-06-13",
+        "note": "Six Framework interface schematics committed (11th/12th Gen, 7040, Ryzen AI 300, Chromebook, Intel Core Ultra Series 1); MNT Reform motherboard schematic PDF (CERN-OHL-S) committed as a second open specimen at sources/mnt-reform/."
+      }
     },
     {
       "id": "A02",
@@ -65,7 +75,17 @@
       "notes": "IEEE 91/91a is paywalled. No standalone laptop logic diagram exists as a separate document; logic in laptops appears inside schematics (A01). Recorded as a fair-use symbol reference. For a real applied example use the KiCad demo schematics which use IEEE 91-style symbols. human_review recommended to source a stamped IEEE 91 specimen figure.",
       "fallback_source": "https://www.allaboutcircuits.com/textbook/digital/chpt-3/logic-signal-voltage-levels/ - applied logic gate diagrams; KiCad demo schematics (GPL v3)",
       "human_review_required": true,
-      "paywalled": true
+      "paywalled": true,
+      "retrieval": {
+        "status": "committed_file",
+        "committed": true,
+        "local_path": [
+          "sources/kicad-demos/video/video.kicad_sch"
+        ],
+        "sha256": "4d3ced775e49f56704b036bf56b9bf90d3d403b29bc9434eca47a8f18bea5ce1",
+        "retrieved_at": "2026-06-13",
+        "note": "Applied IEEE-91-style logic-gate symbols are present in the committed KiCad 'video' schematics. The normative IEEE 91/91a standard is paywalled (url_only)."
+      }
     },
     {
       "id": "A03",
@@ -94,7 +114,17 @@
       "notes": "Complete, openly licensed EDA project; opens natively in KiCad. EC-2 applies (software-native file). Viewer: KiCad PCB editor. GitLab is canonical; GitHub mirror provided as a web-renderable view.",
       "fallback_source": "https://gitlab.com/kicad/kicad/-/tree/master/demos/pic_programmer - KiCad pic_programmer demo PCB (GPL v3)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "committed_file",
+        "committed": true,
+        "local_path": [
+          "sources/kicad-demos/video/video.kicad_pcb"
+        ],
+        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "retrieved_at": "2026-06-13",
+        "note": "Complete KiCad 'video' multi-layer routed PCB. Opens natively in KiCad PCB editor."
+      }
     },
     {
       "id": "A04",
@@ -121,7 +151,18 @@
       "notes": "Near-duplicate of E07 (PCB Fabrication Drawing). Best openly licensed real fab drawing comes from KiCad fabrication output; Sierra Circuits provides an IPC-2221-annotated tutorial specimen as a teaching reference. See E07 for the Framework real-laptop fab-drawing variant.",
       "fallback_source": "https://www.protoexpress.com/kb/pcb-fabrication-notes/ - Sierra Circuits IPC-2221 fabrication-notes specimen (Tier 3, fair use)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "generated_from_committed",
+        "committed": true,
+        "local_path": [
+          "sources/kicad-demos/video/video.kicad_pcb"
+        ],
+        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "retrieved_at": "2026-06-13",
+        "note": "Fabrication drawing is a generated KiCad output; the source project is committed. Sierra Circuits IPC-2221 specimen is url_only.",
+        "generation_command": "kicad-cli pcb export pdf sources/kicad-demos/video/video.kicad_pcb"
+      }
     },
     {
       "id": "A05",
@@ -148,7 +189,19 @@
       "notes": "Generated from KiCad demo assembly layers. For a real laptop PCBA assembly reference, Framework Mainboard 2D drawings provide placement context (CC BY 4.0).",
       "fallback_source": "https://github.com/FrameworkComputer/Framework-Laptop-13/tree/main/Mainboard/2D - Framework Mainboard 2D placement drawings (CC BY 4.0)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "generated_from_committed",
+        "committed": true,
+        "local_path": [
+          "sources/kicad-demos/video/video.kicad_pcb",
+          "sources/framework-laptop-13/Mainboard/2D/fw_main_pcb_generic_2_w_fan.pdf"
+        ],
+        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "retrieved_at": "2026-06-13",
+        "note": "Assembly drawing is a generated KiCad output (fab+silk+ref-des layers); source project committed. Framework 2D placement context PDF also committed.",
+        "generation_command": "kicad-cli pcb export pdf sources/kicad-demos/video/video.kicad_pcb"
+      }
     },
     {
       "id": "A06",
@@ -175,7 +228,18 @@
       "notes": "Drill map is a standard KiCad fabrication output; symbols keyed to a drill-size table. Generated from the same demo project as A03/A04.",
       "fallback_source": "https://www.protoexpress.com/kb/pcb-fabrication-notes/ - Sierra Circuits drill-chart specimen (Tier 3)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "generated_from_committed",
+        "committed": true,
+        "local_path": [
+          "sources/kicad-demos/video/video.kicad_pcb"
+        ],
+        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "retrieved_at": "2026-06-13",
+        "note": "Drill map / Excellon is a generated KiCad fabrication output; source project committed.",
+        "generation_command": "kicad-cli pcb export drill sources/kicad-demos/video/video.kicad_pcb"
+      }
     },
     {
       "id": "A07",
@@ -202,7 +266,15 @@
       "notes": "IPC-2141/IPC-4101 are paywalled. Sierra Circuits publishes a fully annotated stackup specimen suitable as a reference. Framework Mainboard documentation references a 6-layer stackup; a real laptop stackup callout also appears inside the Framework fab context.",
       "fallback_source": "https://github.com/FrameworkComputer/Framework-Laptop-13 - Framework Mainboard stackup callout (CC BY 4.0)",
       "human_review_required": false,
-      "paywalled": true
+      "paywalled": true,
+      "retrieval": {
+        "status": "url_only",
+        "committed": false,
+        "local_path": null,
+        "sha256": null,
+        "retrieved_at": "2026-06-13",
+        "note": "No real layer-stackup *drawing* is redistributable: IPC-2141/IPC-4101 paywalled; Sierra Circuits specimen is reference/fair-use. The committed KiCad video.kicad_pcb contains a 2-layer stackup definition."
+      }
     },
     {
       "id": "A08",
@@ -231,7 +303,18 @@
       "notes": "EC-2 applies. Gerbers are generated from the KiCad demo PCB; render online with Tracespace (https://tracespace.io). RS-274X is an open, freely published format spec (Ucamco). Title block is N/A for Gerber data layers.",
       "fallback_source": "https://www.ucamco.com/en/gerber - Ucamco Gerber X2 format spec (free) + reference Gerber sets",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "generated_from_committed",
+        "committed": true,
+        "local_path": [
+          "sources/kicad-demos/video/video.kicad_pcb"
+        ],
+        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "retrieved_at": "2026-06-13",
+        "note": "Gerber RS-274X set is a generated KiCad output; source project committed. Render with Tracespace.",
+        "generation_command": "kicad-cli pcb export gerbers sources/kicad-demos/video/video.kicad_pcb"
+      }
     },
     {
       "id": "A09",
@@ -258,7 +341,18 @@
       "notes": "KiCad natively exports IPC-D-356A netlists from any demo PCB; this is the canonical machine-readable bare-board test netlist. Scale N/A (data file).",
       "fallback_source": "https://www.ipc.org/TOC/IPC-D-356A.pdf - IPC-D-356A scope/TOC preview (paywalled full standard)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "generated_from_committed",
+        "committed": true,
+        "local_path": [
+          "sources/kicad-demos/video/video.kicad_pcb"
+        ],
+        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "retrieved_at": "2026-06-13",
+        "note": "IPC-D-356A netlist is a generated KiCad export (PCB editor: Fabrication Outputs -> IPC-D-356); source project committed.",
+        "generation_command": "kicad-cli pcb export ipcd356 sources/kicad-demos/video/video.kicad_pcb"
+      }
     },
     {
       "id": "A10",
@@ -285,7 +379,18 @@
       "notes": "Placement diagram + pick-and-place position file both generated from KiCad demo. IPC-7351 governs the footprints used.",
       "fallback_source": "https://github.com/FrameworkComputer/Framework-Laptop-13/tree/main/Mainboard/2D - Framework Mainboard placement context (CC BY 4.0)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "generated_from_committed",
+        "committed": true,
+        "local_path": [
+          "sources/kicad-demos/video/video.kicad_pcb"
+        ],
+        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "retrieved_at": "2026-06-13",
+        "note": "Component placement plot + pick-and-place .pos are generated KiCad outputs; source project committed.",
+        "generation_command": "kicad-cli pcb export pos sources/kicad-demos/video/video.kicad_pcb"
+      }
     },
     {
       "id": "A11",
@@ -312,7 +417,15 @@
       "notes": "ASME Y14.5-2018 is paywalled. GD&T Basics provides a faithful, well-attributed feature-control-frame specimen for educational reference. Purchase the normative standard from ASME for a stamped specimen.",
       "fallback_source": "https://www.asme.org/codes-standards/find-codes-standards/y14-5-dimensioning-tolerancing - ASME Y14.5-2018 purchase page (normative)",
       "human_review_required": false,
-      "paywalled": true
+      "paywalled": true,
+      "retrieval": {
+        "status": "url_only",
+        "committed": false,
+        "local_path": null,
+        "sha256": null,
+        "retrieved_at": "2026-06-13",
+        "note": "ASME Y14.5-2018 paywalled; GD&T Basics feature-control-frame specimen is reference/fair-use. No redistributable GD&T drawing committed."
+      }
     },
     {
       "id": "A12",
@@ -339,7 +452,17 @@
       "notes": "Real laptop mainboard 2D drawing published by Framework (CC BY 4.0). ASME Y14.3 governs the projection conventions; not explicitly stamped.",
       "fallback_source": "https://standards.nasa.gov/ or university engineering-drawing OCW for an ASME Y14.3 specimen figure",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "committed_file",
+        "committed": true,
+        "local_path": [
+          "sources/framework-laptop-13/Mainboard/2D/fw_main_pcb_generic_2_w_fan.pdf"
+        ],
+        "sha256": "54269835c7abe902770436607bf8d4f5939c5998b4798c64d39ed9f417213d91",
+        "retrieved_at": "2026-06-13",
+        "note": "Framework Mainboard 2D multi-view mechanical drawing (PDF) committed. Native DXF vector versions are url_only (size)."
+      }
     },
     {
       "id": "A13",
@@ -366,7 +489,18 @@
       "notes": "HC-05: IPC-7525 is paywalled and no open-hardware laptop publishes stencil drawings. Sierra Circuits / Sunstone tutorials provide annotated specimens with area-ratio math. The KiCad demo also generates a paste layer (top/bottom paste) that can be rendered as the stencil aperture set.",
       "fallback_source": "https://www.sunstone.com/pcb-manufacturing-services or KiCad demo paste layer (GPL v3) for an actual aperture set",
       "human_review_required": false,
-      "paywalled": true
+      "paywalled": true,
+      "retrieval": {
+        "status": "generated_from_committed",
+        "committed": true,
+        "local_path": [
+          "sources/kicad-demos/video/video.kicad_pcb"
+        ],
+        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "retrieved_at": "2026-06-13",
+        "note": "Solder-paste/stencil aperture set is the generated KiCad paste layer; source project committed. IPC-7525 paywalled; Sierra/Sunstone tutorials url_only.",
+        "generation_command": "kicad-cli pcb export pdf sources/kicad-demos/video/video.kicad_pcb"
+      }
     },
     {
       "id": "A14",
@@ -393,7 +527,17 @@
       "notes": "Framework documents connector pinouts and part numbers for the internal harnesses (real laptop). IPC/WHMA-A-620 is paywalled. Full harness drawings with pull-force and wire gauge are not published; pinout tables are the closest authorized real example.",
       "fallback_source": "IPC/WHMA-A-620 specimen (paywalled) or TI/connector-vendor harness drawing app notes",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "committed_file",
+        "committed": true,
+        "local_path": [
+          "sources/framework-laptop-13/Mainboard/Connectors/README.md"
+        ],
+        "sha256": "b9632b8edbf83f281f9059e5af337e70ef92990e32e10dcc0a247bb1dc998dd4",
+        "retrieved_at": "2026-06-13",
+        "note": "Framework connector pinout documentation + two connector datasheets (ACES 50458, AUSB0534) committed. IPC/WHMA-A-620 paywalled."
+      }
     },
     {
       "id": "B01",
@@ -420,7 +564,17 @@
       "notes": "Real laptop block diagram from the OEM under CC BY 4.0. Intel Alder Lake / Raptor Lake Platform Design Guides (Intel EDC, reference-only) provide an equivalent reference-design block diagram but cannot be redistributed.",
       "fallback_source": "https://edc.intel.com - Intel Platform Design Guide platform block diagram (reference only, account required, no redistribution)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "committed_file",
+        "committed": true,
+        "local_path": [
+          "sources/framework-laptop-13/Mainboard/README.md"
+        ],
+        "sha256": "40376b67c2e82e3848a34d5e9ff6328f50f811cb22c6d910e01df8837511d3c0",
+        "retrieved_at": "2026-06-13",
+        "note": "Framework Mainboard README system block diagram committed; interface block diagram also on schematic sheet 1 (committed PDFs). Intel Platform Design Guide is reference-only (url_only)."
+      }
     },
     {
       "id": "B02",
@@ -447,7 +601,17 @@
       "notes": "HC-02: power trees are normally buried in 200-400 page platform PDFs. Framework publishes a real laptop power tree under CC BY 4.0 (best authorized source). TI PowerLab notebook reference designs provide full rail/regulator/current-rating power trees as a Tier-2 fallback.",
       "fallback_source": "https://www.ti.com/power-management/ - TI PowerLab notebook reference design power trees (schematic + rail current ratings)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "committed_file",
+        "committed": true,
+        "local_path": [
+          "sources/framework-laptop-13/Mainboard/README.md"
+        ],
+        "sha256": "40376b67c2e82e3848a34d5e9ff6328f50f811cb22c6d910e01df8837511d3c0",
+        "retrieved_at": "2026-06-13",
+        "note": "Framework Mainboard README power tree committed. TI PowerLab notebook reference designs are url_only."
+      }
     },
     {
       "id": "B03",
@@ -474,7 +638,17 @@
       "notes": "Framework interface schematics show real PCIe/USB/I2C topology. Intel PCIe/USB Platform Design Guides (EDC, reference-only) give a formal lane-by-lane topology but cannot be redistributed.",
       "fallback_source": "https://edc.intel.com - Intel PCIe/USB topology design guide (reference only); PCI-SIG topology figures (paywalled)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "committed_file",
+        "committed": true,
+        "local_path": [
+          "sources/framework-laptop-13/Mainboard/Mainboard_Interfaces_Schematic_Intel_Core_Ultra_Series_1.pdf"
+        ],
+        "sha256": "9eacc3865db8999ae7661750359c9ed249cb9807ad34666020f6384761a87c3b",
+        "retrieved_at": "2026-06-13",
+        "note": "Framework interface schematics show real PCIe/USB/I2C topology. Intel PCIe/USB design guides reference-only (url_only)."
+      }
     },
     {
       "id": "B04",
@@ -501,7 +675,15 @@
       "notes": "B04 best source is the JEDEC normative figure (free with registration). For an applied laptop example, an Intel DDR5 Platform Design Guide (EDC, reference-only) shows the routed mainboard topology. JEDEC content cannot be redistributed.",
       "fallback_source": "https://edc.intel.com - Intel DDR5 platform routing guide (reference only); https://www.protoexpress.com/blog/ DDR5 fly-by routing tutorial (Tier 3)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "url_only",
+        "committed": false,
+        "local_path": null,
+        "sha256": null,
+        "retrieved_at": "2026-06-13",
+        "note": "JEDEC JESD79-5 (DDR5) free with registration but redistribution-restricted; Intel DDR5 routing guide reference-only. Recorded as links."
+      }
     },
     {
       "id": "B05",
@@ -528,7 +710,15 @@
       "notes": "Near-duplicate of B07 (Thermal/Airflow). Intel Thermal Mechanical Design Guides are account-gated and reference-only; no open-hardware laptop publishes a thermal mechanical drawing. Framework publishes 3D CAD of the cooling assembly (CC BY 4.0) which can substitute for the mechanical footprint. human_review to confirm a retrievable specimen.",
       "fallback_source": "https://github.com/FrameworkComputer/Framework-Laptop-13 - Framework cooling/heatsink CAD (CC BY 4.0)",
       "human_review_required": true,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "url_only",
+        "committed": false,
+        "local_path": null,
+        "sha256": null,
+        "retrieved_at": "2026-06-13",
+        "note": "Intel Thermal Mechanical Design Guide is account-gated and reference-only (no redistribution). Recorded as link."
+      }
     },
     {
       "id": "B06",
@@ -555,7 +745,15 @@
       "notes": "HC-06: OEM EMI drawings are internal; FCC test reports are the only public exposure of shield layout, and they are public domain. Search the OET database by applicant (Framework Computer / Dell / Lenovo) and open the 'Internal Photos' exhibit. A specific FCC ID must be selected at retrieval time (search is the stable entry point).",
       "fallback_source": "site:fcc.gov 'internal photos' laptop shielding filetype:pdf - direct exhibit PDFs in the OET database",
       "human_review_required": true,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "url_only",
+        "committed": false,
+        "local_path": null,
+        "sha256": null,
+        "retrieved_at": "2026-06-13",
+        "note": "FCC OET 'Internal Photos' exhibits are public domain but no single FCC ID was pinned (search entry point); flagged human_review. Recorded as link."
+      }
     },
     {
       "id": "B07",
@@ -582,7 +780,15 @@
       "notes": "Near-duplicate of B05. Embedded figure (EC-1) inside Intel thermal guides; account-gated, reference-only. No open-hardware laptop publishes CFD/airflow diagrams. human_review to source a retrievable public specimen (some vendor cooling white papers or university thermal-design course notes contain airflow diagrams).",
       "fallback_source": "Vendor cooling white papers / university thermal-design course notes with laptop airflow diagrams (Tier 3)",
       "human_review_required": true,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "url_only",
+        "committed": false,
+        "local_path": null,
+        "sha256": null,
+        "retrieved_at": "2026-06-13",
+        "note": "Intel Thermal Mechanical Design Guide airflow figure is account-gated/reference-only. Recorded as link."
+      }
     },
     {
       "id": "B08",
@@ -609,7 +815,17 @@
       "notes": "Near-duplicate of B01 (Block Diagram) but emphasizing internal function partitioning. SoC-vendor functional block diagrams (AMD/Qualcomm product briefs) are publicly available but redistribution-restricted; Framework's CC BY 4.0 diagram is the open option.",
       "fallback_source": "AMD / Qualcomm public product brief functional block diagram (vendor site, reference)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "committed_file",
+        "committed": true,
+        "local_path": [
+          "sources/framework-laptop-13/Mainboard/Mainboard_Interfaces_Schematic_AMD_Ryzen_AI_300_Series.pdf"
+        ],
+        "sha256": "a53f5519f3efcdb135bb22cbe4ea65d23bd85ae9ca23d3dd3eb6355c6f626209",
+        "retrieved_at": "2026-06-13",
+        "note": "Framework AMD Ryzen AI 300 interface schematic (functional partitioning) committed. SoC-vendor briefs are redistribution-restricted (url_only)."
+      }
     },
     {
       "id": "B09",
@@ -636,7 +852,15 @@
       "notes": "EC-5: formal signal-flow graphs are rare in laptop electronics (represented instead by block diagrams). Best real-world specimen is a TI analog/audio application note. Note in output: this drawing type's laptop presence is limited; audio codec/amplifier signal paths are the closest match.",
       "fallback_source": "https://www.ti.com/lit/ - TI audio codec / class-D amplifier app note signal-flow diagrams",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "url_only",
+        "committed": false,
+        "local_path": null,
+        "sha256": null,
+        "retrieved_at": "2026-06-13",
+        "note": "TI signal-flow application note is publicly downloadable but copyright-restricted (no redistribution). Recorded as link."
+      }
     },
     {
       "id": "B10",
@@ -663,7 +887,15 @@
       "notes": "EC-5: single-line diagrams belong to power systems, not laptop PCB design. In a laptop the nearest analog is the high-level power-architecture overview (covered by B02 power tree). Recorded as an educational IEEE 315A reference with a note on limited laptop applicability.",
       "fallback_source": "University EE power-systems course single-line diagram example (Tier 3)",
       "human_review_required": true,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "url_only",
+        "committed": false,
+        "local_path": null,
+        "sha256": null,
+        "retrieved_at": "2026-06-13",
+        "note": "IEEE 315A single-line symbols; limited laptop applicability. Reference/fair-use only, nothing redistributable committed."
+      }
     },
     {
       "id": "C01",
@@ -690,7 +922,18 @@
       "notes": "HC-01: no formal standard; Apple/OEM .fz/.brd files carry DMCA risk and are REJECTED (louis.center, schematics.guru excluded). Framework does not ship a .fz directly, but its CC BY 4.0 board data and KiCad open-hardware PCBs can be converted to OpenBoardView format legitimately. Viewer: OpenBoardView / FlexBV; Tracespace for Gerber rendering.",
       "fallback_source": "https://github.com/OpenBoardView/OpenBoardView - viewer + sample open boardview files (no DMCA risk)",
       "human_review_required": true,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "generated_from_committed",
+        "committed": true,
+        "local_path": [
+          "sources/kicad-demos/video/video.kicad_pcb"
+        ],
+        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "retrieved_at": "2026-06-13",
+        "note": "Boardview (.fz/.brd) is generated by converting the committed KiCad/Framework open PCB via OpenBoardView/FlexBV. No DMCA-risk OEM mirror used.",
+        "generation_command": "OpenBoardView/FlexBV import of sources/kicad-demos/video/video.kicad_pcb"
+      }
     },
     {
       "id": "C02",
@@ -717,7 +960,18 @@
       "notes": "Silkscreen/legend is a standard KiCad plot layer; render via Tracespace or KiCad. Generated from the same demo project as A03/A08.",
       "fallback_source": "https://github.com/FrameworkComputer/Framework-Laptop-13/tree/main/Mainboard/2D - Framework silkscreen/legend context (CC BY 4.0)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "generated_from_committed",
+        "committed": true,
+        "local_path": [
+          "sources/kicad-demos/video/video.kicad_pcb"
+        ],
+        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "retrieved_at": "2026-06-13",
+        "note": "Silkscreen/legend (F.Silkscreen/B.Silkscreen) is a generated KiCad plot layer; source project committed.",
+        "generation_command": "kicad-cli pcb export gerbers sources/kicad-demos/video/video.kicad_pcb"
+      }
     },
     {
       "id": "C03",
@@ -744,7 +998,18 @@
       "notes": "Test points are documented via the IPC-D-356 net-access export (A09) plus a placement plot of TP* designators. Framework also exposes documented probe/test points on the mainboard. IPC-9252/IPC-7711 are paywalled.",
       "fallback_source": "https://github.com/FrameworkComputer/Framework-Laptop-13 - Framework mainboard test-point documentation (CC BY 4.0)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "generated_from_committed",
+        "committed": true,
+        "local_path": [
+          "sources/kicad-demos/video/video.kicad_pcb"
+        ],
+        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "retrieved_at": "2026-06-13",
+        "note": "Test-point/access map derived from the generated IPC-D-356 net-access export; source project committed.",
+        "generation_command": "kicad-cli pcb export ipcd356 sources/kicad-demos/video/video.kicad_pcb"
+      }
     },
     {
       "id": "C04",
@@ -771,7 +1036,17 @@
       "notes": "Framework's connector documentation is effectively a system interconnect/connection diagram for a real laptop (CC BY 4.0). IPC-2612 is paywalled; structure conforms.",
       "fallback_source": "IPC-2612 specimen (paywalled) or MNT Reform interconnect schematic (CERN-OHL-S 2.0)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "committed_file",
+        "committed": true,
+        "local_path": [
+          "sources/framework-laptop-13/Mainboard/Connectors/README.md"
+        ],
+        "sha256": "b9632b8edbf83f281f9059e5af337e70ef92990e32e10dcc0a247bb1dc998dd4",
+        "retrieved_at": "2026-06-13",
+        "note": "Framework inter-board connection/interconnect documentation committed. IPC-2612 paywalled."
+      }
     },
     {
       "id": "D01",
@@ -798,7 +1073,17 @@
       "notes": "HC-04: IPC-7711/7721 fully paywalled. NASA-STD-8739.3 'Soldered Electrical Connections' is public domain but was CANCELLED/inactivated on 2011-12-08 (NASA now invokes IPC J-STD-001 with a NASA addendum). Still publicly retrievable and directly analogous for rework workmanship. Flagged so a human can decide whether to cite the current J-STD-001-based workmanship instead.",
       "fallback_source": "https://www.protoexpress.com/blog/ BGA rework drawing tutorial (Tier 3); IPC-7711 product/preview page (paywalled)",
       "human_review_required": true,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "committed_file",
+        "committed": true,
+        "local_path": [
+          "sources/nasa/nasa-std-8739.3.pdf"
+        ],
+        "sha256": "514b961cd6a0fbe1eec5a7b6191a1096466a2e80cc6f59eeb24e1643590a8171",
+        "retrieved_at": "2026-06-13",
+        "note": "NASA-STD-8739.3 'Soldered Electrical Connections' (84-pp public-domain PDF) committed. NOTE: cancelled 2011-10-17, superseded by IPC J-STD-001 + NASA addendum. IPC-7711/7721 paywalled."
+      }
     },
     {
       "id": "D02",
@@ -825,7 +1110,19 @@
       "notes": "KiCad generates a complete structured BOM from any demo project; Framework publishes mainboard connector/component part numbers (CC BY 4.0). Both are openly licensed real examples.",
       "fallback_source": "https://github.com/FrameworkComputer/Framework-Laptop-13/tree/main/Mainboard/Connectors - Framework part numbers (CC BY 4.0)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "generated_from_committed",
+        "committed": true,
+        "local_path": [
+          "sources/kicad-demos/video/video.kicad_pcb",
+          "sources/framework-laptop-13/Mainboard/Connectors/README.md"
+        ],
+        "sha256": "f620675158ddd5c61e5ce9e15f4c92b230ae1df1cbcec6c502b8ce266e4007ea",
+        "retrieved_at": "2026-06-13",
+        "note": "BOM is a generated KiCad export (CSV/XML); source project committed. Framework connector/part-number tables also committed.",
+        "generation_command": "kicad-cli sch export bom sources/kicad-demos/video/video.kicad_sch"
+      }
     },
     {
       "id": "D03",
@@ -852,7 +1149,15 @@
       "notes": "Framework Laptop 13 CAD.stp permits generating ASME Y14.3-style section views; a PCB cross-section is the layer stackup (A07). ASME Y14.3 governs the sectioning convention (paywalled).",
       "fallback_source": "University engineering-drawing OCW ASME Y14.3 section-view specimen (Tier 3)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "url_only",
+        "committed": false,
+        "local_path": null,
+        "sha256": null,
+        "retrieved_at": "2026-06-13",
+        "note": "ASME Y14.3 section view is generated from the Framework CAD .stp, which is url_only (21 MB, exceeds commit budget). PCB cross-section = stackup (A07). Committed Framework 2D PDF is related mechanical context."
+      }
     },
     {
       "id": "E01",
@@ -879,7 +1184,17 @@
       "notes": "EC-1: embedded figure inside the Intel NUC Technical Product Specification (a real, publicly downloadable platform document). Framework Mainboard README block diagram (CC BY 4.0) is the open-license alternative for a real laptop system architecture.",
       "fallback_source": "https://github.com/FrameworkComputer/Framework-Laptop-13/tree/main/Mainboard - Framework system block diagram (CC BY 4.0)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "committed_file",
+        "committed": true,
+        "local_path": [
+          "sources/framework-laptop-13/Mainboard/README.md"
+        ],
+        "sha256": "40376b67c2e82e3848a34d5e9ff6328f50f811cb22c6d910e01df8837511d3c0",
+        "retrieved_at": "2026-06-13",
+        "note": "Framework Mainboard README system block diagram committed as the open-license alternative. Intel NUC Technical Product Specification is redistribution-restricted (url_only)."
+      }
     },
     {
       "id": "E02",
@@ -906,7 +1221,15 @@
       "notes": "HC-03: no standalone laptop timing diagram exists; always embedded in protocol specs. SMBus 3.2 is freely downloadable (best openly accessible normative timing diagram, directly laptop-relevant for the battery/EC SMBus). JEDEC LPDDR5 (JESD209-5) is the memory-timing alternative (free with registration).",
       "fallback_source": "https://www.jedec.org/standards-documents/docs/jesd209-5b - JEDEC LPDDR5 timing waveform figures (free with registration)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "url_only",
+        "committed": false,
+        "local_path": null,
+        "sha256": null,
+        "retrieved_at": "2026-06-13",
+        "note": "SMBus 3.2 spec is freely downloadable but copyright-restricted (no redistribution); JEDEC LPDDR5 free with registration. Timing diagrams recorded as links."
+      }
     },
     {
       "id": "E03",
@@ -933,7 +1256,17 @@
       "notes": "HC-07: laptop state machines live in firmware. Chromium EC (BSD-3) documents the x86 chipset power-state machine; if found only as ASCII/Mermaid, record as-is and note a rendered SVG can be generated. Specific files vary by tree (usb_power.md, low_battery_startup.md present; power-sequencing state machine is in the power/ chipset source).",
       "fallback_source": "https://github.com/system76/ec - System76 open EC power state machine; Intel PCH datasheet EC power-sequencing state machine (intel.com)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "committed_file",
+        "committed": true,
+        "local_path": [
+          "sources/chromium-ec/docs/low_battery_startup.md"
+        ],
+        "sha256": "41cda5715d0569d348b9d0f5d48b70cc7e37957484ac91ccb568598d1cd16a5c",
+        "retrieved_at": "2026-06-13",
+        "note": "Chromium EC firmware docs with state machines committed: low_battery_startup.md, usb-tcpmv2.md (TCPMv2 state machine), usb-c.md, usb_power.md (BSD-3)."
+      }
     },
     {
       "id": "E04",
@@ -960,7 +1293,15 @@
       "notes": "Framework Laptop 13 CAD.stp (and Pro CAD.stp) render directly to an isometric pictorial. ASME Y14.3 governs the isometric convention (paywalled). Service-manual isometrics (iFixit) are an alternative real example.",
       "fallback_source": "https://www.ifixit.com/Device/Framework_Laptop - service-manual isometric views (CC BY-NC-SA)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "url_only",
+        "committed": false,
+        "local_path": null,
+        "sha256": null,
+        "retrieved_at": "2026-06-13",
+        "note": "Isometric render is generated from Framework CAD .stp (url_only, 21 MB). iFixit isometric is CC BY-NC-SA (non-commercial, not committed). Recorded as links."
+      }
     },
     {
       "id": "E05",
@@ -987,7 +1328,15 @@
       "notes": "Framework is designed for repair and publishes CAD + structured repair guides; the modular assembly breaks out naturally into an exploded diagram (CC BY 4.0). iFixit Framework teardown is the canonical exploded view.",
       "fallback_source": "https://www.ifixit.com/Device/Framework_Laptop - Framework exploded teardown (CC BY-NC-SA)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "url_only",
+        "committed": false,
+        "local_path": null,
+        "sha256": null,
+        "retrieved_at": "2026-06-13",
+        "note": "Exploded view is generated from Framework CAD .stp (url_only, 21 MB); iFixit teardown is CC BY-NC-SA (non-commercial, not committed). Recorded as links."
+      }
     },
     {
       "id": "E06",
@@ -1014,7 +1363,17 @@
       "notes": "Framework publishes full chassis CAD (CAD.stp) plus OpenSCAD/printable-case mechanical sources under CC BY 4.0 - the best real laptop chassis drawing available.",
       "fallback_source": "https://source.mnt.re/reform/reform - MNT Reform CNC case STEP files (CERN-OHL-S 2.0)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "committed_file",
+        "committed": true,
+        "local_path": [
+          "sources/framework-laptop-13/Mainboard/OpenSCAD/tray.scad"
+        ],
+        "sha256": "d66fae63d0ffb7cc883aa9639460ccbd01b470696c500d5297af53f49086ab2f",
+        "retrieved_at": "2026-06-13",
+        "note": "Framework OpenSCAD mechanical source (tray.scad) committed as a chassis/enclosure mechanical specimen. Full chassis CAD .stp (21 MB) and Printable Case STLs are url_only."
+      }
     },
     {
       "id": "E07",
@@ -1041,7 +1400,27 @@
       "notes": "Near-duplicate of A04 (Fabrication Drawing). This entry favors the real laptop source (Framework Mainboard 2D, CC BY 4.0); A04 favors the KiCad-generated full fab sheet + Sierra Circuits IPC-2221 annotated specimen. IPC-2221 compliance is structural, not stamped.",
       "fallback_source": "https://gitlab.com/kicad/kicad/-/tree/master/demos/video - KiCad complete fab drawing (GPL v3); https://www.protoexpress.com/kb/pcb-fabrication-notes/ (Tier 3)",
       "human_review_required": false,
-      "paywalled": false
+      "paywalled": false,
+      "retrieval": {
+        "status": "committed_file",
+        "committed": true,
+        "local_path": [
+          "sources/framework-laptop-13/Mainboard/2D/fw_main_pcb_generic_2_w_fan.pdf"
+        ],
+        "sha256": "54269835c7abe902770436607bf8d4f5939c5998b4798c64d39ed9f417213d91",
+        "retrieved_at": "2026-06-13",
+        "note": "Framework Mainboard 2D fabrication-context drawing (PDF) committed; KiCad demo provides the full generated IPC-style fab sheet (project source committed)."
+      }
     }
-  ]
+  ],
+  "retrieval_summary": {
+    "policy": "links-only",
+    "retrieved_at": "2026-06-13",
+    "committed_file": 15,
+    "generated_from_committed": 11,
+    "url_only": 12,
+    "committed_total": 26,
+    "committed_files_on_disk": 84,
+    "note": "Only redistributable artifacts are committed (CC BY 4.0 Framework, GPL v3 KiCad, BSD-3 Chromium EC, CERN-OHL-S MNT Reform, public-domain NASA). 'generated_from_committed' means the named drawing is a standard KiCad output produced from the committed project source (run the generation_command). url_only = paywalled / reference-only / free-but-copyright-restricted, recorded as links per the links-only policy."
+  }
 }

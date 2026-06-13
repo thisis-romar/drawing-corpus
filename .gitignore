@@ -1,0 +1,4 @@
+# Local, personal-use download cache populated by sources/fetch_sources.sh.
+# url-only items (paywalled / reference-only / large open binaries) are fetched here
+# for personal use and are intentionally NOT committed (links-only policy).
+sources/_fetch_cache/

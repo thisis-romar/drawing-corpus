@@ -13,8 +13,12 @@ are explicitly excluded.
 
 | Path | Description |
 |------|-------------|
-| `drawing-corpus.json` | **Main deliverable.** One structured record per drawing type (Section 8 schema): primary source, fallback source, validation result, confidence, and license. |
-| `reports/summary-table.md` | Section 11.1 — one row per type (group, confidence, tier, license, flags). |
+| `drawing-corpus.json` | **Main deliverable.** One structured record per drawing type (Section 8 schema): primary source, fallback source, validation result, confidence, license, and a `retrieval` block (status, `local_path`, `sha256`). |
+| `sources/` | **Retrieved example files** (committed, redistributable only — see below). |
+| `sources/MANIFEST.json` | Machine manifest: per-record retrieval status + a sha256 inventory of every committed file. |
+| `sources/ATTRIBUTION.md` | Per-source license notices (CC BY 4.0 / GPL v3 / BSD / CERN-OHL-S / public domain). |
+| `sources/fetch_sources.sh` | Optional helper to fetch the url-only items into a local (gitignored) cache for personal use. |
+| `reports/summary-table.md` | Section 11.1 — one row per type (group, confidence, tier, license, **retrieved status**, flags). |
 | `reports/gap-report.md` | Section 11.2 — low-confidence items, human-review items, paywalled standards, and the registry count reconciliation. |
 | `reports/license-matrix.md` | Section 11.3 — examples grouped by license posture with redistribution guidance. |
 | `spec/EMBLEM-NLP-RSPEC-001.md` | The source specification, stored verbatim for traceability. |
@@ -35,6 +39,33 @@ analysis).
 - **4** items depend on a paywalled standard and use a fair-use / tutorial specimen (IEEE 91, IPC-2141, ASME Y14.5, IPC-7525).
 - **0** items required dropping to Tier 4.
 - **28 / 38** examples carry an open license (CC BY 4.0, GPL v3, CERN-OHL-S, BSD, public domain / FCC).
+- **26 / 38** have a committed redistributable file in `sources/` (see *Retrieved files* below).
+
+## Retrieved files (`sources/`)
+
+The example files were retrieved on 2026-06-13 under a **links-only policy**: only redistributable
+artifacts are committed; paywalled, vendor reference-only, and copyright-restricted sources are
+recorded as URLs in `sources/MANIFEST.json` (nothing downloaded). **84 files (~18 MB)** are committed.
+
+| Retrieval status | Count | Notes |
+|------------------|-------|-------|
+| committed (file) | 15 | Exact example artifact committed (Framework PDFs, EC docs, NASA PDF, MNT schematic, KiCad schematic). |
+| committed (generated) | 11 | A standard KiCad output; the **generating project** is committed and the record carries a `generation_command` (KiCad is not installed here). |
+| url-only | 12 | Paywalled / reference-only / copyright-restricted — link only. |
+
+```
+sources/
+├── framework-laptop-13/   CC BY 4.0  — 6 interface schematics, 2D drawing, connectors, README, OpenSCAD
+├── kicad-demos/           GPL v3     — video/ + pic_programmer/ KiCad projects
+├── chromium-ec/           BSD-3      — EC firmware docs with state machines
+├── mnt-reform/            CERN-OHL-S — open-hardware laptop motherboard schematic PDF
+├── nasa/                  public dom — NASA-STD-8739.3 (cancelled 2011)
+├── MANIFEST.json  ATTRIBUTION.md  fetch_sources.sh
+```
+
+Integrity: every committed file is checksummed in `sources/MANIFEST.json`; each `committed` record in
+`drawing-corpus.json` carries the `sha256` of its primary file. Retrieve url-only items for personal
+use with `bash sources/fetch_sources.sh` (paywalled/account-gated items must be obtained via their portals).
 
 ## Primary verified sources (seeds)
 
@@ -73,7 +104,13 @@ Each `drawing-corpus.json` record follows the Section 8 schema: `drawing_type`, 
   example is a figure embedded in a large platform PDF (EC-1) or a selection in a live database
   (FCC OET) — these are marked `human_review_required` so a person can pin the exact exhibit/figure.
 - A genuine **sequential-thinking MCP tool was not available** in this environment; the spec's
-  step-by-step execution flow was applied via structured planning instead.
+  step-by-step execution flow (CLASSIFY → SEED CHECK → SEARCH → FETCH → VALIDATE → RECORD) was
+  applied as a structured orchestrated retrieval instead.
+- **Retrieval (2026-06-13):** files were fetched via blobless/sparse `git clone` and `curl` from the
+  canonical upstreams (GitHub, the KiCad GitHub mirror — GitLab anonymous clone is blocked on this
+  egress, the GitHub API was rate-limited — googlesource, source.mnt.re, nepp.nasa.gov). Each PDF was
+  verified as a real multi-page document and each KiCad/EC file as valid source, then checksummed
+  (`sources/MANIFEST.json`). No paywall was bypassed and no DMCA-risk OEM schematic mirror was used.
 
 ---
 *Generated 2026-06-12 per EMBLEM-NLP-RSPEC-001 v1.0.0.*
