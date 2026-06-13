@@ -1350,12 +1350,15 @@
       "human_review_required": false,
       "paywalled": false,
       "retrieval": {
-        "status": "url_only",
-        "committed": false,
-        "local_path": null,
-        "sha256": null,
+        "status": "committed_file",
+        "committed": true,
+        "local_path": [
+          "sources/framework-laptop-13/_generated/framework-laptop-13-exploded.png"
+        ],
+        "sha256": "4cc132e2912d04f4cfb8269b4c4f56537af32f80e4abbee829c2cf02e1e0d07a",
         "retrieved_at": "2026-06-13",
-        "note": "Exploded view needs per-part explode vectors; the Framework CAD .stp is a fused multi-solid with no assembly explode metadata, so an automatic render is only a crude heuristic and was not committed (it was also computationally prohibitive). iFixit teardown is CC BY-NC-SA (non-commercial). The 21 MB .stp is url_only — fetch via fetch_sources.sh and explode in a CAD tool."
+        "note": "Exploded assembly view rendered from the Framework CAD .stp (CC BY 4.0): 107 solids tessellated with OpenCASCADE, separated along the thin (thickness) axis preserving stack order, lambertian-shaded raster (matplotlib). The 21 MB .stp itself is url_only.",
+        "generation_command": "cadquery tessellate (OCC) + matplotlib exploded raster"
       }
     },
     {
@@ -1436,11 +1439,11 @@
   "retrieval_summary": {
     "policy": "links-only",
     "retrieved_at": "2026-06-13",
-    "committed_file": 28,
+    "committed_file": 29,
     "generated_from_committed": 0,
-    "url_only": 10,
-    "committed_total": 28,
-    "committed_files_on_disk": 106,
+    "url_only": 9,
+    "committed_total": 29,
+    "committed_files_on_disk": 107,
     "note": "Only redistributable artifacts are committed (CC BY 4.0 Framework, GPL v3 KiCad, BSD-3 Chromium EC, CERN-OHL-S MNT Reform, public-domain NASA). 'generated_from_committed' means the named drawing is a standard KiCad output produced from the committed project source (run the generation_command). url_only = paywalled / reference-only / free-but-copyright-restricted, recorded as links per the links-only policy."
   }
 }

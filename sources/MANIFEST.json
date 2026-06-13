@@ -4,12 +4,12 @@
   "policy": "links-only: only redistributable artifacts committed; all else url_only",
   "record_count": 38,
   "counts": {
-    "committed_file": 28,
-    "url_only": 10
+    "committed_file": 29,
+    "url_only": 9
   },
-  "committed_total": 28,
-  "committed_files_on_disk": 106,
-  "committed_bytes_on_disk": 23933548,
+  "committed_total": 29,
+  "committed_files_on_disk": 107,
+  "committed_bytes_on_disk": 24263726,
   "sources": {
     "chromium-ec": {
       "upstream": "https://chromium.googlesource.com/chromiumos/platform/ec/+/refs/heads/main/docs/",
@@ -467,12 +467,15 @@
     {
       "id": "E05",
       "drawing_type": "Exploded Assembly Diagram",
-      "status": "url_only",
+      "status": "committed_file",
       "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
-      "local_path": null,
-      "sha256": null,
+      "local_path": [
+        "sources/framework-laptop-13/_generated/framework-laptop-13-exploded.png"
+      ],
+      "sha256": "4cc132e2912d04f4cfb8269b4c4f56537af32f80e4abbee829c2cf02e1e0d07a",
       "source_url": "https://github.com/FrameworkComputer/Framework-Laptop-13",
-      "note": "Exploded view needs per-part explode vectors; the Framework CAD .stp is a fused multi-solid with no assembly explode metadata, so an automatic render is only a crude heuristic and was not committed (it was also computationally prohibitive). iFixit teardown is CC BY-NC-SA (non-commercial). The 21 MB .stp is url_only — fetch via fetch_sources.sh and explode in a CAD tool."
+      "note": "Exploded assembly view rendered from the Framework CAD .stp (CC BY 4.0): 107 solids tessellated with OpenCASCADE, separated along the thin (thickness) axis preserving stack order, lambertian-shaded raster (matplotlib). The 21 MB .stp itself is url_only.",
+      "generation_command": "cadquery tessellate (OCC) + matplotlib exploded raster"
     },
     {
       "id": "E06",
@@ -632,6 +635,13 @@
       "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
       "upstream": "https://github.com/FrameworkComputer/Framework-Laptop-13",
       "bytes": 2776
+    },
+    {
+      "path": "sources/framework-laptop-13/_generated/framework-laptop-13-exploded.png",
+      "sha256": "4cc132e2912d04f4cfb8269b4c4f56537af32f80e4abbee829c2cf02e1e0d07a",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "upstream": "https://github.com/FrameworkComputer/Framework-Laptop-13",
+      "bytes": 330178
     },
     {
       "path": "sources/framework-laptop-13/_generated/framework-laptop-13-isometric.svg",

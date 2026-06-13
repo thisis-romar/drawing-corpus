@@ -9,18 +9,18 @@ redistributable artifacts are committed to `sources/`; paywalled, reference-only
 copyright-restricted sources are recorded as URLs only. Tooling was installed to render derived
 specimens: **KiCad 9.0.9** for the fabrication outputs (Gerbers, drill, IPC-D-356, placement, BOM,
 fab/assembly PDFs) and a `.brd` boardview (via `pcbnew`), and **cadquery/OpenCASCADE** for the
-isometric (E04) and section (D03) views from the Framework CAD `.stp`. See `sources/MANIFEST.json`.
+isometric (E04), section (D03), and exploded (E05) views from the Framework CAD `.stp`. See
+`sources/MANIFEST.json`.
 
 | Status | Count | Meaning |
 |--------|-------|---------|
-| committed (file) | 28 | The example artifact is a redistributable file committed under `sources/`. |
-| url-only | 10 | Paywalled / reference-only / copyright-restricted — recorded as a link, nothing downloaded. |
+| committed (file) | 29 | The example artifact is a redistributable file committed under `sources/`. |
+| url-only | 9 | Paywalled / reference-only / copyright-restricted — recorded as a link, nothing downloaded. |
 
-**28 / 38** drawing types have a committed redistributable specimen (106 files, ~24 MB). The 10
-url-only IDs are: A07, A11, B04, B05, B06, B07, B09, B10, E02, E05. Only two open-licensed types
-remain url-only: B06 (FCC public domain, no single exhibit pinned) and E05 (exploded view — the
-fused Framework CAD `.stp` has no per-part explode metadata, so a faithful exploded render is not
-feasible automatically).
+**29 / 38** drawing types have a committed redistributable specimen (107 files, ~24 MB). The 9
+url-only IDs are: A07, A11, B04, B05, B06, B07, B09, B10, E02 — all paywalled, reference-only, or
+copyright-restricted. The only open-licensed type left url-only is B06 (FCC public domain, no single
+exhibit pinned). Every redistributable/derivable drawing type now has a committed specimen.
 
 ## Open (CC / CERN OHL / GPL / BSD / public domain / FCC)  (28)
 

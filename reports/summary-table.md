@@ -39,10 +39,10 @@
 | E02 | Timing Diagram | E | HIGH | 1 | Public | url-only | no | no |
 | E03 | State Machine Diagram | E | MEDIUM | 2 | BSD 3-Clause | committed | no | no |
 | E04 | Isometric Drawing | E | MEDIUM | 2 | Creative Commons Attribution 4.0 | committed | no | no |
-| E05 | Exploded Assembly Diagram | E | HIGH | 2 | Creative Commons Attribution 4.0 | url-only | no | no |
+| E05 | Exploded Assembly Diagram | E | HIGH | 2 | Creative Commons Attribution 4.0 | committed | no | no |
 | E06 | Chassis / Enclosure Drawing | E | HIGH | 2 | Creative Commons Attribution 4.0 | committed | no | no |
 | E07 | PCB Fabrication Drawing (Fab) | E | HIGH | 2 | Creative Commons Attribution 4.0 | committed | no | no |
 
 **Totals:** 38 drawing types — 17 high, 17 medium, 4 low confidence. 7 flagged for human review, 4 paywalled.
 
-**Retrieval (links-only policy):** 28/38 have a committed redistributable specimen (28 direct files, 0 generated from a committed KiCad project); 10/38 are url-only (paywalled / reference-only / copyright-restricted). 106 files / 23372 KiB committed under `sources/`. See `sources/MANIFEST.json`.
+**Retrieval (links-only policy):** 29/38 have a committed redistributable specimen (29 direct files, 0 generated from a committed KiCad project); 9/38 are url-only (paywalled / reference-only / copyright-restricted). 107 files / 23695 KiB committed under `sources/`. See `sources/MANIFEST.json`.

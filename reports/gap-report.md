@@ -53,23 +53,23 @@ The example files were retrieved and committed under `sources/` (manifest: `sour
 Under the links-only policy only redistributable artifacts were committed. Two toolchains were
 installed to render derived specimens: **KiCad 9.0.9** (kicad-9.0-releases PPA) for the fabrication
 outputs and a `.brd` boardview (via `pcbnew`), and **cadquery/OpenCASCADE** for the isometric and
-section views from the Framework CAD `.stp`.
+section, and exploded views from the Framework CAD `.stp`.
 
-- **28 committed as files** — A01, A02, A03, A04, A05, A06, A08, A09, A10, A12, A13, A14, B01, B02,
-  B03, B08, C01, C02, C03, C04, D01, D02, D03, E01, E03, E04, E06, E07. Includes the Framework
+- **29 committed as files** — A01, A02, A03, A04, A05, A06, A08, A09, A10, A12, A13, A14, B01, B02,
+  B03, B08, C01, C02, C03, C04, D01, D02, D03, E01, E03, E04, E05, E06, E07. Includes the Framework
   CC BY 4.0 schematics/2D/connectors/README/OpenSCAD, the KiCad GPL v3 demo project, Chromium EC
   BSD-3 docs, NASA public-domain PDF, MNT Reform CERN-OHL-S schematic, the KiCad-rendered fab set
   under `kicad-demos/video/_generated/` (Gerbers incl. paste/silkscreen, Excellon drill + map PDF,
   IPC-D-356, placement CSV, fab/assembly PDFs, BOM CSV), the **OpenBoardView BRD2 boardview**
-  (C01, `video.brd`), and the cadquery-rendered **isometric** (E04) and **section** (D03) SVGs under
-  `framework-laptop-13/_generated/`. Each rendered/derived record keeps its `generation_command`.
-- **10 url-only** — A07, A11 (paywalled IPC-2141 / ASME Y14.5; reference specimens), B04 (JEDEC,
+  (C01, `video.brd`), and the cadquery/OpenCASCADE-rendered **isometric** (E04, SVG), **section**
+  (D03, SVG) and **exploded** (E05, shaded PNG) views under `framework-laptop-13/_generated/`. Each
+  rendered/derived record keeps its `generation_command`.
+- **9 url-only** — A07, A11 (paywalled IPC-2141 / ASME Y14.5; reference specimens), B04 (JEDEC,
   registration), B05/B07 (Intel EDC, account-gated reference-only), B06 (FCC OET search entry; no
   single exhibit pinned), B09 (TI app note, copyright-restricted), B10 (IEEE 315A reference),
-  E02 (SMBus 3.2 / JEDEC, copyright-restricted), E05 (exploded view — see below). Retrieve any of
-  these for personal use with `sources/fetch_sources.sh` (paywalled/account-gated items must be
-  obtained through their portals).
+  E02 (SMBus 3.2 / JEDEC, copyright-restricted). All are paywalled, account-gated, or
+  copyright-restricted; retrieve for personal use with `sources/fetch_sources.sh`.
 
-**Remaining follow-up:** E05 (exploded assembly) is the only mechanical view not committed — the
-Framework CAD `.stp` is a fused multi-solid with no per-part explode vectors, so a faithful exploded
-render needs manual assembly work in a CAD tool (fetch the `.stp` via `sources/fetch_sources.sh`).
+**No open follow-up:** every redistributable or derivable drawing type now has a committed specimen.
+The 9 url-only types are non-redistributable by license (standards bodies / vendor-restricted) and
+cannot be committed; they remain recorded as URLs with their license and access notes.
