@@ -40,11 +40,21 @@ of 43 pages — made before a rasterizer was available — is withdrawn.)
 Eight burn-critical pages were inspected at full 300 DPI (5, 6, 7, 18, 19, 20, 21, 22); the
 remaining pages were verified via a contact sheet. Full inventory: `../re-h7604/input-set.json`.
 
-Two findings corrected the source report's optimism:
+Findings that corrected the source report's optimism (and one second-pass self-correction):
 1. **page-20/21** are *material/mylar & bracket* placement pages, **not** a VRM component-location
-   map — the board is mylar-covered, so only CPU/GPU die are locatable (AG-08 downgraded).
-2. **No legible mainboard silkscreen** exists anywhere in the set → full silkscreen/legend (C02)
-   moved to the Gap Registry as ABSENT.
+   map — the CPU/GPU die zone is mylar-covered, so only the die positions are locatable (AG-08
+   downgraded).
+2. **Silkscreen is PARTIAL, not absent** — at 600 DPI the peripheral slot/connector silkscreen is
+   legible (WLAN, SSD0, SSD1; IO board `N7604JV_IAR_BD R2.0`) → AG-09 (a first-pass "ABSENT" call
+   was reversed after re-rendering at higher DPI). Full component-level legend still needs the
+   acquired boardview.
+3. **Torque schedule is comprehensive** — explicit torque tables appear on every FRU disassembly
+   page (page-10/14/22…), so AG-12 is FULLY producible, not partial.
+
+> **Unverified external assumptions** (flagged in `agents.json` → `target.unverified_external_assumptions`):
+> the mainboard P/N `60NB10B0-MB3110`, boardview `Rev 2.1`, and liquid-metal (Conductonaut) TIM are
+> **not** confirmed by any inspected page; the only board rev confirmed from pixels is the IO board
+> `R2.0`. Operator to verify before acquisition/rework.
 
 ---
 
@@ -60,7 +70,8 @@ Two findings corrected the source report's optimism:
 | AG-06 Chassis / Enclosure Outline | E06 | PARTIAL | b | 5, 10 | 2 |
 | AG-07 Coarse Block / Adjacency | B01 | PARTIAL | b | 19 | 2 |
 | AG-08 Major-IC Location Map | A10 (partial) | PARTIAL | b | 20, 21 | 2 |
-| AG-12 Fastener / Torque Schedule | A05 | PARTIAL | b | **22**, 18, 10, 14, 25 | 3 |
+| AG-09 Silkscreen / Legend (slot/connector) | C02 | PARTIAL | b | 20, 22 | 3 |
+| AG-12 Fastener / Torque Schedule | A05 | **FULLY** | b | 10, 14, **22**, 18, 25 | 4 |
 | AG-10 Boardview Acquisition | C01, A09, C03 | ACQUIRE | c | — | 5 |
 | AG-11 Schematic Acquisition | A01 | ACQUIRE | c/d | — | 5 |
 | AG-13 Burn-Triage Workflow | D01 | PARTIAL | d | 4, 11 | 4 |
@@ -125,9 +136,11 @@ Per-agent record: `agent_id`, `name`, `produces` [A01–E07], `drawing_type`, `f
 3. **Boardview legality** — acquire `.FZ/.brd` through legitimate channels; no paywall bypass, no
    DMCA OEM-mirror redistribution; `.FZ` decryption key sourced separately by the operator; never
    commit the `.FZ`/key to this repo.
-4. **Liquid-metal hazard** — H7604JV uses conductive liquid-metal TIM (Conductonaut) on the
-   CPU/GPU die (page-20/21 kapton/mylar zones); clean before powering, avoid bridging adjacent
-   components during rework; disconnect the battery (page-11) before probing.
+4. **Liquid-metal hazard (precautionary — not confirmed in the manual)** — high-TDP ProArt SKUs of
+   this class are reported to use conductive liquid-metal TIM on the CPU/GPU die; the manual shows
+   kapton/mylar zones (page-20/21) but does not name the compound. Treat the die TIM as potentially
+   conductive: verify before rework, clean before powering, avoid bridging. Disconnect the battery
+   (page-11) before probing.
 5. **Provenance** — the ASUS repair manual is recorded **URL-only** (category a), consistent with
    RSPEC-001 §12; page numbers are cited, the PDF is not redistributed here.
 
@@ -136,7 +149,7 @@ Per-agent record: `agent_id`, `name`, `produces` [A01–E07], `drawing_type`, `f
 ## 10. Gap Registry (not producible — next-best acquisition)
 | Codes | Drawing | Status | Avail. | Next best |
 |-------|---------|--------|--------|-----------|
-| C02 | Silkscreen / legend (full) | ABSENT | d | derive from acquired boardview |
+| C02 | Silkscreen / legend (full component-level) | PARTIAL via AG-09 | b/d | slot/connector silkscreen self-captured (AG-09); full legend → acquired boardview |
 | A03, A08, A06, A07, A04, E07 | PCB layout / Gerber / drill / stackup / fab | NOT-PRODUCIBLE | d | partial from boardview, else not derivable |
 | A11, D03 | GD&T / cross-section | NOT-PRODUCIBLE | d | CT / X-ray or vendor CAD |
 | B02, A02 | Power tree / logic | NOT-PRODUCIBLE | c | derive from acquired schematic |

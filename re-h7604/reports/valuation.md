@@ -28,7 +28,8 @@ input set cannot support a drawing, that is stated as **ABSENT** rather than sco
 | AG-05 | Orthographic / multi-view (**A12**) | **PARTIAL** (strong) | **page-05** | 2 | 3 | page-05 gives all 5 faces with port/feature callouts — a genuine multi-view. **No dimensions/scale** → silhouette/locational only, not a dimensioned drawing. |
 | AG-06 | Chassis / enclosure outline (**E06**) | **PARTIAL** | page-05, page-10 | 3 | 2 | outer geometry + bottom-case fastener pattern recoverable as outline; uncalibrated. |
 | AG-07 | Coarse block / adjacency diagram (**B01**) | **PARTIAL** | page-19 | 4 | 2 | connector adjacency on page-19 supports a coarse block diagram; no internal nets → topology only. |
-| AG-12 | Fastener / torque schedule (assembly aid) | **PARTIAL** | **page-22**, page-18, page-10, page-14, page-25 | 3 | 3 | page-22 carries an explicit torque table (M2×3L, 2.0±0.2 kgf-cm, QTY 2); several pages show numbered screw maps → a partial torque schedule is producible. |
+| AG-12 | Fastener / torque schedule (assembly aid) | **FULLY** | page-10, page-14, **page-22**, page-18, page-25 | 3 | 4 | explicit torque tables on **every** FRU disassembly page (confirmed page-10 bottom case, page-14 battery, page-22 IO board — all 2.0±0.2 kgf-cm with per-screw M-specs) → a near-complete torque schedule is producible. |
+| AG-09 | Silkscreen / legend (slot/connector level) (**C02**) | **PARTIAL** | page-20, page-22 | 3 | 3 | at 600 DPI, peripheral slot/connector silkscreen is legible (WLAN, SSD0, SSD1 on page-20; IO board name+rev `N7604JV_IAR_BD R2.0` + designators on page-22). CPU/GPU zone mylar-covered; fine-pitch R/C/U designators not legible. |
 
 ## B. Confirmed valuation — drawings requiring ACQUISITION (electrical, burn-critical)
 
@@ -42,28 +43,42 @@ input set cannot support a drawing, that is stated as **ABSENT** rather than sco
 
 | Drawing (taxonomy) | Status | Availability | Next best |
 |--------------------|--------|--------------|-----------|
-| **C02** Silkscreen / legend (full) | **ABSENT** | d | derive from acquired boardview; mainboard silkscreen is mylar-covered in page-20/21 |
+| **C02** Silkscreen / legend (full component-level) | **PARTIAL** (slot/connector only — see AG-09) | b/d | slot/connector silkscreen self-captured (AG-09); full component-level legend → derive from acquired boardview |
 | A03 PCB layout · A08 Gerber · A06 drill · A07 stackup · A04/E07 fab | NOT-PRODUCIBLE | d | acquire boardview (partial), else not derivable |
 | A11 GD&T · D03 cross-section | NOT-PRODUCIBLE | d | requires CT/X-ray or vendor CAD |
 | B02 power tree · A02 logic | NOT-PRODUCIBLE | c/d | derive from acquired schematic |
 
 ## Corrections forced by the pixel-level review
 
+*(Items 5–7 were added in a second-pass self-audit that inspected pages at 600 DPI and opened
+disassembly pages not read in the first pass — see "Audit gaps closed" below.)*
+
 1. **AG-08 (VRM/CPU component-location map): downgraded.** The plan and source report treated
    page-20/21 as a top-side component-location map. The rendered pixels show these are
    **material/mylar & bracket placement** pages — the board is covered in mylar/kapton, so only the
-   CPU and GPU die positions are locatable. No VRM phases or reference designators are legible.
+   CPU and GPU die positions are locatable. No VRM phases or fine-pitch designators are legible.
    Feasibility PARTIAL (major ICs only); value lowered 4→2.
-2. **AG-09 / C02 (silkscreen transcription): removed from producible set.** There is no legible
-   bare-board silkscreen anywhere in the 26 pages (page-20/21 are mylar-covered; page-19 is a
-   connector-name overlay, not silkscreen). Moved to the Gap Registry as **ABSENT**. (The IO board
-   on page-22 shows partial silkscreen only.)
-3. **Page-count reconciliation:** PDF = **26 pages**, matching the report's "26-page set." The
+2. **Page-count reconciliation:** PDF = **26 pages**, matching the report's "26-page set." The
    43-page figure used in early planning was an unverified guess and is withdrawn. Report refs
    p05–p21 map 1:1 onto `page-05`…`page-21` with no offset.
-4. **AG-05 (multi-view) and AG-12 (torque schedule): confirmed stronger than the report implied.**
-   page-05 is a real 5-face multi-view; page-22 carries an explicit torque table. Both retained as
-   producible with cited evidence.
+3. **AG-05 (multi-view):** confirmed stronger than the report implied — page-05 is a real 5-face
+   orthographic multi-view with port callouts (uncalibrated). Retained as producible.
+4. **Provenance:** rendered pages are the copyrighted ASUS asset → kept local-only (git-ignored),
+   recorded URL-only, consistent with RSPEC-001 §12.
+
+### Audit gaps closed (second pass)
+
+5. **C02 silkscreen: ABSENT → PARTIAL (over-correction reversed).** A 600 DPI re-render shows
+   peripheral slot/connector silkscreen IS legible — `WLAN`, `SSD0`, `SSD1` on page-20, and the IO
+   board name+revision `N7604JV_IAR_BD R2.0` plus connector designators on page-22. The first pass
+   under-rated this by judging only the full-page 300 DPI render. New agent **AG-09** added.
+6. **AG-12 torque schedule: PARTIAL → FULLY.** The first pass cited only page-22; opening
+   page-10 (bottom case) and page-14 (battery) shows explicit torque tables on **every** FRU
+   disassembly page. A near-complete fastener/torque schedule is producible. Value 3→4.
+7. **Unverified external facts flagged.** Mainboard P/N `60NB10B0-MB3110`, boardview `Rev 2.1`, and
+   the liquid-metal (Conductonaut) TIM are **not** confirmed by any inspected page — they are
+   external assumptions now explicitly marked `unverified_external_assumptions` in `agents.json`.
+   The only board revision confirmed from pixels is the IO board `R2.0` (page-22).
 
 ---
 *EMBLEM-NLP-RSPEC-002 — valuation confirmed against extracted imagery — 2026-06-14*

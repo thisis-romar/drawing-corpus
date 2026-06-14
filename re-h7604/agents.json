@@ -8,7 +8,15 @@
     "model": "ASUS ProArt StudioBook 16 OLED H7604JI / H7604JV",
     "mainboard": "60NB10B0-MB3110",
     "boardview_revision": "H7604JV Rev 2.1",
-    "input_set": "../re-h7604/input-set.json (26 pages, rendered to pages/page-NN.png @ 300 DPI)"
+    "input_set": "../re-h7604/input-set.json (26 pages, rendered to pages/page-NN.png @ 300 DPI)",
+    "confirmed_from_pixels": {
+      "io_board": "N7604JV_IAR_BD R2.0 (silkscreen legible on page-22 @ 600 DPI)"
+    },
+    "unverified_external_assumptions": [
+      "mainboard P/N '60NB10B0-MB3110' is NOT printed on any inspected page (mylar-covered) - external assumption; operator to confirm.",
+      "boardview_revision 'H7604JV Rev 2.1' is NOT from the manual - external assumption; the only board rev confirmed from pixels is the IO board 'R2.0'. Operator to confirm the mainboard .FZ revision before acquisition.",
+      "liquid-metal (Conductonaut) TIM is an external/general-knowledge assumption for this SKU - the manual shows kapton/mylar zones (page-20/21) but does NOT state the TIM compound. Treated as a precautionary hazard, not a confirmed fact; operator to verify before rework."
+    ]
   },
   "availability_legend": {
     "a": "free from ASUS (official repair manual)",
@@ -20,7 +28,7 @@
     "Fidelity ceiling: all photo-derived outputs are illustrative and UNCALIBRATED (no scale/GD&T); never present as dimensioned engineering drawings.",
     "No AI hallucination: never synthesize nets, component values, reference designators, or hidden/back-side traces not visible in a cited page image.",
     "Boardview legality: acquire .FZ/.brd through legitimate channels; no paywall bypass, no DMCA OEM-mirror redistribution; .FZ decryption key sourced separately by the operator.",
-    "HAZARD: H7604JV ships with liquid-metal (Conductonaut) TIM on the CPU/GPU die (page-20/21 kapton/mylar zones); electrically conductive — bridging adjacent components is a burn/short risk during rework.",
+    "HAZARD (precautionary, NOT confirmed in manual): high-TDP ProArt SKUs of this class are reported to use conductive liquid-metal TIM on the CPU/GPU die (the manual shows kapton/mylar zones page-20/21 but does not name the compound). Treat the die TIM as potentially conductive — verify before rework; if liquid metal, clean before powering and avoid bridging.",
     "Provenance: the ASUS repair manual is recorded URL-only (category a); page numbers are cited, the PDF is not redistributed in this repo."
   ],
   "agents": [
@@ -244,6 +252,35 @@
       "source_report": "Methods&Tools"
     },
     {
+      "agent_id": "AG-09",
+      "name": "Silkscreen / Legend Transcription Producer",
+      "produces": ["C02"],
+      "drawing_type": "Silkscreen / Legend Drawing (slot/connector level)",
+      "feasibility": "PARTIAL",
+      "availability_category": "b",
+      "usability_rank": 3,
+      "value_rating": {"documentation": 3, "burn_repair": 2, "overall": 3},
+      "input_pages": ["page-20.png", "page-22.png", "page-19.png"],
+      "evidence": ["page-20.png", "page-22.png"],
+      "tools": [
+        {"name": "pypdfium2 + Pillow", "license": "BSD/Apache + MIT-CMU", "cost": "free", "role": "re-render board regions at 600 DPI"},
+        {"name": "GIMP", "license": "GPL v3", "cost": "free", "role": "contrast / crop"},
+        {"name": "Tesseract OCR", "license": "Apache-2.0", "cost": "free", "role": "optional silkscreen text extraction"},
+        {"name": "Inkscape", "license": "GPL v3", "cost": "free", "role": "transcribe to vector legend"}
+      ],
+      "steps": [
+        "Re-render the mainboard/IO-board regions at 600 DPI (page-20/22).",
+        "Transcribe legible slot/connector silkscreen: e.g. WLAN, SSD0, SSD1 (page-20), and IO board name/rev 'N7604JV_IAR_BD R2.0' + connector designators (page-22).",
+        "Mark the CPU/GPU area as NOT transcribable (mylar/kapton covered)."
+      ],
+      "outputs": ["CSV", "SVG"],
+      "effort": "medium",
+      "fidelity_ceiling": "Slot/connector-level silkscreen only; fine-pitch component reference designators (R/C/U) are NOT legible; CPU/GPU zone is mylar-covered. Confirmed at 600 DPI.",
+      "guardrails": ["Transcribe only glyphs actually legible in a cited render; never infer designators."],
+      "next_best": "Acquire boardview (AG-10) for the full silkscreen/legend.",
+      "source_report": "Methods&Tools"
+    },
+    {
       "agent_id": "AG-10",
       "name": "Boardview Acquisition Agent",
       "produces": ["C01", "A09", "C03"],
@@ -303,12 +340,12 @@
       "name": "Fastener / Torque Schedule Producer",
       "produces": ["A05"],
       "drawing_type": "Fastener & Torque Schedule (assembly aid)",
-      "feasibility": "PARTIAL",
+      "feasibility": "FULLY",
       "availability_category": "b",
       "usability_rank": 3,
-      "value_rating": {"documentation": 3, "burn_repair": 2, "overall": 3},
-      "input_pages": ["page-22.png", "page-18.png", "page-10.png", "page-14.png", "page-25.png"],
-      "evidence": ["page-22.png"],
+      "value_rating": {"documentation": 4, "burn_repair": 2, "overall": 4},
+      "input_pages": ["page-10.png", "page-14.png", "page-22.png", "page-18.png", "page-25.png"],
+      "evidence": ["page-10.png", "page-14.png", "page-22.png"],
       "tools": [
         {"name": "LibreOffice Calc", "license": "MPL/LGPL", "cost": "free", "role": "torque table"},
         {"name": "Inkscape", "license": "GPL v3", "cost": "free", "role": "screw-location callouts"}
@@ -320,7 +357,7 @@
       ],
       "outputs": ["CSV", "PDF"],
       "effort": "low",
-      "fidelity_ceiling": "Only torque values explicitly printed in the manual; do not invent missing specs.",
+      "fidelity_ceiling": "Comprehensive: explicit torque tables appear on every FRU disassembly page (confirmed page-10 bottom case, page-14 battery, page-22 IO board; all 2.0+/-0.2 kgf-cm with per-screw M-specs). A near-complete fastener/torque schedule is producible. Transcribe only printed values.",
       "guardrails": ["Mark fasteners with no printed torque as 'spec not in manual'."],
       "next_best": null,
       "source_report": "Methods&Tools"

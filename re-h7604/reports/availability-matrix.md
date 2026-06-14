@@ -15,8 +15,8 @@ photos · **c** paid third-party · **d** not available / must be derived.
 | Exploded E05/E04 | AG-04 | **b** | 3 | self-captured from disassembly steps |
 | Torque schedule (A05) | AG-12 | **b** | 3 | self-captured from page-22 torque table |
 | Major-IC map (A10 partial) | AG-08 | **b** | 4 | self-captured from page-20/21 (CPU/GPU only) |
+| Silkscreen C02 (slot/connector level) | AG-09 | **b** | 3 | self-captured @600 DPI (WLAN, SSD0/1, IO `R2.0`); full component legend → boardview |
 | Repair manual (whole) | — | **a** | — | free from ASUS (URL-only; cited, not redistributed) |
-| Silkscreen C02 (full) | gap | **d** | — | derive from acquired boardview |
 | PCB layout/Gerber/drill/stackup/fab; GD&T; cross-section; power tree; logic | gap | **d** (B02/A02: c) | — | not available; derive from schematic/boardview or CT |
 
 **Headline:** the two electrical drawings that actually drive burn repair — **boardview (C01)** and
