@@ -10,12 +10,12 @@
     "boardview_revision": "H7604JV Rev 2.1",
     "input_set": "../re-h7604/input-set.json (26 pages, rendered to pages/page-NN.png @ 300 DPI)",
     "confirmed_from_pixels": {
-      "io_board": "N7604JV_IAR_BD R2.0 (silkscreen legible on page-22 @ 600 DPI)"
+      "io_board": "N7604JV_IAR_BD R2.0 (silkscreen legible on page-22 @ 600 DPI)",
+      "die_tim": "Conductonaut 1g liquid-metal TIM (named in the page-09 required-materials list)"
     },
     "unverified_external_assumptions": [
-      "mainboard P/N '60NB10B0-MB3110' is NOT printed on any inspected page (mylar-covered) - external assumption; operator to confirm.",
-      "boardview_revision 'H7604JV Rev 2.1' is NOT from the manual - external assumption; the only board rev confirmed from pixels is the IO board 'R2.0'. Operator to confirm the mainboard .FZ revision before acquisition.",
-      "liquid-metal (Conductonaut) TIM is an external/general-knowledge assumption for this SKU - the manual shows kapton/mylar zones (page-20/21) but does NOT state the TIM compound. Treated as a precautionary hazard, not a confirmed fact; operator to verify before rework."
+      "mainboard P/N '60NB10B0-MB3110' is NOT printed on any inspected page (page-08 directs to the ASUS 'Orderbook' for the SKU-specific part number) - external assumption; operator to confirm.",
+      "boardview_revision 'H7604JV Rev 2.1' is NOT from the manual - external assumption; the only board rev confirmed from pixels is the IO board 'R2.0'. Operator to confirm the mainboard .FZ revision before acquisition."
     ]
   },
   "availability_legend": {
@@ -28,7 +28,7 @@
     "Fidelity ceiling: all photo-derived outputs are illustrative and UNCALIBRATED (no scale/GD&T); never present as dimensioned engineering drawings.",
     "No AI hallucination: never synthesize nets, component values, reference designators, or hidden/back-side traces not visible in a cited page image.",
     "Boardview legality: acquire .FZ/.brd through legitimate channels; no paywall bypass, no DMCA OEM-mirror redistribution; .FZ decryption key sourced separately by the operator.",
-    "HAZARD (precautionary, NOT confirmed in manual): high-TDP ProArt SKUs of this class are reported to use conductive liquid-metal TIM on the CPU/GPU die (the manual shows kapton/mylar zones page-20/21 but does not name the compound). Treat the die TIM as potentially conductive — verify before rework; if liquid metal, clean before powering and avoid bridging.",
+    "HAZARD (confirmed in manual, page-09): the required-materials list specifies 'Conductonaut 1g (Liquid Metal)' as the CPU/GPU die TIM (alongside GA500 grease, FCR-AS, thermal pad). Liquid metal is electrically conductive — clean residue before powering and avoid bridging adjacent components during rework. Disconnect the battery (page-11) before probing.",
     "Provenance: the ASUS repair manual is recorded URL-only (category a); page numbers are cited, the PDF is not redistributed in this repo."
   ],
   "agents": [
@@ -41,8 +41,8 @@
       "availability_category": "b",
       "usability_rank": 1,
       "value_rating": {"documentation": 5, "burn_repair": 4, "overall": 5},
-      "input_pages": ["page-19.png"],
-      "evidence": ["page-19.png"],
+      "input_pages": ["page-19.png", "page-17.png", "page-15.png", "page-23.png"],
+      "evidence": ["page-19.png", "page-17.png"],
       "tools": [
         {"name": "GIMP", "license": "GPL v3", "cost": "free", "role": "deskew / clean board photo"},
         {"name": "Inkscape", "license": "GPL v3", "cost": "free", "role": "trace board outline + label connectors as vector"},
@@ -52,6 +52,7 @@
         "Import page-19 board photo, deskew and crop in GIMP.",
         "Vector-trace the mainboard outline in Inkscape.",
         "Place each labelled connector (FAN, FFC_USB, LAN_IO_FPC, EDP, SPEAKER, CMOS, BL FPC, LED FFC, K/B FPC, BATTERY, TP FFC) at its photographed location.",
+        "Cross-check connector identities against page-17 (each connector shown being disconnected, labelled) and add antenna routing (MAIN/AUX, page-15) and speaker/wifi cable tidy paths (page-23).",
         "Emit an interconnect table (connector -> destination FRU) in draw.io."
       ],
       "outputs": ["SVG", "PDF", "PNG"],
@@ -344,8 +345,8 @@
       "availability_category": "b",
       "usability_rank": 3,
       "value_rating": {"documentation": 4, "burn_repair": 2, "overall": 4},
-      "input_pages": ["page-10.png", "page-14.png", "page-22.png", "page-18.png", "page-25.png"],
-      "evidence": ["page-10.png", "page-14.png", "page-22.png"],
+      "input_pages": ["page-10.png", "page-12.png", "page-14.png", "page-15.png", "page-16.png", "page-17.png", "page-22.png", "page-24.png", "page-25.png", "page-26.png"],
+      "evidence": ["page-10.png", "page-14.png", "page-22.png", "page-26.png"],
       "tools": [
         {"name": "LibreOffice Calc", "license": "MPL/LGPL", "cost": "free", "role": "torque table"},
         {"name": "Inkscape", "license": "GPL v3", "cost": "free", "role": "screw-location callouts"}
@@ -357,7 +358,7 @@
       ],
       "outputs": ["CSV", "PDF"],
       "effort": "low",
-      "fidelity_ceiling": "Comprehensive: explicit torque tables appear on every FRU disassembly page (confirmed page-10 bottom case, page-14 battery, page-22 IO board; all 2.0+/-0.2 kgf-cm with per-screw M-specs). A near-complete fastener/torque schedule is producible. Transcribe only printed values.",
+      "fidelity_ceiling": "Comprehensive: explicit torque tables on 10 FRU disassembly pages (10,12,14,15,16,17,22,24,25,26) with real spec variation - M1.6 @ 1.0+/-0.2 (page-26), M2 @ 2.0+/-0.2, M2.5 @ 3.0+/-0.2 (page-25) kgf-cm. A near-complete fastener/torque schedule is producible. Transcribe only printed values.",
       "guardrails": ["Mark fasteners with no printed torque as 'spec not in manual'."],
       "next_best": null,
       "source_report": "Methods&Tools"

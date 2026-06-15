@@ -75,10 +75,23 @@ disassembly pages not read in the first pass — see "Audit gaps closed" below.)
 6. **AG-12 torque schedule: PARTIAL → FULLY.** The first pass cited only page-22; opening
    page-10 (bottom case) and page-14 (battery) shows explicit torque tables on **every** FRU
    disassembly page. A near-complete fastener/torque schedule is producible. Value 3→4.
-7. **Unverified external facts flagged.** Mainboard P/N `60NB10B0-MB3110`, boardview `Rev 2.1`, and
-   the liquid-metal (Conductonaut) TIM are **not** confirmed by any inspected page — they are
-   external assumptions now explicitly marked `unverified_external_assumptions` in `agents.json`.
-   The only board revision confirmed from pixels is the IO board `R2.0` (page-22).
+7. **Unverified external facts flagged.** Mainboard P/N `60NB10B0-MB3110` and boardview `Rev 2.1`
+   are **not** confirmed by any inspected page (page-08 directs to the ASUS "Orderbook" for the
+   SKU part number) — marked `unverified_external_assumptions` in `agents.json`. The only board
+   revision confirmed from pixels is the IO board `R2.0` (page-22).
+
+### Full-sweep findings (all 26 pages read at full resolution)
+
+8. **Liquid-metal hazard is CONFIRMED, not assumed (reverses correction #7's first draft).** The
+   page-09 required-materials list explicitly names **"Conductonaut 1g (Liquid Metal)"** as the
+   die TIM (with GA500 grease, FCR-AS, thermal pad). The hazard guardrail is manual-stated.
+9. **AG-01 gains a second connector reference.** page-17 ("MB with THERMAL MODULE and FAN") shows
+   every MB connector being disconnected with a close-up label (LAN_IO_FPC, EDP, CMOS, FAN, TP,
+   LED, BL, SPEAKER) — it pairs with the page-19 placement map. Antenna routing (page-15
+   MAIN/AUX) and speaker/wifi cable tidy paths (page-23) further feed the harness drawing.
+10. **AG-12 torque schedule is broader than the second pass found.** Explicit torque tables appear
+    on **10** disassembly pages (10,12,14,15,16,17,22,24,25,26) with real spec variation —
+    M1.6 @ 1.0, M2 @ 2.0, M2.5 @ 3.0 kgf-cm. Confirms FULLY producible with strong coverage.
 
 ---
 *EMBLEM-NLP-RSPEC-002 — valuation confirmed against extracted imagery — 2026-06-14*
