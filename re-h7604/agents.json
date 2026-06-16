@@ -1,0 +1,403 @@
+{
+  "spec": "EMBLEM-NLP-RSPEC-002",
+  "spec_version": "1.0.0",
+  "spec_title": "Reverse-Engineering Drawing-Production & Acquisition Agent Roster (ASUS ProArt H7604JV)",
+  "generated": "2026-06-14",
+  "generator": "Claude Code (EMBLEM-NLP-RSPEC-002 authoring)",
+  "target": {
+    "model": "ASUS ProArt StudioBook 16 OLED H7604JI / H7604JV",
+    "mainboard": "60NB10B0-MB3110",
+    "boardview_revision": "H7604JV Rev 2.1",
+    "input_set": "../re-h7604/input-set.json (26 pages, rendered to pages/page-NN.png @ 300 DPI)",
+    "confirmed_from_pixels": {
+      "io_board": "N7604JV_IAR_BD R2.0 (silkscreen legible on page-22 @ 600 DPI)",
+      "die_tim": "Conductonaut 1g liquid-metal TIM (named in the page-09 required-materials list)"
+    },
+    "unverified_external_assumptions": [
+      "mainboard P/N '60NB10B0-MB3110' is NOT printed on any inspected page (page-08 directs to the ASUS 'Orderbook' for the SKU-specific part number) - external assumption; operator to confirm.",
+      "boardview_revision 'H7604JV Rev 2.1' is NOT from the manual - external assumption; the only board rev confirmed from pixels is the IO board 'R2.0'. Operator to confirm the mainboard .FZ revision before acquisition."
+    ]
+  },
+  "availability_legend": {
+    "a": "free from ASUS (official repair manual)",
+    "b": "free, self-captured from photos",
+    "c": "paid third-party (boardview/schematic databases)",
+    "d": "not available off-the-shelf / must be derived"
+  },
+  "guardrails_global": [
+    "Fidelity ceiling: all photo-derived outputs are illustrative and UNCALIBRATED (no scale/GD&T); never present as dimensioned engineering drawings.",
+    "No AI hallucination: never synthesize nets, component values, reference designators, or hidden/back-side traces not visible in a cited page image.",
+    "Boardview legality: acquire .FZ/.brd through legitimate channels; no paywall bypass, no DMCA OEM-mirror redistribution; .FZ decryption key sourced separately by the operator.",
+    "HAZARD (confirmed in manual, page-09): the required-materials list specifies 'Conductonaut 1g (Liquid Metal)' as the CPU/GPU die TIM (alongside GA500 grease, FCR-AS, thermal pad). Liquid metal is electrically conductive — clean residue before powering and avoid bridging adjacent components during rework. Disconnect the battery (page-11) before probing.",
+    "Provenance: the ASUS repair manual is recorded URL-only (category a); page numbers are cited, the PDF is not redistributed in this repo."
+  ],
+  "agents": [
+    {
+      "agent_id": "AG-01",
+      "name": "Connector / Interconnect Map Producer",
+      "produces": ["C04", "A14"],
+      "drawing_type": "Interconnect / Connection Diagram + Cable/Harness Drawing",
+      "feasibility": "FULLY",
+      "availability_category": "b",
+      "usability_rank": 1,
+      "value_rating": {"documentation": 5, "burn_repair": 4, "overall": 5},
+      "input_pages": ["page-19.png", "page-17.png", "page-15.png", "page-23.png"],
+      "evidence": ["page-19.png", "page-17.png"],
+      "tools": [
+        {"name": "GIMP", "license": "GPL v3", "cost": "free", "role": "deskew / clean board photo"},
+        {"name": "Inkscape", "license": "GPL v3", "cost": "free", "role": "trace board outline + label connectors as vector"},
+        {"name": "draw.io (diagrams.net)", "license": "Apache-2.0", "cost": "free", "role": "connection table / interconnect diagram"}
+      ],
+      "steps": [
+        "Import page-19 board photo, deskew and crop in GIMP.",
+        "Vector-trace the mainboard outline in Inkscape.",
+        "Place each labelled connector (FAN, FFC_USB, LAN_IO_FPC, EDP, SPEAKER, CMOS, BL FPC, LED FFC, K/B FPC, BATTERY, TP FFC) at its photographed location.",
+        "Cross-check connector identities against page-17 (each connector shown being disconnected, labelled) and add antenna routing (MAIN/AUX, page-15) and speaker/wifi cable tidy paths (page-23).",
+        "Emit an interconnect table (connector -> destination FRU) in draw.io."
+      ],
+      "outputs": ["SVG", "PDF", "PNG"],
+      "effort": "low",
+      "fidelity_ceiling": "Locational/illustrative; connector positions are relative, not dimensioned.",
+      "guardrails": ["Label only connectors visible on page-19; do not infer pin-level nets."],
+      "next_best": null,
+      "source_report": "Methods&Tools"
+    },
+    {
+      "agent_id": "AG-02",
+      "name": "Component-Placement / Assembly Drawing Producer",
+      "produces": ["A10", "A05"],
+      "drawing_type": "Component Placement Diagram + Assembly Drawing (PCBA)",
+      "feasibility": "PARTIAL",
+      "availability_category": "b",
+      "usability_rank": 2,
+      "value_rating": {"documentation": 4, "burn_repair": 3, "overall": 4},
+      "input_pages": ["page-06.png", "page-07.png", "page-20.png"],
+      "evidence": ["page-06.png", "page-07.png", "page-20.png"],
+      "tools": [
+        {"name": "GIMP", "license": "GPL v3", "cost": "free", "role": "FRU photo cleanup"},
+        {"name": "Inkscape", "license": "GPL v3", "cost": "free", "role": "placement callouts"},
+        {"name": "LibreCAD / QCAD", "license": "GPL v2 / GPL v3", "cost": "free", "role": "2D placement layout"}
+      ],
+      "steps": [
+        "Catalog the named FRUs from page-06 (top) and page-07 (bottom).",
+        "Overlay placement callouts on the board top/bottom photos.",
+        "Add variant material zones from page-20 (JI vs JV GPU mylar)."
+      ],
+      "outputs": ["SVG", "PDF"],
+      "effort": "medium",
+      "fidelity_ceiling": "Board-level FRU placement only; not net-level PCBA assembly.",
+      "guardrails": ["Distinguish H7604JI vs H7604JV explicitly (GPU mylar differs, page-20)."],
+      "next_best": "Acquire boardview (AG-10) for net-level placement.",
+      "source_report": "Methods&Tools"
+    },
+    {
+      "agent_id": "AG-03",
+      "name": "Thermal / Airflow Layout Producer",
+      "produces": ["B05", "B07"],
+      "drawing_type": "Thermal Management + Thermal/Airflow Diagram",
+      "feasibility": "PARTIAL",
+      "availability_category": "b",
+      "usability_rank": 2,
+      "value_rating": {"documentation": 3, "burn_repair": 3, "overall": 3},
+      "input_pages": ["page-17.png", "page-18.png"],
+      "evidence": ["page-18.png"],
+      "tools": [
+        {"name": "Inkscape", "license": "GPL v3", "cost": "free", "role": "trace heatpipe/fan geometry"},
+        {"name": "draw.io", "license": "Apache-2.0", "cost": "free", "role": "airflow arrows / schematic"}
+      ],
+      "steps": [
+        "Trace dual-fan + heatpipe layout from page-18.",
+        "Annotate intake/exhaust and the numbered screw sequence (1-7).",
+        "Add airflow direction arrows (inferred)."
+      ],
+      "outputs": ["SVG", "PDF"],
+      "effort": "low",
+      "fidelity_ceiling": "Geometry illustrative; airflow inferred, not CFD-validated.",
+      "guardrails": ["Mark airflow arrows as inferred."],
+      "next_best": null,
+      "source_report": "Methods&Tools"
+    },
+    {
+      "agent_id": "AG-04",
+      "name": "Exploded / Isometric Assembly View Producer",
+      "produces": ["E05", "E04"],
+      "drawing_type": "Exploded Assembly + Isometric Drawing",
+      "feasibility": "PARTIAL",
+      "availability_category": "b",
+      "usability_rank": 3,
+      "value_rating": {"documentation": 3, "burn_repair": 2, "overall": 3},
+      "input_pages": ["page-06.png", "page-07.png", "page-08.png", "page-10.png", "page-11.png", "page-12.png", "page-13.png", "page-14.png", "page-15.png", "page-16.png", "page-17.png", "page-18.png", "page-22.png", "page-23.png", "page-24.png", "page-25.png", "page-26.png"],
+      "evidence": ["page-06.png", "page-08.png"],
+      "tools": [
+        {"name": "Inkscape", "license": "GPL v3", "cost": "free", "role": "2.5D exploded illustration (default)"},
+        {"name": "FreeCAD + TechDraw", "license": "LGPL", "cost": "free", "role": "optional true-3D exploded view"},
+        {"name": "tools/fw_explode.py", "license": "repo", "cost": "free", "role": "existing explode-render helper"}
+      ],
+      "steps": [
+        "Order FRUs by the disassembly sequence (page-08 + steps page-10..26).",
+        "Compose a 2.5D exploded illustration along the stack axis.",
+        "Annotate each FRU with its name and removal order."
+      ],
+      "outputs": ["SVG", "PDF", "PNG"],
+      "effort": "medium",
+      "fidelity_ceiling": "Illustrative explosion; no CAD geometry / true dimensions.",
+      "guardrails": ["Do not fabricate hidden internal geometry."],
+      "next_best": "iFixit-style teardown photography for missing angles.",
+      "source_report": "Methods&Tools"
+    },
+    {
+      "agent_id": "AG-05",
+      "name": "Orthographic / Multi-View Silhouette Producer",
+      "produces": ["A12"],
+      "drawing_type": "Orthographic / Multi-View Drawing",
+      "feasibility": "PARTIAL",
+      "availability_category": "b",
+      "usability_rank": 2,
+      "value_rating": {"documentation": 3, "burn_repair": 1, "overall": 3},
+      "input_pages": ["page-05.png"],
+      "evidence": ["page-05.png"],
+      "tools": [
+        {"name": "GIMP", "license": "GPL v3", "cost": "free", "role": "extract face silhouettes"},
+        {"name": "LibreCAD", "license": "GPL v2", "cost": "free", "role": "orthographic layout + port callouts"}
+      ],
+      "steps": [
+        "Extract the 5 face views from page-05 (Top/Bottom/Right/Left/Rear).",
+        "Lay out as orthographic projection with numbered port/feature callouts.",
+        "Stamp 'NOT TO SCALE'."
+      ],
+      "outputs": ["SVG", "PDF"],
+      "effort": "low",
+      "fidelity_ceiling": "Silhouette + port locations; UNCALIBRATED (page-05 carries no dimensions).",
+      "guardrails": ["Must carry a NOT-TO-SCALE stamp."],
+      "next_best": "Caliper measurement pass to calibrate.",
+      "source_report": "Methods&Tools"
+    },
+    {
+      "agent_id": "AG-06",
+      "name": "Chassis / Enclosure Outline Producer",
+      "produces": ["E06"],
+      "drawing_type": "Chassis / Enclosure Drawing",
+      "feasibility": "PARTIAL",
+      "availability_category": "b",
+      "usability_rank": 3,
+      "value_rating": {"documentation": 2, "burn_repair": 1, "overall": 2},
+      "input_pages": ["page-05.png", "page-10.png"],
+      "evidence": ["page-05.png"],
+      "tools": [
+        {"name": "Inkscape", "license": "GPL v3", "cost": "free", "role": "trace enclosure outline"},
+        {"name": "LibreCAD", "license": "GPL v2", "cost": "free", "role": "fastener-pattern layout"}
+      ],
+      "steps": [
+        "Trace outer enclosure outline from page-05 faces.",
+        "Add the bottom-case fastener pattern from page-10."
+      ],
+      "outputs": ["SVG", "PDF"],
+      "effort": "low",
+      "fidelity_ceiling": "Outline only; uncalibrated.",
+      "guardrails": ["NOT-TO-SCALE stamp."],
+      "next_best": null,
+      "source_report": "Methods&Tools"
+    },
+    {
+      "agent_id": "AG-07",
+      "name": "Coarse Block / Adjacency Diagram Producer",
+      "produces": ["B01"],
+      "drawing_type": "Block Diagram",
+      "feasibility": "PARTIAL",
+      "availability_category": "b",
+      "usability_rank": 4,
+      "value_rating": {"documentation": 2, "burn_repair": 2, "overall": 2},
+      "input_pages": ["page-19.png"],
+      "evidence": ["page-19.png"],
+      "tools": [
+        {"name": "draw.io", "license": "Apache-2.0", "cost": "free", "role": "block diagram"}
+      ],
+      "steps": [
+        "Derive coarse adjacency (which connector feeds which subsystem) from page-19.",
+        "Render as a block diagram with no internal nets."
+      ],
+      "outputs": ["SVG", "PDF"],
+      "effort": "low",
+      "fidelity_ceiling": "Topology/adjacency only; no signal-level detail.",
+      "guardrails": ["No invented internal buses."],
+      "next_best": "Acquire schematic (AG-11) for true block diagram.",
+      "source_report": "Methods&Tools"
+    },
+    {
+      "agent_id": "AG-08",
+      "name": "Major-IC Location Map Producer (burn targeting aid)",
+      "produces": ["A10"],
+      "drawing_type": "Component Placement Diagram (major ICs only)",
+      "feasibility": "PARTIAL",
+      "availability_category": "b",
+      "usability_rank": 4,
+      "value_rating": {"documentation": 2, "burn_repair": 2, "overall": 2},
+      "input_pages": ["page-20.png", "page-21.png"],
+      "evidence": ["page-20.png", "page-21.png"],
+      "tools": [
+        {"name": "GIMP", "license": "GPL v3", "cost": "free", "role": "annotate die positions"},
+        {"name": "PCB Tracer", "license": "freeware", "cost": "free", "role": "optional manual net tracing"}
+      ],
+      "steps": [
+        "Mark CPU and GPU die positions and bracket footprint from page-20/21.",
+        "Annotate the kapton/mylar (liquid-metal) hazard zone."
+      ],
+      "outputs": ["PNG", "SVG"],
+      "effort": "low",
+      "fidelity_ceiling": "MAJOR ICs ONLY. Board is mylar-covered: no VRM phases or reference designators legible. Not a full component map.",
+      "guardrails": [
+        "Do NOT label VRM phases / passives — not visible (mylar-covered).",
+        "Flag liquid-metal bridging hazard at the CPU/GPU die."
+      ],
+      "next_best": "Acquire boardview (AG-10) for the real component/VRM map.",
+      "source_report": "Methods&Tools"
+    },
+    {
+      "agent_id": "AG-09",
+      "name": "Silkscreen / Legend Transcription Producer",
+      "produces": ["C02"],
+      "drawing_type": "Silkscreen / Legend Drawing (slot/connector level)",
+      "feasibility": "PARTIAL",
+      "availability_category": "b",
+      "usability_rank": 3,
+      "value_rating": {"documentation": 3, "burn_repair": 2, "overall": 3},
+      "input_pages": ["page-20.png", "page-22.png", "page-19.png"],
+      "evidence": ["page-20.png", "page-22.png"],
+      "tools": [
+        {"name": "pypdfium2 + Pillow", "license": "BSD/Apache + MIT-CMU", "cost": "free", "role": "re-render board regions at 600 DPI"},
+        {"name": "GIMP", "license": "GPL v3", "cost": "free", "role": "contrast / crop"},
+        {"name": "Tesseract OCR", "license": "Apache-2.0", "cost": "free", "role": "optional silkscreen text extraction"},
+        {"name": "Inkscape", "license": "GPL v3", "cost": "free", "role": "transcribe to vector legend"}
+      ],
+      "steps": [
+        "Re-render the mainboard/IO-board regions at 600 DPI (page-20/22).",
+        "Transcribe legible slot/connector silkscreen: e.g. WLAN, SSD0, SSD1 (page-20), and IO board name/rev 'N7604JV_IAR_BD R2.0' + connector designators (page-22).",
+        "Mark the CPU/GPU area as NOT transcribable (mylar/kapton covered)."
+      ],
+      "outputs": ["CSV", "SVG"],
+      "effort": "medium",
+      "fidelity_ceiling": "Slot/connector-level silkscreen only; fine-pitch component reference designators (R/C/U) are NOT legible; CPU/GPU zone is mylar-covered. Confirmed at 600 DPI.",
+      "guardrails": ["Transcribe only glyphs actually legible in a cited render; never infer designators."],
+      "next_best": "Acquire boardview (AG-10) for the full silkscreen/legend.",
+      "source_report": "Methods&Tools"
+    },
+    {
+      "agent_id": "AG-10",
+      "name": "Boardview Acquisition Agent",
+      "produces": ["C01", "A09", "C03"],
+      "drawing_type": "Boardview (.FZ/.brd) with embedded netlist + test points",
+      "feasibility": "ACQUIRE",
+      "availability_category": "c",
+      "usability_rank": 1,
+      "value_rating": {"documentation": 5, "burn_repair": 5, "overall": 5},
+      "input_pages": [],
+      "evidence": [],
+      "tools": [
+        {"name": "OpenBoardView", "license": "MIT", "cost": "free", "role": "view .FZ/.brd (requires FZ key)"},
+        {"name": "FlexBV (Free)", "license": "freeware", "cost": "free/paid", "role": "boardview viewer"}
+      ],
+      "steps": [
+        "Acquire the H7604JV Rev 2.1 boardview .FZ through a legitimate channel.",
+        "Obtain the .FZ decryption key separately (operator-sourced).",
+        "Open in OpenBoardView; cross-reference connectors against AG-01 (page-19)."
+      ],
+      "outputs": ["FZ", "BRD", "annotated PNG"],
+      "effort": "low (acquisition) ",
+      "fidelity_ceiling": "Authoritative net/test-point data once acquired.",
+      "guardrails": [
+        "No paywall bypass; no DMCA OEM-mirror redistribution.",
+        "Do not commit the .FZ or its key to this repo."
+      ],
+      "next_best": "If unobtainable: manual net tracing from AG-08 map + DMM (AG-13).",
+      "source_report": "Availability"
+    },
+    {
+      "agent_id": "AG-11",
+      "name": "Schematic Acquisition Agent",
+      "produces": ["A01"],
+      "drawing_type": "Schematic Diagram",
+      "feasibility": "ACQUIRE",
+      "availability_category": "c",
+      "usability_rank": 1,
+      "value_rating": {"documentation": 5, "burn_repair": 5, "overall": 5},
+      "input_pages": [],
+      "evidence": [],
+      "tools": [
+        {"name": "PDF viewer", "license": "n/a", "cost": "free", "role": "view acquired schematic"}
+      ],
+      "steps": [
+        "Attempt acquisition of the H7604J schematic from a legitimate paid database.",
+        "If unavailable, fall back to deriving partial topology from AG-10 boardview."
+      ],
+      "outputs": ["PDF"],
+      "effort": "medium (acquisition)",
+      "fidelity_ceiling": "Authoritative if acquired; otherwise derive partial only.",
+      "guardrails": ["No scraped OEM schematic redistribution."],
+      "next_best": "Partial topology from boardview (AG-10).",
+      "source_report": "Availability"
+    },
+    {
+      "agent_id": "AG-12",
+      "name": "Fastener / Torque Schedule Producer",
+      "produces": ["A05"],
+      "drawing_type": "Fastener & Torque Schedule (assembly aid)",
+      "feasibility": "FULLY",
+      "availability_category": "b",
+      "usability_rank": 3,
+      "value_rating": {"documentation": 4, "burn_repair": 2, "overall": 4},
+      "input_pages": ["page-10.png", "page-12.png", "page-14.png", "page-15.png", "page-16.png", "page-17.png", "page-22.png", "page-24.png", "page-25.png", "page-26.png"],
+      "evidence": ["page-10.png", "page-14.png", "page-22.png", "page-26.png"],
+      "tools": [
+        {"name": "LibreOffice Calc", "license": "MPL/LGPL", "cost": "free", "role": "torque table"},
+        {"name": "Inkscape", "license": "GPL v3", "cost": "free", "role": "screw-location callouts"}
+      ],
+      "steps": [
+        "Transcribe the explicit torque table from page-22 (M2x3L, 2.0+/-0.2 kgf-cm, QTY 2).",
+        "Collect numbered screw maps from page-18/10/14/25.",
+        "Assemble a per-FRU fastener schedule."
+      ],
+      "outputs": ["CSV", "PDF"],
+      "effort": "low",
+      "fidelity_ceiling": "Comprehensive: explicit torque tables on 10 FRU disassembly pages (10,12,14,15,16,17,22,24,25,26) with real spec variation - M1.6 @ 1.0+/-0.2 (page-26), M2 @ 2.0+/-0.2, M2.5 @ 3.0+/-0.2 (page-25) kgf-cm. A near-complete fastener/torque schedule is producible. Transcribe only printed values.",
+      "guardrails": ["Mark fasteners with no printed torque as 'spec not in manual'."],
+      "next_best": null,
+      "source_report": "Methods&Tools"
+    },
+    {
+      "agent_id": "AG-13",
+      "name": "Burn-Triage Workflow Agent",
+      "produces": ["D01"],
+      "drawing_type": "Rework / Repair Workflow (diode/continuity triage)",
+      "feasibility": "PARTIAL",
+      "availability_category": "d",
+      "usability_rank": 2,
+      "value_rating": {"documentation": 2, "burn_repair": 5, "overall": 4},
+      "input_pages": ["page-04.png", "page-11.png"],
+      "evidence": ["page-04.png", "page-11.png"],
+      "tools": [
+        {"name": "DMM (diode/continuity)", "license": "hardware", "cost": "operator", "role": "rail short detection"},
+        {"name": "PCB Tracer / MNA", "license": "freeware", "cost": "free", "role": "node analysis"}
+      ],
+      "steps": [
+        "Apply pre-repair safety checklist (page-04) and battery disconnect (page-11).",
+        "Cross-reference AG-08 die map + AG-10 boardview rails.",
+        "Diode/continuity test power rails around the CPU/VRM burn site."
+      ],
+      "outputs": ["repair log", "annotated PNG"],
+      "effort": "medium",
+      "fidelity_ceiling": "Procedure, not a drawing; depends on AG-10 acquisition for net data.",
+      "guardrails": [
+        "HAZARD: liquid-metal TIM is conductive — clean before powering; avoid bridging.",
+        "Battery must be disconnected (page-11) before probing."
+      ],
+      "next_best": "X-ray/CT if visual + electrical triage is inconclusive.",
+      "source_report": "Availability"
+    }
+  ],
+  "gap_registry": [
+    {"codes": ["C02"], "name": "Silkscreen / Legend (full)", "status": "ABSENT", "availability": "d", "reason": "mainboard silkscreen mylar-covered (page-20/21); page-19 is connector overlay not silkscreen", "next_best": "derive from acquired boardview (AG-10)"},
+    {"codes": ["A03", "A08", "A06", "A07", "A04", "E07"], "name": "PCB layout / Gerber / drill / stackup / fab", "status": "NOT-PRODUCIBLE", "availability": "d", "next_best": "partial from boardview; otherwise not derivable"},
+    {"codes": ["A11", "D03"], "name": "GD&T / cross-section", "status": "NOT-PRODUCIBLE", "availability": "d", "next_best": "CT/X-ray or vendor CAD"},
+    {"codes": ["B02", "A02"], "name": "Power tree / logic", "status": "NOT-PRODUCIBLE", "availability": "c", "next_best": "derive from acquired schematic (AG-11)"}
+  ]
+}

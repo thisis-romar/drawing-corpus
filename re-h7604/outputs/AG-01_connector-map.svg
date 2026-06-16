@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" font-family="Helvetica,Arial,sans-serif">
+<rect x="0" y="0" width="1000" height="600" fill="#ffffff"/>
+<text x="500" y="30" text-anchor="middle" font-size="22" font-weight="bold">ASUS ProArt H7604J Mainboard - Connector / Interconnect Map</text>
+<text x="500" y="48" text-anchor="middle" font-size="12" fill="#444">AG-01 - EMBLEM-NLP-RSPEC-002 - produces C04 (interconnect) / A14 (harness)</text>
+<path d="M 150,360 L 150,250 Q 150,235 168,232 L 330,210 Q 360,150 400,150 L 600,150 Q 640,150 670,210 L 832,232 Q 850,235 850,250 L 850,360 Q 850,378 832,378 L 700,378 L 700,430 Q 700,445 685,445 L 315,445 Q 300,445 300,430 L 300,378 L 168,378 Q 150,378 150,360 Z" fill="#0b6b2e" fill-opacity="0.10" stroke="#0b6b2e" stroke-width="2.5"/>
+<rect x="430" y="175" width="140" height="95" rx="6" fill="#d9534f" fill-opacity="0.10" stroke="#d9534f" stroke-dasharray="5 4" stroke-width="1.5"/>
+<text x="500" y="225" text-anchor="middle" font-size="11" fill="#b52b27">CPU/GPU zone</text>
+<text x="500" y="240" text-anchor="middle" font-size="9" fill="#b52b27">liquid-metal TIM (page-09)</text>
+<circle cx="770" cy="410" r="22" fill="#ffffff" stroke="#0b6b2e" stroke-width="2"/>
+<line x1="500" y1="150" x2="500" y2="55" stroke="#c0392b" stroke-width="1.4"/>
+<rect x="489" y="142" width="22" height="16" rx="2" fill="#f1c40f" stroke="#7a5c00" stroke-width="1.2"/>
+<text x="500" y="55" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">FAN</text>
+<line x1="815" y1="190" x2="950" y2="150" stroke="#c0392b" stroke-width="1.4"/>
+<rect x="804" y="182" width="22" height="16" rx="2" fill="#f1c40f" stroke="#7a5c00" stroke-width="1.2"/>
+<text x="950" y="150" text-anchor="end" font-size="13" font-weight="bold" fill="#111">FFC_USB</text>
+<line x1="840" y1="250" x2="950" y2="250" stroke="#c0392b" stroke-width="1.4"/>
+<rect x="829" y="242" width="22" height="16" rx="2" fill="#f1c40f" stroke="#7a5c00" stroke-width="1.2"/>
+<text x="950" y="250" text-anchor="end" font-size="13" font-weight="bold" fill="#111">LAN_IO_FPC</text>
+<line x1="840" y1="300" x2="950" y2="300" stroke="#c0392b" stroke-width="1.4"/>
+<rect x="829" y="292" width="22" height="16" rx="2" fill="#f1c40f" stroke="#7a5c00" stroke-width="1.2"/>
+<text x="950" y="300" text-anchor="end" font-size="13" font-weight="bold" fill="#111">EDP CABLE</text>
+<line x1="815" y1="352" x2="950" y2="350" stroke="#c0392b" stroke-width="1.4"/>
+<rect x="804" y="344" width="22" height="16" rx="2" fill="#f1c40f" stroke="#7a5c00" stroke-width="1.2"/>
+<text x="950" y="350" text-anchor="end" font-size="13" font-weight="bold" fill="#111">SPEAKER</text>
+<line x1="185" y1="290" x2="50" y2="290" stroke="#c0392b" stroke-width="1.4"/>
+<rect x="174" y="282" width="22" height="16" rx="2" fill="#f1c40f" stroke="#7a5c00" stroke-width="1.2"/>
+<text x="50" y="290" text-anchor="start" font-size="13" font-weight="bold" fill="#111">CMOS CABLE</text>
+<line x1="380" y1="400" x2="330" y2="525" stroke="#c0392b" stroke-width="1.4"/>
+<rect x="369" y="392" width="22" height="16" rx="2" fill="#f1c40f" stroke="#7a5c00" stroke-width="1.2"/>
+<text x="330" y="525" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">BL FPC</text>
+<line x1="445" y1="410" x2="445" y2="525" stroke="#c0392b" stroke-width="1.4"/>
+<rect x="434" y="402" width="22" height="16" rx="2" fill="#f1c40f" stroke="#7a5c00" stroke-width="1.2"/>
+<text x="445" y="525" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">LED FFC</text>
+<line x1="515" y1="412" x2="560" y2="525" stroke="#c0392b" stroke-width="1.4"/>
+<rect x="504" y="404" width="22" height="16" rx="2" fill="#f1c40f" stroke="#7a5c00" stroke-width="1.2"/>
+<text x="560" y="525" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">K/B FPC</text>
+<line x1="600" y1="405" x2="670" y2="525" stroke="#c0392b" stroke-width="1.4"/>
+<rect x="589" y="397" width="22" height="16" rx="2" fill="#f1c40f" stroke="#7a5c00" stroke-width="1.2"/>
+<text x="670" y="525" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">BATTERY</text>
+<line x1="660" y1="398" x2="790" y2="525" stroke="#c0392b" stroke-width="1.4"/>
+<rect x="649" y="390" width="22" height="16" rx="2" fill="#f1c40f" stroke="#7a5c00" stroke-width="1.2"/>
+<text x="790" y="525" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">TP FFC</text>
+<g font-size="11" fill="#333">
+<rect x="30" y="548" width="940" height="44" fill="#f7f7f7" stroke="#ccc"/>
+<rect x="40" y="560" width="16" height="12" fill="#f1c40f" stroke="#7a5c00"/>
+<text x="62" y="570">connector (yellow = board-side header)</text>
+<text x="300" y="570" font-weight="bold" fill="#b52b27">NOT TO SCALE - illustrative; positions approximate page-19/page-17.</text>
+<text x="40" y="586">Evidence: input-set.json pages 19,17,15,23 | No pin-level nets inferred (RSPEC-002 guardrail). Generated for EMBLEM-NLP-RSPEC-002.</text>
+</g>
+</svg>

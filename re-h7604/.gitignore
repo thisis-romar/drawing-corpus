@@ -1,0 +1,6 @@
+# Rendered ASUS repair-manual pages are the copyrighted OEM asset (category a).
+# Per RSPEC-002 §9 / RSPEC-001 §12 they are recorded URL-only and NOT redistributed.
+# They are a LOCAL evidence base only; regenerate with the command in README.md.
+pages/*.png
+# Keep the page metadata index (dimensions only, no manual content):
+!pages/_index.json

@@ -1,6 +1,26 @@
 # EMBLEM-NLP-RSPEC-001 — License Matrix
 
-*Section 11.3 — retrieved examples grouped by license posture. Generated 2026-06-12 from `drawing-corpus.json`.*
+*Section 11.3 — retrieved examples grouped by license posture. Generated 2026-06-12 from `drawing-corpus.json`; retrieval status added 2026-06-13.*
+
+## Retrieval status (links-only policy)
+
+The actual example files were retrieved on 2026-06-13 under a **links-only policy**: only
+redistributable artifacts are committed to `sources/`; paywalled, reference-only, and
+copyright-restricted sources are recorded as URLs only. Tooling was installed to render derived
+specimens: **KiCad 9.0.9** for the fabrication outputs (Gerbers, drill, IPC-D-356, placement, BOM,
+fab/assembly PDFs) and a `.brd` boardview (via `pcbnew`), and **cadquery/OpenCASCADE** for the
+isometric (E04), section (D03), and exploded (E05) views from the Framework CAD `.stp`. See
+`sources/MANIFEST.json`.
+
+| Status | Count | Meaning |
+|--------|-------|---------|
+| committed (file) | 29 | The example artifact is a redistributable file committed under `sources/`. |
+| url-only | 9 | Paywalled / reference-only / copyright-restricted — recorded as a link, nothing downloaded. |
+
+**29 / 38** drawing types have a committed redistributable specimen (107 files, ~24 MB). The 9
+url-only IDs are: A07, A11, B04, B05, B06, B07, B09, B10, E02 — all paywalled, reference-only, or
+copyright-restricted. The only open-licensed type left url-only is B06 (FCC public domain, no single
+exhibit pinned). Every redistributable/derivable drawing type now has a committed specimen.
 
 ## Open (CC / CERN OHL / GPL / BSD / public domain / FCC)  (28)
 
