@@ -1,0 +1,12 @@
+connector_silkscreen,destination_FRU,evidence_page,note
+FAN,Cooling fans (dual),p19/p17,"board-side header, location per page-19 map"
+FFC_USB,USB / IO daughter (FFC),p19,"board-side header, location per page-19 map"
+LAN_IO_FPC,IO board (LAN/audio/SD) FPC,p19/p17,"board-side header, location per page-19 map"
+EDP CABLE,OLED panel (eDP),p19/p17,"board-side header, location per page-19 map"
+SPEAKER,Speaker set,p19/p17,"board-side header, location per page-19 map"
+CMOS CABLE,RTC / CMOS battery,p19/p17,"board-side header, location per page-19 map"
+BL FPC,Keyboard backlight,p19/p17,"board-side header, location per page-19 map"
+LED FFC,Status LED board,p19/p17,"board-side header, location per page-19 map"
+K/B FPC,Keyboard matrix,p19/p17,"board-side header, location per page-19 map"
+BATTERY,Battery pack,p19/p17,"board-side header, location per page-19 map"
+TP FFC,Touchpad module,p19/p17,"board-side header, location per page-19 map"
