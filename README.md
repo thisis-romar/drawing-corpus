@@ -1,7 +1,8 @@
 # Laptop Electronics Drawing-Type Corpus
 
-Execution output of **EMBLEM-NLP-RSPEC-001 v1.0.0** — *Research Agent Specification: Laptop
-Electronics Drawing Type Discovery & Retrieval* (Emblem Projects Inc., 2026-06-12).
+Execution output of **[EMBLEM-NLP-RSPEC-001](spec/EMBLEM-NLP-RSPEC-001.md) v1.0.0** — *Research
+Agent Specification: Laptop Electronics Drawing Type Discovery & Retrieval* (Emblem Projects Inc.,
+2026-06-12).
 
 This corpus retrieves the single most accurate, highest-authority **publicly available** example of
 each drawing type used in laptop electronics design, manufacturing, and repair. Every example is
@@ -12,8 +13,8 @@ are explicitly excluded.
 ## Key result
 
 **38 drawing types** processed (the spec registry enumerates 38, although the objective/title says 45
-— see `reports/gap-report.md` §0 for the reconciliation and the near-duplicate / plausibly-missing
-analysis).
+— see [`reports/gap-report.md`](reports/gap-report.md) §0 for the reconciliation and the
+near-duplicate / plausibly-missing analysis).
 
 | Confidence | Count | Meaning |
 |-----------|-------|---------|
@@ -32,14 +33,15 @@ analysis).
 
 | Path | What it is |
 |------|------------|
-| `drawing-corpus.json` | **Main deliverable.** One record per drawing type (Section 8 schema): primary/fallback source, validation, confidence, license, and a `retrieval` block (status, `local_path`, `sha256`). |
-| `sources/` | Retrieved + rendered example files — redistributable only (tree below). |
-| `sources/MANIFEST.json` | Per-record retrieval status + a sha256 inventory of every committed file. |
-| `sources/ATTRIBUTION.md` | Per-source license notices + the CC BY change notices for rendered derivatives. |
-| `sources/fetch_sources.sh` | Optional helper to fetch the url-only items into a local (gitignored) cache. |
-| `reports/` | Section 11 outputs — `summary-table.md`, `gap-report.md`, `license-matrix.md`. |
-| `spec/EMBLEM-NLP-RSPEC-001.md` | The source specification, stored verbatim for traceability. |
-| `tools/` | Generation scripts + `tools/README.md` — reproduce the rendered specimens and rebuild the metadata. |
+| [`drawing-corpus.json`](drawing-corpus.json) | **Main deliverable.** One record per drawing type (Section 8 schema): primary/fallback source, validation, confidence, license, and a `retrieval` block (status, `local_path`, `sha256`). |
+| [`sources/`](sources/) | Retrieved + rendered example files — redistributable only (tree below). |
+| [`sources/MANIFEST.json`](sources/MANIFEST.json) | Per-record retrieval status + a sha256 inventory of every committed file. |
+| [`sources/ATTRIBUTION.md`](sources/ATTRIBUTION.md) | Per-source license notices + the CC BY change notices for rendered derivatives. |
+| [`sources/fetch_sources.sh`](sources/fetch_sources.sh) | Optional helper to fetch the url-only items into a local (gitignored) cache. |
+| [`reports/`](reports/) | Section 11 outputs — [`summary-table.md`](reports/summary-table.md), [`gap-report.md`](reports/gap-report.md), [`license-matrix.md`](reports/license-matrix.md). |
+| [`spec/EMBLEM-NLP-RSPEC-001.md`](spec/EMBLEM-NLP-RSPEC-001.md) | The source specification, stored verbatim for traceability. |
+| [`tools/`](tools/) | Generation scripts + [`tools/README.md`](tools/README.md) — reproduce the rendered specimens and rebuild the metadata. |
+| [`re-h7604/`](re-h7604/README.md) | **Sub-project** — the [EMBLEM-NLP-RSPEC-002](spec/EMBLEM-NLP-RSPEC-002.md) ASUS ProArt H7604JV drawing production/acquisition roster (see *Related sub-project* below). |
 
 ```
 sources/
@@ -52,6 +54,24 @@ sources/
 ├── nasa/                  public dom — NASA-STD-8739.3 (cancelled 2011)
 ├── MANIFEST.json  ATTRIBUTION.md  fetch_sources.sh
 ```
+
+## Related sub-project — `re-h7604/` (H7604JV drawing production & acquisition)
+
+Where this corpus catalogs one *generic* specimen per drawing **type**, the
+[`re-h7604/`](re-h7604/README.md) sub-project applies the catalog to a **specific machine**: the
+ASUS ProArt StudioBook 16 OLED **H7604JI/H7604JV** (mainboard 60NB10B0-MB3110), driven by a
+CPU/VRM burn-repair need. It is the execution output of a sibling spec,
+[EMBLEM-NLP-RSPEC-002](spec/EMBLEM-NLP-RSPEC-002.md), which defines one agent per drawing, bound to
+free-first tools and mapped onto this corpus's `A01–E07` taxonomy.
+
+| Path | What it is |
+|------|------------|
+| [`re-h7604/README.md`](re-h7604/README.md) | How to read the roster + the page-image evidence base. |
+| [`spec/EMBLEM-NLP-RSPEC-002.md`](spec/EMBLEM-NLP-RSPEC-002.md) | The sibling production/acquisition spec (verbatim). |
+| [`re-h7604/agents.json`](re-h7604/agents.json) | Executable roster — one record per agent (13 agents + gap registry). |
+| [`re-h7604/input-set.json`](re-h7604/input-set.json) | 26-page manifest: content, labels, consuming agents. |
+| [`re-h7604/reports/valuation.md`](re-h7604/reports/valuation.md) | Per-drawing valuation, each rating confirmed against a cited page image. |
+| [`re-h7604/SOURCES.md`](re-h7604/SOURCES.md) | Provenance — the repair-manual page images are committed with explicit operator authorization (superseding the URL-only default for that asset); the source PDF itself is not committed. |
 
 ## File formats
 
@@ -106,7 +126,7 @@ output below is reproducible.
 | Format | # | Purpose |
 |--------|---|---------|
 | `.json` | 2 | `drawing-corpus.json` (dataset) + `MANIFEST.json` (inventory + checksums) |
-| `.md` | 14 | Dual role: **corpus docs** (README, `reports/*`, `spec/*`, `ATTRIBUTION.md`, `tools/README.md`) and **specimens** — Chromium EC state-machine docs (B-series) and the Framework READMEs (system block diagram, E01/B01) |
+| `.md` | 14 | Dual role: **corpus docs** (this README, [`reports/*`](reports/), [`spec/*`](spec/), [`ATTRIBUTION.md`](sources/ATTRIBUTION.md), [`tools/README.md`](tools/README.md)) and **specimens** — Chromium EC state-machine docs (B-series) and the Framework READMEs (system block diagram, E01/B01) |
 | `.sh` | 1 | `fetch_sources.sh` — pull url-only items into a gitignored cache |
 | `.gitignore` | 1 | Ignores that cache (`sources/_fetch_cache/`) |
 | `.py` | 5 | `tools/` generation scripts — boardview, CAD renders, mesh cache, and the corpus builder |
@@ -126,7 +146,11 @@ output below is reproducible.
 
 Files were retrieved on 2026-06-13 under a **links-only policy**: only redistributable artifacts are
 committed; paywalled, vendor reference-only, and copyright-restricted sources are recorded as URLs in
-`sources/MANIFEST.json` (nothing downloaded). **107 files (~22 MB)** are committed.
+[`sources/MANIFEST.json`](sources/MANIFEST.json) (nothing downloaded). **107 data files (~22 MB)**
+are committed under [`sources/`](sources/) (the figure in [`reports/summary-table.md`](reports/summary-table.md)).
+*(The [`re-h7604/`](re-h7604/README.md) sub-project below adds its own ~59 MB image evidence base —
+300 DPI page renders + native embedded-image extracts — under a separate, operator-authorized
+provenance policy; see its [`SOURCES.md`](re-h7604/SOURCES.md).)*
 
 | Retrieval status | Count | Notes |
 |------------------|-------|-------|
@@ -157,7 +181,7 @@ diagrams), [TI Power Topologies](https://www.ti.com/lit/ml/sluw001g/sluw001g.pdf
 
 ## How to read a record
 
-Each `drawing-corpus.json` record follows the Section 8 schema: `drawing_type`, `group`, `domain`,
+Each [`drawing-corpus.json`](drawing-corpus.json) record follows the Section 8 schema: `drawing_type`, `group`, `domain`,
 `governing_standard`, `example_title`, `source_tier`, `source_type`, `source_url` (plus
 `native_file_url` / `rendered_view_url` for software-native files per EC-2), `file_format`,
 `native_format`, `license`, a `validation` block (`title_block`, `standard_referenced`,

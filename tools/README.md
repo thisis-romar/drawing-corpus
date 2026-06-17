@@ -1,17 +1,17 @@
 # tools/ — generation scripts for the derived specimens
 
 These are the exact scripts used to produce the *derived* artifacts under
-`sources/**/_generated/`. They make the corpus reproducible: every record whose
-`retrieval.generation_command` names one of these can be regenerated from the
-committed open sources. Run all commands from the repository root.
+`sources/**/_generated/`. They make the corpus reproducible: every record in
+[`../drawing-corpus.json`](../drawing-corpus.json) whose `retrieval.generation_command` names one of
+these can be regenerated from the committed open sources. Run all commands from the repository root.
 
 ## Prerequisites
 
 | Script | Needs | Install used (Ubuntu 24.04) |
 |--------|-------|------------------------------|
-| `pcb2brd.py` | KiCad 9 `pcbnew` Python API | `kicad` from `ppa:kicad/kicad-9.0-releases` |
-| `cad_render.py`, `fw_tess.py`, `fw_explode.py` | cadquery / OpenCASCADE (+ numpy, matplotlib) | `python3 -m venv venv && venv/bin/pip install cadquery matplotlib` |
-| `build_corpus.py` | python3 stdlib only | — |
+| [`pcb2brd.py`](pcb2brd.py) | KiCad 9 `pcbnew` Python API | `kicad` from `ppa:kicad/kicad-9.0-releases` |
+| [`cad_render.py`](cad_render.py), [`fw_tess.py`](fw_tess.py), [`fw_explode.py`](fw_explode.py) | cadquery / OpenCASCADE (+ numpy, matplotlib) | `python3 -m venv venv && venv/bin/pip install cadquery matplotlib` |
+| [`build_corpus.py`](build_corpus.py) | python3 stdlib only | — |
 
 The KiCad fab outputs (`sources/kicad-demos/video/_generated/gerbers|drill`,
 `video.d356`, `video-pos.csv`, `video-bom.csv`, `video-*.pdf`) are produced directly
@@ -39,9 +39,11 @@ find sources -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/sources_sha25
 python3 tools/build_corpus.py
 ```
 
-`build_corpus.py` holds the master record→retrieval mapping (license, upstream,
-local paths, generation commands) and is the single source of truth that emits the
-JSON manifest and the Markdown reports; edit it there, never the generated files.
+[`build_corpus.py`](build_corpus.py) holds the master record→retrieval mapping (license, upstream,
+local paths, generation commands) and is the single source of truth that emits
+[`../drawing-corpus.json`](../drawing-corpus.json), [`../sources/MANIFEST.json`](../sources/MANIFEST.json),
+and [`../reports/summary-table.md`](../reports/summary-table.md); edit it there, never the generated
+files. It reads `/tmp/sources_sha256.txt` (the `find … | sha256sum` line above) for the checksums.
 
 Notes: `cad_render.py`/`fw_tess.py` read the STEP path from `$FW_STEP`. The Framework
 CAD `.stp` and other url-only sources are intentionally not committed (license/size);

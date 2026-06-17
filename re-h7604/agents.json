@@ -8,10 +8,11 @@
     "model": "ASUS ProArt StudioBook 16 OLED H7604JI / H7604JV",
     "mainboard": "60NB10B0-MB3110",
     "boardview_revision": "H7604JV Rev 2.1",
-    "input_set": "../re-h7604/input-set.json (26 pages, rendered to pages/page-NN.png @ 300 DPI)",
+    "input_set": "../re-h7604/input-set.json (26 pages; committed as pages/300dpi/ @ 300 DPI + pages/native/ raw embedded-image extracts; manifest pages/_index.json with per-file sha256)",
     "confirmed_from_pixels": {
       "io_board": "N7604JV_IAR_BD R2.0 (silkscreen legible on page-22 @ 600 DPI)",
-      "die_tim": "Conductonaut 1g liquid-metal TIM (named in the page-09 required-materials list)"
+      "die_tim": "Conductonaut 1g liquid-metal TIM (named in the page-09 required-materials list)",
+      "native_photo_ceiling": "Embedded mainboard photos are natively 1149x762 px (e.g. native/page-19-img02.jpg) - the hard limit on recoverable silkscreen/IC detail; no render DPI exceeds it."
     },
     "unverified_external_assumptions": [
       "mainboard P/N '60NB10B0-MB3110' is NOT printed on any inspected page (page-08 directs to the ASUS 'Orderbook' for the SKU-specific part number) - external assumption; operator to confirm.",
@@ -29,7 +30,7 @@
     "No AI hallucination: never synthesize nets, component values, reference designators, or hidden/back-side traces not visible in a cited page image.",
     "Boardview legality: acquire .FZ/.brd through legitimate channels; no paywall bypass, no DMCA OEM-mirror redistribution; .FZ decryption key sourced separately by the operator.",
     "HAZARD (confirmed in manual, page-09): the required-materials list specifies 'Conductonaut 1g (Liquid Metal)' as the CPU/GPU die TIM (alongside GA500 grease, FCR-AS, thermal pad). Liquid metal is electrically conductive — clean residue before powering and avoid bridging adjacent components during rework. Disconnect the battery (page-11) before probing.",
-    "Provenance: the ASUS repair manual is recorded URL-only (category a); page numbers are cited, the PDF is not redistributed in this repo."
+    "Provenance: the ASUS repair manual is category a. Its derived page images (pages/300dpi renders + pages/native embedded-image extracts) are committed with the operator's explicit authorization (2026-06-15), superseding the URL-only default for this asset; the source PDF itself is not committed. Images remain ASUS copyright, kept as an internal repair-engineering evidence base."
   ],
   "agents": [
     {
@@ -244,7 +245,7 @@
       ],
       "outputs": ["PNG", "SVG"],
       "effort": "low",
-      "fidelity_ceiling": "MAJOR ICs ONLY. Board is mylar-covered: no VRM phases or reference designators legible. Not a full component map.",
+      "fidelity_ceiling": "MAJOR ICs ONLY. Board is mylar-covered: no VRM phases or reference designators legible. Not a full component map. Physically capped by the native photo resolution (~1149x762 px; native/page-20-img02.jpg) - no DPI recovers covered detail.",
       "guardrails": [
         "Do NOT label VRM phases / passives — not visible (mylar-covered).",
         "Flag liquid-metal bridging hazard at the CPU/GPU die."
@@ -276,7 +277,7 @@
       ],
       "outputs": ["CSV", "SVG"],
       "effort": "medium",
-      "fidelity_ceiling": "Slot/connector-level silkscreen only; fine-pitch component reference designators (R/C/U) are NOT legible; CPU/GPU zone is mylar-covered. Confirmed at 600 DPI.",
+      "fidelity_ceiling": "Slot/connector-level silkscreen only; fine-pitch component reference designators (R/C/U) are NOT legible; CPU/GPU zone is mylar-covered. Confirmed at 600 DPI. Hard limit is the native embedded-photo resolution (~1149x762 px; native/page-19-img02.jpg) - the 600 DPI page render upscales but adds no real detail.",
       "guardrails": ["Transcribe only glyphs actually legible in a cited render; never infer designators."],
       "next_best": "Acquire boardview (AG-10) for the full silkscreen/legend.",
       "source_report": "Methods&Tools"

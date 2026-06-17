@@ -82,5 +82,17 @@ Per-record mapping (which drawing type each file serves) is in `MANIFEST.json` a
 
 ---
 
+## Related sub-project — ASUS H7604 repair-manual images (`../re-h7604/pages/`)
+
+Outside this `sources/` corpus, the [`../re-h7604/`](../re-h7604/README.md) sub-project commits
+**ASUS-copyright** repair-manual page images (`../re-h7604/pages/300dpi/` page renders and
+`../re-h7604/pages/native/` embedded-image extracts). These are **not** open-licensed and are **not**
+covered by the links-only policy above: they are committed as an internal repair-engineering evidence
+base **with explicit operator authorization** (2026-06-15), and the source PDF itself is not
+redistributed. Full provenance, the source-PDF hash, and the rationale are in
+[`../re-h7604/SOURCES.md`](../re-h7604/SOURCES.md).
+
+---
+
 The scripts that produce every derived render are in [`../tools/`](../tools/) (see
 [`../tools/README.md`](../tools/README.md)); this file is maintained by hand alongside them.

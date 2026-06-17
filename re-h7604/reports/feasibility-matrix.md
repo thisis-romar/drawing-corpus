@@ -1,7 +1,8 @@
 # Feasibility Matrix — Producible from the 26-Page Photo Set
 
 **Spec:** EMBLEM-NLP-RSPEC-002 · **Objective 1:** what can be produced from the ASUS repair-manual
-photos alone. Ratings confirmed against `../pages/page-NN.png` (see `valuation.md` for evidence).
+photos alone. Ratings confirmed against [`../pages/300dpi/`](../pages/300dpi/)`page-NN.png` (see
+[`valuation.md`](valuation.md) for evidence).
 
 | Rank | Agent | Drawing (A01–E07) | Feasibility | Evidence | Why |
 |------|-------|-------------------|-------------|----------|-----|

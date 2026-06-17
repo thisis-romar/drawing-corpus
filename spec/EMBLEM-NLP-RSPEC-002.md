@@ -30,8 +30,21 @@ completeness.
 ---
 
 ## 2. Evidence Base (Phase 0 — completed)
-The source PDF was rendered with **pypdfium2 + Pillow at 300 DPI** to 26 lossless PNGs
-(`../re-h7604/pages/page-01.png` … `page-26.png`, uniform 4001×2250).
+The source PDF was rendered with **pypdfium2 + Pillow** to two committed representations under
+`../re-h7604/pages/`: **300 DPI** (`300dpi/page-01.png` … `page-26.png`, uniform 4001×2250 — the
+canonical cited evidence base) and **native embedded-image extracts** (`native/`, 273 raw image
+objects at original encoding, w≥64 & h≥64). Manifest: `../re-h7604/pages/_index.json` (per-file
+`sha256`).
+
+**Fidelity ceiling (Phase 0b).** The embedded board photos are natively **≤~1149×762 px**, so no
+render DPI recovers more photo detail than `native/` — re-rendering the page higher only sharpens the
+vector text. The `native/` extracts are the raw photos **without** the manual's overlaid callout
+arrows/numbers (higher photo fidelity, no annotations) — which is why both representations are kept,
+and why a higher-DPI page set is *not* retained (it would add bytes, not detail). This ceiling is the
+physical basis for AG-08 ("major ICs only") and AG-09 ("slot/connector silkscreen only"); the AG-09
+silkscreen confirmation used a transient 600 DPI render, recorded in the reports but not committed.
+**Provenance:** these images are committed with the operator's explicit authorization (2026-06-15),
+superseding the URL-only default for this asset (see §9 and `../re-h7604/SOURCES.md`).
 
 **Page-count reconciliation:** the PDF is **26 pages**, matching the report's "26-page set." Report
 references `p05–p21` map 1:1 onto `page-05`…`page-21` with no offset. (An early planning estimate
@@ -52,9 +65,10 @@ Findings that corrected the source report's optimism (and one second-pass self-c
    page (page-10/14/22…), so AG-12 is FULLY producible, not partial.
 
 > **Unverified external assumptions** (flagged in `agents.json` → `target.unverified_external_assumptions`):
-> the mainboard P/N `60NB10B0-MB3110`, boardview `Rev 2.1`, and liquid-metal (Conductonaut) TIM are
-> **not** confirmed by any inspected page; the only board rev confirmed from pixels is the IO board
-> `R2.0`. Operator to verify before acquisition/rework.
+> the mainboard P/N `60NB10B0-MB3110` and boardview `Rev 2.1` are **not** confirmed by any inspected
+> page; the only board rev confirmed from pixels is the IO board `R2.0`. Operator to verify before
+> acquisition/rework. *(The liquid-metal **Conductonaut** TIM, by contrast, **is** confirmed — it is
+> named in the page-09 required-materials list; see §9.)*
 
 ---
 
@@ -136,13 +150,16 @@ Per-agent record: `agent_id`, `name`, `produces` [A01–E07], `drawing_type`, `f
 3. **Boardview legality** — acquire `.FZ/.brd` through legitimate channels; no paywall bypass, no
    DMCA OEM-mirror redistribution; `.FZ` decryption key sourced separately by the operator; never
    commit the `.FZ`/key to this repo.
-4. **Liquid-metal hazard (precautionary — not confirmed in the manual)** — high-TDP ProArt SKUs of
-   this class are reported to use conductive liquid-metal TIM on the CPU/GPU die; the manual shows
-   kapton/mylar zones (page-20/21) but does not name the compound. Treat the die TIM as potentially
-   conductive: verify before rework, clean before powering, avoid bridging. Disconnect the battery
-   (page-11) before probing.
-5. **Provenance** — the ASUS repair manual is recorded **URL-only** (category a), consistent with
-   RSPEC-001 §12; page numbers are cited, the PDF is not redistributed here.
+4. **Liquid-metal hazard (CONFIRMED in the manual, page-09)** — the page-09 required-materials list
+   names **"Conductonaut 1g (Liquid Metal)"** as the CPU/GPU die TIM (alongside GA500 grease,
+   FCR-AS, thermal pad); the manual also shows the kapton/mylar die zones (page-20/21). Liquid metal
+   is electrically conductive: clean residue before powering and avoid bridging adjacent components
+   during rework. Disconnect the battery (page-11) before probing.
+5. **Provenance** — the ASUS repair manual is category a. The derived page images (300/600 DPI
+   renders + native embedded-image extracts under `../re-h7604/pages/`) are **committed with the
+   operator's explicit authorization (2026-06-15)**, superseding the RSPEC-001 §12 URL-only default
+   for this asset; the **source PDF itself is not committed**. The images remain ASUS copyright,
+   included as an internal repair-engineering evidence base (see `../re-h7604/SOURCES.md`).
 
 ---
 

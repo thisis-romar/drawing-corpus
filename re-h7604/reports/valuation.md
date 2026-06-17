@@ -2,7 +2,9 @@
 
 **Spec:** EMBLEM-NLP-RSPEC-002
 **Target:** ASUS ProArt StudioBook 16 OLED H7604JI/H7604JV — mainboard 60NB10B0-MB3110
-**Evidence base:** all 26 PDF pages rendered to `../pages/page-NN.png` at 300 DPI (4001×2250).
+**Evidence base:** all 26 PDF pages committed in two representations under `../pages/` —
+`300dpi/` (4001×2250, the cited renders below) and `native/` (273 raw embedded image objects at
+~1149×762). See `../pages/_index.json`.
 **Method:** every rating below cites the specific page image it was confirmed against. Where the
 input set cannot support a drawing, that is stated as **ABSENT** rather than scored optimistically.
 
@@ -63,8 +65,9 @@ disassembly pages not read in the first pass — see "Audit gaps closed" below.)
    p05–p21 map 1:1 onto `page-05`…`page-21` with no offset.
 3. **AG-05 (multi-view):** confirmed stronger than the report implied — page-05 is a real 5-face
    orthographic multi-view with port callouts (uncalibrated). Retained as producible.
-4. **Provenance:** rendered pages are the copyrighted ASUS asset → kept local-only (git-ignored),
-   recorded URL-only, consistent with RSPEC-001 §12.
+4. **Provenance:** the rendered/extracted pages are the copyrighted ASUS asset; they are committed
+   with the operator's explicit authorization (2026-06-15), superseding the RSPEC-001 §12 URL-only
+   default for this asset. The source PDF itself is not committed. See [`../SOURCES.md`](../SOURCES.md).
 
 ### Audit gaps closed (second pass)
 
@@ -92,6 +95,16 @@ disassembly pages not read in the first pass — see "Audit gaps closed" below.)
 10. **AG-12 torque schedule is broader than the second pass found.** Explicit torque tables appear
     on **10** disassembly pages (10,12,14,15,16,17,22,24,25,26) with real spec variation —
     M1.6 @ 1.0, M2 @ 2.0, M2.5 @ 3.0 kgf-cm. Confirms FULLY producible with strong coverage.
+11. **Native resolution sets a hard fidelity ceiling (Phase 0b).** Extracting the raw embedded
+    image objects (`../pages/native/`) shows the mainboard photos are stored at only **1149×762 px**
+    (e.g. `native/page-19-img02.jpg`, the bat-wing board shot). The 300 DPI page render is an
+    *upscale* of these same pixels — re-rendering higher (a transient 600 DPI pass was used to read
+    silkscreen during this audit) sharpens the vector callouts but adds **no** new photo detail, so
+    no higher-DPI set is committed. This is the physical reason AG-08 stays "major ICs only" and AG-09
+    stays "slot/connector silkscreen only": the detail is not in the source pixels at any DPI. Note the
+    native extracts are the raw photos *without* the manual's overlaid callout arrows/numbers — so
+    the `300dpi/` renders remain the better evidence for reading labels, `native/` for the raw photo.
 
 ---
-*EMBLEM-NLP-RSPEC-002 — valuation confirmed against extracted imagery — 2026-06-14*
+*EMBLEM-NLP-RSPEC-002 — valuation confirmed against extracted imagery — 2026-06-14;
+native-resolution fidelity ceiling + committed image set added 2026-06-16*
